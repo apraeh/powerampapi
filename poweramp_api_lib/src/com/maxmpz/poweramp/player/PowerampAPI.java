@@ -30,7 +30,7 @@ public final class PowerampAPI {
 	/**
 	 * Defines PowerampAPI version, which could be also 200 and 210 for older Poweramps.
 	 */
-	public static final int VERSION = 526;
+	public static final int VERSION = 533;
 	
 	/**
 	 * No id flag.
@@ -66,6 +66,11 @@ public final class PowerampAPI {
 	public static final String COMMAND = "cmd";
 	
 	
+	/** 
+	 * 
+	 * Commonm extras:
+	 * - beep - boolean - (optional) if true, Poweramp will beep on playback command
+	 */
 	public static final class Commands {
 		/**
 		 * Extras:
@@ -276,6 +281,13 @@ public final class PowerampAPI {
 	 * Since 2.0.6
 	 */
 	public static final String KEEP_SERVICE = "keepService"; 
+	
+	/**
+	 * Extra.
+	 * Boolean
+	 * Since build 533
+	 */
+	public static final String BEEP = "beep";
 	
 	
 	/**

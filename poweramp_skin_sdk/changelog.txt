@@ -1,3 +1,9 @@
+1.2
+- skin build scripts changed to allow Sony 4.2.2 ROM compatibility (additional dummy apk is used per skin for build process only)
+- skins now have additional button to directly set the skin and also hides header when InfoActivity is started on Android 3+
+- please use Android SDK 22
+- NOTE: skins build with this SDK are visible starting from Poweramp Build 532
+
 1.1
 - added .9 in default_style.psd for 9-patch images
 - added sdk_contents.rtf

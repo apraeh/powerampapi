@@ -146,10 +146,10 @@
 				android:background="?com.maxmpz.audioplayer:attr/deck_bg"
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
-				android:layout_alignParentTop="true"
 				android:paddingBottom="8dip"
 				android:layout_weight="1"
 			>
+				<include layout="@com.maxmpz.audioplayer:layout/eq_fx_buttons"/>
 				
 				<com.maxmpz.audioplayer.widget.RoundKnob android:id="@com.maxmpz.audioplayer:id/volume_knob"
 					android:layout_width="@com.maxmpz.audioplayer:dimen/vol_round_knob_size"
@@ -190,47 +190,6 @@
 					android:layout_marginRight="@com.maxmpz.audioplayer:dimen/round_knob_vert_label_offset"
 					android:layout_marginBottom="4dip"
 				/>
-				
-
-				<com.maxmpz.audioplayer.widget.ToggleButton android:id="@com.maxmpz.audioplayer:id/dhd_button" 
-					style="?com.maxmpz.audioplayer:attr/EqCheckButton"
-					android:text="@com.maxmpz.audioplayer:string/DHD"
-		
-					android:layout_alignParentLeft="true"
-					android:layout_alignParentTop="true"
-					android:visibility="gone"
-				/>
-				<View android:id="@com.maxmpz.audioplayer:id/dhd_button_div"
-					style="?com.maxmpz.audioplayer:attr/EqHorButtonDiv"
-					android:layout_below="@com.maxmpz.audioplayer:id/dhd_button"
-					android:visibility="gone"
-				/>
-
-				<com.maxmpz.audioplayer.widget.ToggleButton android:id="@com.maxmpz.audioplayer:id/beats_button" 
-					style="?com.maxmpz.audioplayer:attr/EqCheckButton"
-					android:text="@com.maxmpz.audioplayer:string/beats_fx"
-			
-					android:layout_alignParentLeft="true"
-					android:layout_alignWithParentIfMissing="true"
-					android:layout_below="@com.maxmpz.audioplayer:id/dhd_button_div"
-					android:visibility="gone"
-				/>
-				<View android:id="@com.maxmpz.audioplayer:id/beats_button_div"
-					style="?com.maxmpz.audioplayer:attr/EqHorButtonDiv"
-					android:layout_below="@com.maxmpz.audioplayer:id/beats_button"
-					android:visibility="gone"
-				/>
-
-				<com.maxmpz.audioplayer.widget.ToggleButton android:id="@com.maxmpz.audioplayer:id/srs_button" 
-					style="?com.maxmpz.audioplayer:attr/EqCheckButton"
-					android:text="@com.maxmpz.audioplayer:string/srs_fx"
-			
-					android:layout_alignParentLeft="true"
-					android:layout_alignWithParentIfMissing="true"
-					android:layout_below="@com.maxmpz.audioplayer:id/beats_button_div"
-					android:visibility="gone"
-				/>
-
 			</RelativeLayout>
 							
 

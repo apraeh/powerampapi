@@ -2,14 +2,14 @@
 <RelativeLayout	xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_width="fill_parent" 
 	android:layout_height="fill_parent"
-	android:id="@android:id/custom"
 >
-	<ScrollView
-		android:id="@+id/scrollview"
-		android:layout_width="fill_parent" android:layout_height="wrap_content"
+   	<ScrollView
+		android:layout_width="fill_parent" 
+		android:layout_height="fill_parent"
 		android:scrollbarDefaultDelayBeforeFade="100000"
-		android:layout_above="@+id/button1"
 		android:layout_alignParentTop="true"
+		android:layout_marginBottom="180dip"
+		android:fillViewport="true"
 	>
 		<RelativeLayout
 			android:layout_width="fill_parent" android:layout_height="wrap_content"
@@ -21,6 +21,8 @@
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_marginTop="2dip"
+				android:tag="icon"
+				android:layout_marginBottom="22dip"
 			/>
 			<TextView
 				android:id="@+id/title"
@@ -29,11 +31,12 @@
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
 				android:text="@string/app_name"
-				android:textSize="18sp"
+				android:textSize="19sp"
 				android:textStyle="bold"
 				android:layout_alignTop="@+id/icon"
 				android:layout_alignBottom="@+id/icon"
 				android:gravity="center_vertical"
+				android:tag="title"
 			/>
 		
 			<TextView
@@ -42,20 +45,40 @@
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
 				android:text="@string/installation_ok"
-				android:textSize="16sp"
-				android:layout_marginTop="22dip"
+				android:textSize="19sp"
 			/>
 		</RelativeLayout>
 	</ScrollView>		
-	
-	<Button android:id="@+id/button1"
-		android:onClick="onButton1Click"
+	<LinearLayout 
+		android:orientation="vertical"
 		android:layout_alignParentBottom="true"
 		android:layout_centerHorizontal="true"
 		android:layout_width="fill_parent"
-		android:layout_height="100dip"
-		android:text="@string/start_poweramp"
-		android:textSize="18sp"
+		android:layout_height="wrap_content"
 		android:layout_margin="10dip"
-	/>
+	>
+		<Button android:id="@+id/button1"
+			android:onClick="onButton1Click"
+			android:layout_width="fill_parent"
+			android:layout_height="80dip"
+			android:text="@string/start_poweramp"
+			android:textSize="18sp"
+		/>
+
+		<Button android:id="@+id/button2"
+			android:onClick="onButton2Click"
+			android:layout_width="fill_parent"
+			android:layout_height="80dip"
+			android:text="@string/set_skin_1"
+			android:textSize="18sp"
+		/>
+
+		<Button android:id="@+id/button3"
+			android:onClick="onButton3Click"
+			android:layout_width="fill_parent"
+			android:layout_height="80dip"
+			android:text="@string/set_skin_2"
+			android:textSize="18sp"
+		/>
+	</LinearLayout>	
 </RelativeLayout>

@@ -24,6 +24,8 @@
 	
 
 	<include layout="@com.maxmpz.audioplayer:layout/aaa_panels"/>	
+
+
 	
 	<!-- Required as this is anchor view for aaa panels. Aaa bottom panel uses layout_above="bottom_bg" layout_marginBottom="-8dip" -->
 	<View android:id="@com.maxmpz.audioplayer:id/bottom_bg"

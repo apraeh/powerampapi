@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project
+	name="skin_compat"
+	default="debug">
+
+	<property
+		name="version.num"
+		value="1" />
+	
+	<property
+		name="version.prefix"
+		value="1.0" />
+
+	<property
+		file="local.properties" />
+
+	<property
+		file="project.properties" />
+	
+	<property file="ant.properties" />	
+
+	<loadproperties srcFile="project.properties" />
+
+    <fail
+            message="sdk.dir is missing. Make sure to generate local.properties using 'android update project' or to inject it through an env var"
+            unless="sdk.dir"
+    />
+
+    <target name="-code-gen" depends="-build-setup">
+        <echo>SKIN: Generating R.java / Manifest.java from the resources...</echo>
+		<exec executable="${aapt}" failonerror="true">
+			<arg value="package"/>
+			<arg value="-f"/>
+			<arg value="-m"/>
+			<arg value="-M"/>
+			<arg value="AndroidManifest.xml"/>
+			<arg value="-S"/>
+			<arg value="${resource.absolute.dir}"/>
+			<arg value="-I"/>
+			<arg value="${project.target.android.jar}"/>
+			<arg value="-I"/>
+			<arg value="${poweramp.apk}"/>			
+			<arg value="-J"/>
+			<arg value="${gen.absolute.dir}"/>
+			<arg value="-x"/>
+			
+	<!-- 		<arg value="-P"/>
+			<arg value="res/values/public2.xml"/>			 -->
+		</exec>
+    </target>
+
+    <target name="-package-resources">
+        <echo>SKIN: Packaging resources</echo>
+		<exec executable="${aapt}" failonerror="true">
+			<arg value="package"/>
+			<arg value="-f"/>
+			<arg value="-M"/>
+			<arg value="AndroidManifest.xml"/>
+			<arg value="-S"/>
+			<arg value="${resource.absolute.dir}"/>
+			<arg value="-A"/>
+			<arg value="${asset.absolute.dir}"/>
+			<arg value="-I"/>
+			<arg value="${project.target.android.jar}"/>
+			<arg value="-I"/>
+			<arg value="${poweramp.apk}"/>			
+			<arg value="-F"/>
+			<arg value="${out.absolute.dir}/${resource.package.file.name}"/>
+			<arg value="-x"/>
+
+			<arg value="--version-code"/>
+			<arg value="${version.code}"/>
+		</exec>
+    </target>
+
+    <!-- version-tag: custom -->
+    <import file="${sdk.dir}/tools/ant/build.xml" />
+
+
+	<target name="-set-jar">
+	    <property name="resource.package.file.name" value="${ant.project.name}.jar" />
+	</target>
+</project>

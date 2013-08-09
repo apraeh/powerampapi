@@ -1,21 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project
-	name="SkinTemplate"
+	name="skin_template"
 	default="jar">
 
 	<property
 		name="version.num"
 		value="1" />
 	
-	<buildnumber
-		file="build.num" />
 
 	<property
 		name="version.prefix"
 		value="1.0" />
-
-
 	
 	<property
 		file="local.properties" />
@@ -46,10 +42,16 @@
 			<arg value="${project.target.android.jar}"/>
 			<arg value="-I"/>
 			<arg value="${poweramp.apk}"/>
+			<arg value="-I"/>
+			<arg value="skin_compat/bin/skin_compat-debug.apk"/>
 			<arg value="-J"/>
 			<arg value="${gen.absolute.dir}"/>
 			<arg value="-x"/>
-		</exec>
+ <!-- 			
+			<arg value="-P"/>
+			<arg value="res/values/public.xml"/>
+ -->		
+ 		</exec>
     </target>
 
     <target name="-package-resources">
@@ -67,11 +69,12 @@
 			<arg value="${project.target.android.jar}"/>
 			<arg value="-I"/>
 			<arg value="${poweramp.apk}"/>
+			<arg value="-I"/>
+			<arg value="skin_compat/bin/skin_compat-debug.apk"/>
 			<arg value="-F"/>
 			<arg value="${out.absolute.dir}/${resource.package.file.name}"/>
-			<arg value="-x"/>
-
-			<arg value="--version-code"/>
+ 			<arg value="-x"/>
+ 			<arg value="--version-code"/>
 			<arg value="${version.code}"/>
 		</exec>
     </target>
@@ -108,6 +111,7 @@
 	</target>
 
 	<target name="dist" depends="clean, release">
+		<buildnumber file="build.num" />
 		<property name="release.apk" value="${out.absolute.dir}/${ant.project.name}-release.apk"/>
 		<property name="version.tag" value="${version.prefix}-build-${build.number}"/>
 		<property name="dist.dir" value="dist/${version.tag}"/>
