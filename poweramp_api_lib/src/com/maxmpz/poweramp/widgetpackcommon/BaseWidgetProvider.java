@@ -194,7 +194,6 @@ public abstract class BaseWidgetProvider extends AppWidgetProvider {
 
 
 	protected boolean getAANoAnimState(WidgetUpdateData data, WidgetContext widgetCtx) {
-		//final boolean LOG = true;
 		if(IS_HTC_SENSE && Build.VERSION.SDK_INT < 15
 				|| data.albumArtNoAnim
 				|| widgetCtx.lastAATimeStamp == data.albumArtTimestamp 

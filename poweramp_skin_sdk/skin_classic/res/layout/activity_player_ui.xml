@@ -70,6 +70,7 @@
 	
 	-->
 	<com.maxmpz.audioplayer.widget.DeckNowPlaying android:id="@com.maxmpz.audioplayer:id/deck_now_playing"
+	    android:layout="@layout/classic_deck_now_playing"
 		android:background="?com.maxmpz.audioplayer:attr/in_deck_hilite_selector"
 		android:longClickable="true"
 		android:paddingTop="0dip"
@@ -84,6 +85,7 @@
 	/>	
 
 	<com.maxmpz.audioplayer.widget.DeckTrackProgress android:id="@com.maxmpz.audioplayer:id/deck_track_progress"
+	    android:layout="@layout/classic_deck_track_progress"
 		android:layout_width="fill_parent"
 		android:layout_height="47dip"
 		android:paddingLeft="2dip"
