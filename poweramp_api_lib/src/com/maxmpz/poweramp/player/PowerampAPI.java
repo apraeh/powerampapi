@@ -3,7 +3,7 @@ Copyright (C) 2011-2013 Maksim Petrov
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted for widgets, plugins, applications and other software
-which communicate with PowerAMP application on Android platform.
+which communicate with Poweramp application on Android platform.
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
 ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
@@ -52,7 +52,7 @@ public final class PowerampAPI {
 	
 	
 	/**
-	 * PowerAMP Control action.
+	 * Poweramp Control action.
 	 * Should be sent with sendBroadcast().
 	 * Extras:
 	 * 	- cmd - int - command to execute.
@@ -139,7 +139,7 @@ public final class PowerampAPI {
 		 * 	- content://com.maxmpz.audioplayer/PLAYLIST/<lib_playlist_id>/<lib_playlist_entry_id>
 		 * 	- content://com.maxmpz.audioplayer/QUEUE/<queue_entry_id>
 		 * 
-		 * PowerAMP plays whole list starting from the specified song (for SONG uri) or from first one or random one in shuffle mode (for LIST uri).
+		 * Poweramp plays whole list starting from the specified song (for SONG uri) or from first one or random one in shuffle mode (for LIST uri).
 		 * If last Uri segment exists (file/song/entry id) - it's SONG uri. 
 		 * If last song/entry id segment doesn't exist - it's a LIST uri. 
 		 * 
@@ -163,8 +163,8 @@ public final class PowerampAPI {
 		 * - pos - int - (optional) seek to this position in song before playing
 		 * 					  Can be applied only to file:// and SONG uri.
 		 * 
-		 * - matchFile - boolean - (optional) default true. If true, PowerAMP will try to match file://path against Folder Files database, and if match found,
-		 *                    PowerAMP will play that file based on matched folder/file ids. Otherwise just file is played (no list loaded, Category=NONE_RAW_FILE).
+		 * - matchFile - boolean - (optional) default true. If true, Poweramp will try to match file://path against Folder Files database, and if match found,
+		 *                    Poweramp will play that file based on matched folder/file ids. Otherwise just file is played (no list loaded, Category=NONE_RAW_FILE).
 		 *                    Can be applied only to file:// uri. 
 		 *  
 		 */
@@ -291,12 +291,12 @@ public final class PowerampAPI {
 	
 	
 	/**
-	 * PowerAMP track changed.
+	 * Poweramp track changed.
 	 * Sticky intent.
 	 * Extras:
 	 * - track - bundle - Track bundle, see Track class.
 	 * - ts - long - timestamp of the event (System.currentTimeMillis()).
-	 *  Note, that by default PowerAMP won't search/download album art when screen is OFF, but will do that on next screen ON event.  
+	 *  Note, that by default Poweramp won't search/download album art when screen is OFF, but will do that on next screen ON event.  
 	 */
 	public static final String ACTION_TRACK_CHANGED = "com.maxmpz.audioplayer.TRACK_CHANGED";
 	
@@ -317,7 +317,7 @@ public final class PowerampAPI {
 	public static final String ACTION_AA_CHANGED = "com.maxmpz.audioplayer.AA_CHANGED";
 
 	/**
-	 * PowerAMP playing status changed (track started/paused/resumed/ended, playing ended).
+	 * Poweramp playing status changed (track started/paused/resumed/ended, playing ended).
 	 * Sticky intent.
 	 * Extras: 
 	 * - status - string - one of the STATUS_* values
@@ -334,7 +334,7 @@ public final class PowerampAPI {
 	public static final String ACTION_TRACK_POS_SYNC = "com.maxmpz.audioplayer.TPOS_SYNC";
 	
 	/**
-	 * PowerAMP repeat or shuffle mode changed.
+	 * Poweramp repeat or shuffle mode changed.
 	 * Sticky intent.
 	 * Extras:
 	 * - repeat - int - new repeat mode. See RepeatMode class.
@@ -344,7 +344,7 @@ public final class PowerampAPI {
 	public static final String ACTION_PLAYING_MODE_CHANGED = "com.maxmpz.audioplayer.PLAYING_MODE_CHANGED";
 
 	/**
-	 * PowerAMP equalizer settings changed.
+	 * Poweramp equalizer settings changed.
 	 * Sticky intent.
 	 * Extras:
 	 * - name - string - preset name. If no name extra exists, it's not a preset.
@@ -416,7 +416,7 @@ public final class PowerampAPI {
 	public static final class Status {
 		/**
 		 * STATUS_CHANGED status value - track has been started to play or has been paused.
-		 * Note that PowerAMP will start track immediately into this state when it's just loaded to avoid STARTED => PAUSED transition. 
+		 * Note that Poweramp will start track immediately into this state when it's just loaded to avoid STARTED => PAUSED transition. 
 		 * Additional extras:
 		 * 	track - bundle - track info 
 		 * 	paused - boolean - true if track paused, false if track resumed
@@ -424,7 +424,7 @@ public final class PowerampAPI {
 		public static final int TRACK_PLAYING = 1;
 		
 		/**
-		 * STATUS_CHANGED status value - track has been ended. Note, this intent will NOT be sent for just finished song IF PowerAMP advances to the next song.
+		 * STATUS_CHANGED status value - track has been ended. Note, this intent will NOT be sent for just finished song IF Poweramp advances to the next song.
 		 * Additional extras:
 		 * 	track - bundle - track info 
 		 *  failed - boolean - true if track failed to play
@@ -432,7 +432,7 @@ public final class PowerampAPI {
 		public static final int TRACK_ENDED = 2;
 
 		/**
-		 * STATUS_CHANGED status value - PowerAMP finished playing some list and stopped.
+		 * STATUS_CHANGED status value - Poweramp finished playing some list and stopped.
 		 */
 		public static final int PLAYING_ENDED = 3;
 	}
@@ -510,7 +510,7 @@ public final class PowerampAPI {
 		public static final String ID = "id";
 		
 		/**
-		 * "Real" id. In case of playlist entry, this is always resolved to PowerAMP folder_files table row ID or System Library MediaStorage.Audio._ID. 
+		 * "Real" id. In case of playlist entry, this is always resolved to Poweramp folder_files table row ID or System Library MediaStorage.Audio._ID. 
 		 * Long.
 		 */
 		public static final String REAL_ID = "realId";
@@ -680,6 +680,125 @@ public final class PowerampAPI {
 		public static final int TOP_RATED = 48;
 		public static final int RECENTLY_ADDED = 53;
 		public static final int RECENTLY_PLAYED = 58;
+	}
+	
+
+	public static final class Scanner {
+		 
+		/**
+		 * Poweramp Scanner action.
+		 * 
+		 * Poweramp Scanner scanning process is 2 step:
+		 * 1. Folders scan.
+		 *    Checks filesystem and updates DB with folders/files structure.
+		 * 2. Tags scan.
+		 *    Iterates over files in DB with TAG_STATUS == TAG_NOT_SCANNED and scans them with tag scanner.
+		 *    
+		 * Poweramp Scanner is a IntentService, this means multiple scan requests at the same time (or during another scans) are queued.  
+		 * ACTION_SCAN_DIRS actions are prioritized and executed before ACTION_SCAN_TAGS.
+		 * 
+		 * Poweramp main scan action, which scans either incrementally or from scratch the set of folders, which is configured by user in Poweramp Settings.
+		 * Poweramp will always do ACTION_SCAN_TAGS automatically after ACTION_SCAN_DIRS is finished and some changes are required to song tags in DB.
+		 * Unless, fullRescan specified, Poweramp will not remove songs if they are missing from filesystem due to unmounted storages.
+		 * Normal menu => Rescan calls ACTION_SCAN_DIRS without extras
+		 * 
+		 * Poweramp Scanner sends appropriate broadcast intents:
+		 * ACTION_DIRS_SCAN_STARTED (sticky), ACTION_DIRS_SCAN_FINISHED, ACTION_TAGS_SCAN_STARTED (sticky), ACTION_TAGS_SCAN_PROGRESS, ACTION_TAGS_SCAN_FINISHED, or ACTION_FAST_TAGS_SCAN_FINISHED.
+		 * 
+		 * Extras:
+		 * - fastScan - Poweramp will not check folders and scan files which hasn't been modified from previous scan. Based on files last modified timestamp.
+         *				 Poweramp doesn;t send 
+		 *               
+		 * - eraseTags - Poweramp will clean all tags from exisiting songs. This causes each song to be re-scanned for tags.
+		 *               Warning: as a side effect, cleans CUE tracks from user created playlists. 
+		 *               This is because scanner can't incrementaly re-scan CUE sheets, so they are deleted from DB.
+		 *               
+		 * - fullRescan - Poweramp will also check for folders/files from missing/unmounted storages and will remove them from DB. 
+		 *                Warning: removed songs also disappear from user created playlists.
+		 *                Used in Poweramp only when user specificaly goes to Settings and does Full Rescan (after e.g. SD card change).                
+		 *                                  
+		 */
+		public static final String ACTION_SCAN_DIRS = "com.maxmpz.audioplayer.ACTION_SCAN_DIRS";
+
+		/**
+		 * Poweramp Scanner action.
+		 * Secondary action, only checks songs with TAG_STATUS set to TAG_NOT_SCANNED. Useful for rescanning just songs (which are already in Poweramp DB) with editied file tag info.  
+		 *
+		 * Extras:
+		 * - fastScan - If true, scanner doesn't send ACTION_TAGS_SCAN_STARTED/ACTION_TAGS_SCAN_PROGRESS/ACTION_TAGS_SCAN_FINISHED intents, 
+		 *               just sends ACTION_FAST_TAGS_SCAN_FINISHED when done.
+		 *               It doesn't modify scanning logic otherwise.  
+		 */
+		public static final String ACTION_SCAN_TAGS = "com.maxmpz.audioplayer.ACTION_SCAN_TAGS";
+		
+
+		/**
+		 * Broadcast.
+		 * Poweramp Scanner started folders scan.
+		 * This is sticky broadcast, so Poweramp folder scanner running status can be polled via registerReceiver() return value.
+		 */
+		public static final String ACTION_DIRS_SCAN_STARTED = "com.maxmpz.audioplayer.ACTION_DIRS_SCAN_STARTED";
+		/**
+		 * Broadcast.
+		 * Poweramp Scanner finished folders scan.
+		 */
+		public static final String ACTION_DIRS_SCAN_FINISHED = "com.maxmpz.audioplayer.ACTION_DIRS_SCAN_FINISHED";
+		/**
+		 * Broadcast.
+		 * Poweramp Scanner started tag scan.
+		 * This is sticky broadcast, so Poweramp tag scanner running status can be polled via registerReceiver() return value.
+		 */
+		public static final String ACTION_TAGS_SCAN_STARTED = "com.maxmpz.audioplayer.ACTION_TAGS_SCAN_STARTED";
+		/**
+		 * Broadcast.
+		 * Poweramp Scanner tag scan in progess.
+		 * Extras:
+		 * - progress - 0-100 progress of scanning.
+		 */
+		public static final String ACTION_TAGS_SCAN_PROGRESS = "com.maxmpz.audioplayer.ACTION_TAGS_SCAN_PROGRESS";
+		/**
+		 * Broadcast.
+		 * Poweramp Scanner finished tag scan.
+		 * Extras:
+		 * - track_content_changed - boolean - true if at least on track has been scanned, false if no tags scanned (probably, because all files are up-to-date).
+		 */
+		public static final String ACTION_TAGS_SCAN_FINISHED = "com.maxmpz.audioplayer.ACTION_TAGS_SCAN_FINISHED";
+		/**
+		 * Broadcast.
+		 * Poweramp Scanner finished fast tag scan. Only fired when ACTION_SCAN_TAGS is called with extra fastScan = true.
+		 * Extras:
+		 * - trackContentChanged - boolean - true if at least on track has been scanned, false if no tags scanned (probably, because all files are up-to-date).
+		 */
+		public static final String ACTION_FAST_TAGS_SCAN_FINISHED = "com.maxmpz.audioplayer.ACTION_FAST_TAGS_SCAN_FINISHED";
+		
+		/**
+		 * Extra.
+		 * Boolean.
+		 */
+		public static final String EXTRA_FAST_SCAN = "fastScan";
+		/**
+		 * Extra.
+		 * Int.
+		 */
+		public static final String EXTRA_PROGRESS = "progress";
+		/**
+		 * Extra.
+		 * Boolean.
+		 */
+		public static final String EXTRA_TRACK_CONTENT_CHANGED = "trackContentChanged";	
+
+		/**
+		 * Extra.
+		 * Boolean.
+		 */
+		public static final String EXTRA_ERASE_TAGS = "eraseTags";
+		
+		/**
+		 * Extra.
+		 * Boolean.
+		 */
+		public static final String EXTRA_FULL_RESCAN = "fullRescan";
+		
 	}
 	
 }
