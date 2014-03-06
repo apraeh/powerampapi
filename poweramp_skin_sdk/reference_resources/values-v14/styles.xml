@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-Copyright (C) 2010-2012 Maksim Petrov
+Copyright (C) 2010-2014 Maksim Petrov
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted for themes, skins, widgets, plugins, applications and other software
@@ -19,8 +19,9 @@ NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-<!-- values-v11 -->
+<!-- values-v14 -->
 <resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:z="http://schemas.android.com/apk/res/com.maxmpz.audioplayer">
+    
     <!-- NOTE: applied this way as dimen with reference to ?android:attr/actionBarSize fails -->
 	<style name="status_text_1" parent="@android:style/TextAppearance.StatusBar.EventContent.Title">
 

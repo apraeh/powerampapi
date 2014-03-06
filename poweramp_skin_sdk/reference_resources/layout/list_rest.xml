@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-Copyright (C) 2010-2012 Maksim Petrov
+Copyright (C) 2010-2014 Maksim Petrov
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted for themes, skins, widgets, plugins, applications and other software
@@ -73,7 +73,8 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 				android:layout_width="fill_parent" 
 				android:layout_height="wrap_content"
 				android:orientation="horizontal"
-				android:gravity="center_vertical" 
+				android:gravity="center_vertical"
+
 			>
 				<ImageView android:id="@+id/cue_icon"
 					android:layout_width="wrap_content" 
@@ -83,12 +84,11 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 					android:layout_marginRight="3dip"
 					android:layout_marginTop=".66dip"
 				/>
+				<!-- android:textColor="#ffffff" -->
 				<TextView android:id="@+id/line2" 
-					android:textAppearance="?PlayListText2"
-					android:ellipsize="end" 
+ 					android:textAppearance="?PlayListText2_Header"
 					android:singleLine="true"
-					android:textColor="#ffffff"
-	
+					android:ellipsize="end"
 					android:layout_width="fill_parent" 
 					android:layout_height="wrap_content" 
 				/>

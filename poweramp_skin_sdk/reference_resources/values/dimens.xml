@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-Copyright (C) 2010-2012 Maksim Petrov
+Copyright (C) 2010-2014 Maksim Petrov
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted for themes, skins, widgets, plugins, applications and other software
@@ -31,7 +31,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dimen name="OnDeckText2_size">16dip</dimen>
     <dimen name="PlayListText1_Header_size">15sp</dimen>
     <dimen name="DialogTitleText_size">17sp</dimen>
-    <dimen name="DialogText_size">15sp</dimen>
+    <dimen name="DialogText_size">16sp</dimen>
     <dimen name="SmallMetaText_size">10.5sp</dimen>
     <dimen name="MenuText_size">14sp</dimen>
     <dimen name="EditText_textSize">20sp</dimen>
@@ -70,6 +70,9 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<dimen name="alu_deckAlbumArt_marginBottom">88.67dip</dimen>
 	
 	<dimen name="ls_bottom_panel_marginBottom">8dip</dimen>
+	
+	<dimen name="ls_keyguard_paddingTB">4dip</dimen>
+	<dimen name="ls_keyguard_paddingLR">8dip</dimen>
 	
 	<integer name="grid_view_columns">2</integer>
    	<dimen name="linear_knob_text_size">12sp</dimen>
@@ -147,8 +150,56 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
    	<dimen name="dialog_padding">4dip</dimen>
    	<dimen name="dialog_content_paddingBottom">44dip</dimen>
    	<dimen name="dialog_info_separator_margin">3dip</dimen>
-   	
-   	<dimen name="status_button_margin">-26dip</dimen>
-	<dimen name="status_padding_left">6dip</dimen>   	
-   	
+	<dimen name="dialog_title_padding">-4dip</dimen>
+	<dimen name="dialog_text_padding">10dip</dimen>
+	<dimen name="dialog_text_padding_bottom">16dip</dimen>
+	<dimen name="dialog_grid_height">300dip</dimen>
+	
+   	<dimen name="standard_dialog_padding">@dimen/dialog_padding</dimen>
+   	<dimen name="standard_dialog_content_paddingBottom">@dimen/dialog_content_paddingBottom</dimen>
+   	<dimen name="standard_dialog_content_paddingTop">16dip</dimen>
+	   	
+   	<dimen name="status_button_margin">-10dip</dimen>
+	<dimen name="status_padding_left">0dip</dimen>
+	
+	<dimen name="init_panel_width">280dip</dimen>
+	
+	<integer name="ellipsize_end">3</integer>
+	<integer name="ellipsize_marquee">4</integer>
+	
+	<dimen name="ls_width">-1px</dimen><!-- port -->
+	<dimen name="ls_height">-1px</dimen><!-- port -->
+	<dimen name="ls_height_width_time">-1px</dimen><!--  when date/time is shown -->
+	<dimen name="ls_paddings">8dp</dimen>
+	
+	<dimen name="ls_date_time_height">-1px</dimen><!-- port -->
+	
+	<dimen name="ls_album_art_frame_width">-1px</dimen>
+	<dimen name="ls_album_art_frame_marginBottom">-72dip</dimen>
+	
+	<dimen name="ls_decks_layout_width">320dp</dimen>
+	<dimen name="ls_decks_layout_height">-1px</dimen>
+	<dimen name="ls_deck_controls_height">94dp</dimen>
+	
+	<dimen name="ls_timeDisplay_textSize">60dp</dimen>
+	<dimen name="ls_timeDisplay_textSize2">100dp</dimen><!-- used when no AlbumArt shown -->
+	<dimen name="ls_am_pm_textSize">18dp</dimen>
+	<dimen name="ls_date_textSize">14dp</dimen>
+	<dimen name="ls_date_time_paddingLR">8dp</dimen>
+	<dimen name="ls_date_time_paddingTB">8dp</dimen>
+	<dimen name="ls_date_time_marginBottom">0dp</dimen>
+	
+	<dimen name="ls_deck_now_playing_height">46dip</dimen>
+	<dimen name="ls_deck_track_progress_height">38dip</dimen>
+	<dimen name="ls_deck_now_playing_height_marginTop">-10dip</dimen>
+	<dimen name="ls_playing_mode_marginBottom">-10dip</dimen>
+	<dimen name="ls_aa_padding">9.33dip</dimen>
+	
+	<dimen name="mw_default_w">632dp</dimen>		
+	<dimen name="mw_default_h">598dp</dimen>
+	
+	<dimen name="list_checkmark_marginLeft">18dip</dimen>
+	<dimen name="list_checkmark_marginBottom">-2dip</dimen>
+	
+	<dimen name="checkbox_paddingLeft">40dip</dimen>
 </resources>

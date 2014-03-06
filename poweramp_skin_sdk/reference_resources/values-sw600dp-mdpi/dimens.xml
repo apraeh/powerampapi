@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-Copyright (C) 2010-2012 Maksim Petrov
+Copyright (C) 2010-2014 Maksim Petrov
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted for themes, skins, widgets, plugins, applications and other software
@@ -30,8 +30,8 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dimen name="OnDeckText_size">16dip</dimen>
     <dimen name="OnDeckText2_size">18dip</dimen>
     <dimen name="PlayListText1_Header_size">20dip</dimen>
-    <dimen name="DialogTitleText_size">19sp</dimen>
-    <dimen name="DialogText_size">17sp</dimen>
+    <dimen name="DialogTitleText_size">22sp</dimen>
+    <dimen name="DialogText_size">17.5sp</dimen>
     <dimen name="SmallMetaText_size">12sp</dimen>
     <dimen name="MenuText_size">16sp</dimen>
     <dimen name="EditText_textSize">22sp</dimen>
@@ -125,7 +125,43 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
    	<dimen name="dialog_content_paddingBottom">54dip</dimen>
    	<dimen name="dialog_playlist_select_list_height">600dip</dimen>
    	<dimen name="dialog_info_separator_margin">8dip</dimen>
+   	<dimen name="dialog_grid_height">550dip</dimen>
    	
+   	<dimen name="init_panel_width">480dip</dimen>
+
    	<dimen name="status_button_margin">-16dip</dimen>
-   	<dimen name="status_padding_left">12dip</dimen>
+   	<dimen name="status_text_size1_samsung">21dip</dimen>
+   	<dimen name="status_text_size2_samsung">17dip</dimen>
+   	<dimen name="status_padding_left_samsung">12dip</dimen>
+   	
+   	<dimen name="action_overflow_padding">0dp</dimen>
+   	
+	
+	
+	<dimen name="ls_width">480dp</dimen><!-- portrait-only -->	
+	<dimen name="ls_height">860dp</dimen><!-- portrait-only -->
+	<dimen name="ls_deck_controls_height">154dp</dimen><!-- port -->
+	
+	<dimen name="ls_keyguard_paddingTB">4dip</dimen>
+	<dimen name="ls_keyguard_paddingLR">16dip</dimen>
+	
+	<dimen name="ls_timeDisplay_textSize">84dp</dimen><!-- 100 -->
+	<dimen name="ls_timeDisplay_textSize2">120dp</dimen><!-- used when no AlbumArt shown -->
+	<dimen name="ls_am_pm_textSize">30dp</dimen><!-- 32 -->
+	<dimen name="ls_date_textSize">20dp</dimen>
+	<dimen name="ls_date_time_paddingLR">8dp</dimen>
+	<dimen name="ls_date_time_paddingTB">8dp</dimen>
+	<dimen name="ls_date_time_marginBottom">16dp</dimen>
+	
+	
+	<dimen name="ls_deck_now_playing_height">71dip</dimen>
+	<dimen name="ls_deck_track_progress_height">61dip</dimen>
+	<dimen name="ls_deck_now_playing_height_marginTop">0dip</dimen>
+	<dimen name="ls_playing_mode_marginBottom">0dip</dimen>
+	<dimen name="ls_aa_padding">14dip</dimen>
+	
+	<dimen name="ls_paddings">12dp</dimen>		
+
+	<dimen name="list_checkmark_marginLeft">40dip</dimen>
+	<dimen name="list_checkmark_marginBottom">15dip</dimen>
 </resources>

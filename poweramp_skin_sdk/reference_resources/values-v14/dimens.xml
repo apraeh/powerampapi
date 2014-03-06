@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-Copyright (C) 2010-2012 Maksim Petrov
+Copyright (C) 2010-2014 Maksim Petrov
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted for themes, skins, widgets, plugins, applications and other software
@@ -19,33 +19,10 @@ NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:z="http://schemas.android.com/apk/res/com.maxmpz.audioplayer"
-	android:layout_width="fill_parent" 
-	android:layout_height="fill_parent"
-	android:paddingTop="4dip"
-	android:paddingBottom="8dip"
->
-
-	<LinearLayout android:id="@+id/group_layout"
-		android:layout_width="fill_parent"
-		android:layout_height="wrap_content"
-		android:orientation="vertical"
-	>
-		<TextView  
-			android:text="@string/play_filtered_or_all"
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			
-			android:paddingTop="12dip"
-			android:paddingBottom="6dip"
-			
-			style="?DialogText"
-		/>
-		
-		<CheckBox android:id="@+id/remember"
-			android:text="@string/remember_this_setting"
-			android:layout_width="fill_parent" 
-			android:layout_height="wrap_content"
-		/>
-	</LinearLayout>
-</ScrollView>
+<!-- v-14 -->
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <dimen name="dialog_text_padding">16dip</dimen>
+    <dimen name="dialog_text_padding_bottom">16dip</dimen>
+    <dimen name="status_padding_left">12dip</dimen>
+    <dimen name="action_overflow_padding">0dp</dimen>
+</resources>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-Copyright (C) 2010-2012 Maksim Petrov
+Copyright (C) 2010-2014 Maksim Petrov
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted for themes, skins, widgets, plugins, applications and other software
@@ -30,6 +30,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		<attr name="eq_layout" format="reference"/>
 		<attr name="play_list_layout" format="reference"/>
 		<attr name="lock_screen_layout" format="reference"/>
+		<attr name="stereo_x_layout" format="reference"/>
 	
 		<attr name="plain_bg_color" format="color|reference" />
 		<attr name="deck_bg" format="color|reference"/>
@@ -54,6 +55,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		<attr name="PlayListText3" format="reference"/>
 		<attr name="PlayListText2_Bigger" format="reference"/>
 		<attr name="PlayListText1_Header" format="reference"/>
+		<attr name="PlayListText2_Header" format="reference"/>
 		<attr name="ToastText1" format="reference"/>
 		<attr name="ToastText2" format="reference"/>
 		<attr name="SmallLabelText" format="reference"/>
@@ -158,7 +160,6 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		<attr name="menu_play" format="reference"/>
 		<attr name="menu_shuffle" format="reference"/>
 		
-		<!--<attr name="selected_aa_widget_bg" format="reference"/>-->
 		<attr name="close_selector" format="reference"/>
 		<attr name="ratingbar_perm" format="reference"/>
 		<attr name="ratingbar_full" format="reference"/>
@@ -224,6 +225,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		<attr name="LinearProgress" format="reference"/>
 		<attr name="Dialog" format="reference"/>
 		<attr name="DialogSeparator" format="reference"/>
+		<attr name="StandardDialog" format="reference"/>
 	
 		<attr name="AlertDialogWindowStyle" format="reference"/>
 		
@@ -273,6 +275,14 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		<attr name="android:layout"/>
 	</declare-styleable>
 	
+	<declare-styleable name="DeckNowPlaying">
+		<attr name="android:layout"/>
+	</declare-styleable>
+	
+	<declare-styleable name="DeckTrackProgress">
+		<attr name="android:layout"/>
+	</declare-styleable>
+	
 	<declare-styleable name="LinearKnob">
 		<attr name="thumb" format="reference" />
 		<attr name="hole" format="reference" />
@@ -284,7 +294,8 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		<attr name="knob_bg" format="reference"/>
 		<attr name="indicator" format="reference"/>
 		<attr name="indicatorScale" format="float"/>
-		<attr name="snap" format="boolean"/>
+		<!-- <attr name="snap" format="boolean"/> -->
+		<attr name="snap"/> <!-- vpi -->
 		<attr name="snapTo" format="float"/>
 	</declare-styleable>
 	
@@ -352,6 +363,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		<attr name="lineColor" format="color"/>
 		<attr name="glowColor" format="color"/>
 		<attr name="lineWidth" format="dimension"/>
+		<!-- <attr name="lineWidth" /> --><!-- vpi -->
 		<attr name="glowWidth" format="dimension"/>
 		<attr name="blurWidth" format="float"/>
 		<attr name="backLineColor" format="color"/>
@@ -409,7 +421,8 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <attr name="line13Color" format="color|reference"/>
         <attr name="line2Color" format="color|reference"/>
 		<attr name="backgroundColor" format="color|reference"/>        
-        <attr name="strokeWidth" format="dimension"/>
+        <!-- <attr name="strokeWidth" format="dimension"/> -->
+        <attr name="strokeWidth"/><!-- vpi -->
         <attr name="dashes" format="string"/>
     </declare-styleable>
     

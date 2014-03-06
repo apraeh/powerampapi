@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-Copyright (C) 2010-2012 Maksim Petrov
+Copyright (C) 2010-2014 Maksim Petrov
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted for themes, skins, widgets, plugins, applications and other software
@@ -33,7 +33,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		android:paddingLeft="20dip"
 		android:paddingRight="20dip"
 		android:paddingBottom="@dimen/grid_item_folder_album_paddingBottom"
-		android:scaleType="centerInside"
+		android:scaleType="fitXY"
 	/>
 	
 	<ImageView android:id="@+id/cue_icon"
@@ -50,9 +50,9 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		android:layout_height="wrap_content"
 		android:visibility="gone"
 		android:layout_alignParentLeft="true"
-		android:layout_alignParentTop="true"
-		android:layout_marginLeft="26dip"
-		android:layout_marginTop="6dip"
+		android:layout_above="@+id/line1"
+		android:layout_marginLeft="@dimen/list_checkmark_marginLeft"
+		android:layout_marginBottom="@dimen/list_checkmark_marginBottom"
 	/>
 
 	<TextView android:id="@+id/line1"

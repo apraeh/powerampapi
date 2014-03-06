@@ -23,18 +23,18 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 <!-- layout -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:layout_gravity="center"
-    android:paddingRight="10dp"
     >
     <com.maxmpz.audioplayer.widget.DigitalClock android:id="@+id/time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginBottom="4dip"
-        android:layout_centerHorizontal="true"
-        >
-
+        android:layout_marginRight="32dp"
+        android:layout_centerVertical="true"
+    >
+		<!--  
+		            android:paddingBottom="16dp"
+		 -->
         <TextView android:id="@+id/timeDisplay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -45,9 +45,9 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             android:shadowDx="0"
             android:shadowDy="0"
             android:shadowRadius="3.0"
+            android:layout_alignParentTop="true"
             android:includeFontPadding="true"
             android:paddingBottom="10sp"
-            android:paddingRight="4sp"
         />
 
         <TextView android:id="@+id/am_pm"
@@ -64,10 +64,9 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             android:shadowDx="0"
             android:shadowDy="0"
             android:shadowRadius="2.0"
-            android:paddingRight="4dip"
             android:paddingTop="2dip"
             android:paddingBottom="2dip"
-        />
+	    />
 
     </com.maxmpz.audioplayer.widget.DigitalClock>
 
@@ -75,12 +74,12 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         android:id="@+id/date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/time"
-        android:layout_alignRight="@id/time"
-        android:layout_alignLeft="@id/time"
-        android:textSize="@dimen/ls_date_textSize"
-	    android:textAppearance="?android:attr/textAppearanceMedium"
-	    android:gravity="center"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="4dp"
+                
+        android:gravity="right"
+	    android:textSize="@dimen/ls_date_textSize"
         android:shadowColor="#FF000000"
         android:shadowDx="0"
         android:shadowDy="0"

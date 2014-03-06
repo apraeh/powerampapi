@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-Copyright (C) 2010-2012 Maksim Petrov
+Copyright (C) 2010-2014 Maksim Petrov
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted for themes, skins, widgets, plugins, applications and other software
@@ -19,19 +19,23 @@ NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
+<!-- layout -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:layout_width="fill_parent"
-	android:layout_height="fill_parent"
+	android:layout_width="@dimen/ls_width"
+	android:layout_height="@dimen/ls_height"
+	android:layout_gravity="center"
+	android:paddingBottom="@dimen/ls_paddings"
 >
 
 	<FrameLayout android:id="@+id/album_art_frame" 
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
 		android:layout_alignParentLeft="true"
+		android:layout_alignWithParentIfMissing="true"
 		android:layout_toLeftOf="@+id/date_time"
-		android:layout_alignParentTop="true"
-		android:layout_above="@+id/decks_layout"
-		android:layout_marginBottom="-8dip"
+		android:layout_alignTop="@+id/date_time"
+		android:layout_above="@+id/bottom_panel"
+		android:layout_marginBottom="@dimen/ls_album_art_frame_marginBottom"
 	>
 		<ImageView android:id="@+id/album_art_logo"
 			android:src="@drawable/lock_screen_logo"
@@ -46,7 +50,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 			android:background="@drawable/lock_art_glow"
 			android:scaleType="fitXY"
 			android:adjustViewBounds="false"
-			android:padding="9.33dip"		
+			android:padding="@dimen/ls_aa_padding"		
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_gravity="center"
@@ -57,7 +61,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 			android:background="@drawable/lock_art_glow"
 			android:scaleType="fitXY"
 			android:adjustViewBounds="false"
-			android:padding="9.33dip"		
+			android:padding="@dimen/ls_aa_padding"		
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_gravity="center"
@@ -67,12 +71,14 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 	<FrameLayout android:id="@+id/date_time"
 	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
+	    android:layout_height="@dimen/ls_date_time_height"
 	    android:layout_alignParentRight="true"
-		android:layout_alignParentTop="true"
-		android:layout_above="@+id/decks_layout"
-		android:layout_marginBottom="-8dip"
+
+		android:layout_above="@+id/bottom_panel"
+		android:layout_marginBottom="@dimen/ls_album_art_frame_marginBottom"
+
 	    android:visibility="gone"
+	    android:gravity="center_horizontal"
 	>
 		<include layout="@layout/lock_screen_clock"/>
 	</FrameLayout>
@@ -131,12 +137,12 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		android:layout_height="wrap_content"
 		android:layout_above="@+id/goto_keyguard_cont"
 		android:orientation="vertical"
-		android:layout_marginBottom="8dip"
+		android:layout_marginBottom="@dimen/ls_paddings"
 	>
 		<com.maxmpz.audioplayer.widget.DeckControls android:id="@+id/deck_controls"
 			android:layout_width="fill_parent"
-			android:layout_height="96dip"
-			android:layout_marginBottom="-8dip"
+			android:layout_height="@dimen/ls_deck_controls_height"
+			android:layout_marginBottom="-7.5dip"
 		/>
 
 		<com.maxmpz.audioplayer.widget.DeckNowPlaying android:id="@+id/deck_now_playing"
@@ -144,13 +150,13 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 			android:clickable="false"
 			
 			android:layout_width="fill_parent"
-			android:layout_height="45dip"
+			android:layout_height="@dimen/ls_deck_now_playing_height"
 		/>	
 
 		<com.maxmpz.audioplayer.widget.DeckTrackProgress android:id="@+id/deck_track_progress"
 			android:background="@null"
 			android:layout_width="fill_parent"
-			android:layout_height="40dip"
+			android:layout_height="@dimen/ls_deck_track_progress_height"
 			android:paddingLeft="2dip"
 			android:paddingRight="2dip"
 			android:clickable="true"

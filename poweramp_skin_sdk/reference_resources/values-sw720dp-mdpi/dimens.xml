@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-Copyright (C) 2010-2012 Maksim Petrov
+Copyright (C) 2010-2014 Maksim Petrov
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted for themes, skins, widgets, plugins, applications and other software
@@ -23,4 +23,22 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 <resources>
 	<dimen name="round_knob_size">270dip</dimen>
    	<dimen name="vol_round_knob_size">320dip</dimen>
+   	
+	<dimen name="ls_width">560dp</dimen><!-- portrait-only -->
+	<dimen name="ls_height">1100dp</dimen>
+	
+	<dimen name="ls_bottom_panel_marginBottom">16dip</dimen>
+	
+	<dimen name="ls_date_time_height">450dp</dimen><!-- port -->
+	<dimen name="ls_album_art_frame_marginBottom">0dip</dimen>
+   	
+	<dimen name="ls_keyguard_paddingTB">4dip</dimen>
+	<dimen name="ls_keyguard_paddingLR">16dip</dimen>
+	
+	<dimen name="ls_timeDisplay_textSize">90dp</dimen><!-- 100 -->
+	<dimen name="ls_am_pm_textSize">20dp</dimen><!-- 32 -->
+	<dimen name="ls_date_textSize">20dp</dimen>
+	<dimen name="status_button_margin">0dip</dimen>
+	
+	<dimen name="ls_paddings">32dp</dimen>
 </resources>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-Copyright (C) 2010-2012 Maksim Petrov
+Copyright (C) 2010-2014 Maksim Petrov
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted for themes, skins, widgets, plugins, applications and other software
@@ -19,13 +19,13 @@ NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
+<!-- layout -->
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:id="@+id/goto_keyguard_cont"
 	android:layout_width="300dip"
 	android:layout_height="wrap_content"
 	android:layout_alignParentBottom="true"
 	android:layout_centerHorizontal="true"
-	android:layout_marginBottom="6dip"
 	android:background="@null"
 >
 	<ImageView android:id="@+id/unlock_ar_left"
@@ -48,10 +48,10 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<LinearLayout  
 		android:id="@+id/goto_keyguard"
 		android:background="?unlock_keyguard_bg"
-		android:paddingTop="4dip"
-		android:paddingBottom="4dip"
-		android:paddingLeft="4dip"
-		android:paddingRight="8dip"
+		android:paddingTop="@dimen/ls_keyguard_paddingTB"
+		android:paddingBottom="@dimen/ls_keyguard_paddingTB"
+		android:paddingLeft="@dimen/ls_keyguard_paddingLR"
+		android:paddingRight="@dimen/ls_keyguard_paddingLR"
 		android:clickable="true"
 		android:focusable="true"
 	
@@ -68,7 +68,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 			android:textColor="#ffffff"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:layout_marginLeft="4dip"
+			android:layout_marginLeft="@dimen/ls_keyguard_paddingLR"
 			android:layout_gravity="center_vertical"
 		/>
 	</LinearLayout>

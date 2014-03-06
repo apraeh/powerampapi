@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-Copyright (C) 2010-2012 Maksim Petrov
+Copyright (C) 2010-2014 Maksim Petrov
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted for themes, skins, widgets, plugins, applications and other software
@@ -19,27 +19,81 @@ NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
+<!--  values-v11 -->
 <resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:z="http://schemas.android.com/apk/res/com.maxmpz.audioplayer">
 	<!-- NOTE: set in values-v11 -->
 	<style name="Matte_ActionOverflowButton" parent="@android:style/Widget.ActionButton.Overflow">
-	    <item name="android:src">@drawable/matte_menu</item>
-	    <item name="android:paddingTop">4dip</item>
-	    <item name="android:paddingBottom">4dip</item>
-	</style>
-	
+	    <item name="android:src">?menu</item>
+- 	    <item name="android:paddingTop">@dimen/action_overflow_padding</item>
+	    <item name="android:paddingBottom">@dimen/action_overflow_padding</item>
+	    <item name="android:background">@drawable/matte_button_selector</item>
+   	</style>
+   	
 	<!-- NOTE: Meizu MX bug required:
 	- @style/Base_ActivityTheme_Default introduction, values/ActivityTheme_Default and values-11/ActivityTheme_Default inherit from it
 	- v11+ items removed from Base_ActivityTheme_Default
 	- values-11/ActivityTheme_Default now includes v11+ items
 	-->
 	<style name="ActivityTheme_Default" parent="@style/Base_ActivityTheme_Default">
-		<!-- NOTE: not applied from here as, but from probably, action bar takes styles from manifest? or
+		<!-- NOTE: not applied from here as action bar takes styles from manifest or
 			some other pre-defined space, not from dynamic assigned theme -->
 		<item name="android:actionBarStyle">@style/Matte_ActionBar</item>
 		<item name="android:actionOverflowButtonStyle">@style/Matte_ActionOverflowButton</item>
 		<item name="android:selectableItemBackground">@drawable/matte_button_selector</item><!-- v11 requires this -->
-   		<item name="android:fastScrollTrackDrawable">@drawable/matte_fast_track</item>				
+   		<item name="android:fastScrollTrackDrawable">@drawable/matte_fast_track</item>
+   		
+   		<item name="StandardDialog">@style/Matte_StandardDialog</item><!-- General style used for settings/Holo looking dialogs -->
 	</style>
+	
+	
+    <style name="DialogWindowTitle_Holo">
+        <item name="android:maxLines">2</item>
+        <item name="android:scrollHorizontally">false</item>
+        <item name="android:textAppearance">@android:style/TextAppearance.Holo.DialogWindowTitle</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+    
+	<style name="Matte_StandardDialog" parent="@android:style/Theme.Holo.Dialog">
+	    <item name="android:windowBackground">@drawable/matte_dialog_bg</item>
+        <item name="android:windowTitleStyle">@style/DialogWindowTitle_Holo</item>
+        <item name="android:windowMinWidthMajor">@android:dimen/dialog_min_width_major</item>
+        <item name="android:windowMinWidthMinor">@android:dimen/dialog_min_width_minor</item>
+	    
+        <item name="DialogText">?android:attr/textAppearanceMedium</item>
+        
+        <item name="DialogButton">@style/Matte_StandardDialog_Button</item>
+	    <item name="DialogSeparator">@style/Matte_StandardDialog_DialogSeparator</item>
+	    <item name="DivTableLayout">@style/Matte_StandardDialog_DivTableLayout</item>
+		<item name="text_color_1">#FFFFFFFF</item>
+		<item name="text_color_2">#FFFFFFFF</item>
+		<item name="text_color_3">#FFFFFFFF</item>
+	</style> 
+	
+    <style name="Matte_StandardDialog_Button" parent="@android:style/Widget.Button">
+    	<item name="android:background">@drawable/matte_button_selector</item>
+		<item name="android:focusable">true</item>
+		<item name="android:clickable">true</item>
+		<item name="android:textSize">@dimen/button_textSize</item>
+		<item name="android:textColor">@color/matte_button_text</item>
+		<item name="android:gravity">center</item>
+		<item name="android:layout_height">48dip</item>
+		<item name="android:layout_width">@dimen/button_width</item>
+    </style>
+    
+	<style name="Matte_StandardDialog_DialogSeparator">
+		<item name="android:layout_width">fill_parent</item>
+		<item name="android:layout_height">.66dip</item>
+		<item name="android:background">@drawable/matte_h_divider</item>
+	</style>
+	
+	<style name="Matte_StandardDialog_DivTableLayout">
+        <item name="verticalDivider">@drawable/matte_v_divider</item>
+        <item name="android:layout_height">48dip</item>
+	</style>
+	
+		
+	
+		
 	
 	<style name="Base_Matte_Dialog" parent="@style/ActivityTheme_Default">
 		<!-- v11 -->

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-Copyright (C) 2010-2012 Maksim Petrov
+Copyright (C) 2010-2014 Maksim Petrov
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted for themes, skins, widgets, plugins, applications and other software
@@ -19,30 +19,10 @@ NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:z="http://schemas.android.com/apk/res/com.maxmpz.audioplayer"
-	android:layout_width="fill_parent" 
-	android:layout_height="fill_parent"
->
-	<LinearLayout android:id="@+id/group_layout"
-		android:layout_width="fill_parent"
-		android:layout_height="wrap_content"
-		android:orientation="vertical"
-		android:paddingBottom="6dip"		
-	>
-		<TextView  
-			android:id="@+id/message"
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			
-			android:paddingTop="12dip"
-			
-			style="?DialogText"
-		/>
-		
-		<CheckBox android:id="@+id/also_delete_file" 
-			android:visibility="gone"
-			android:layout_width="fill_parent" 
-			android:layout_height="wrap_content"
-		/>
-	</LinearLayout>
-</ScrollView>
+<!-- values-xhdpi-v14 -->
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+   	<!-- S2 @ ICS -->
+   	<dimen name="status_padding_left_samsung">7dip</dimen>
+   	<dimen name="status_text_size1_samsung">15dip</dimen>
+   	<dimen name="status_text_size2_samsung">12dip</dimen>
+</resources>

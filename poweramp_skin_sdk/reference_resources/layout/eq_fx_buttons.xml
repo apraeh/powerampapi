@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-Copyright (C) 2010-2012 Maksim Petrov
+Copyright (C) 2010-2014 Maksim Petrov
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted for themes, skins, widgets, plugins, applications and other software
@@ -75,4 +75,31 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		android:visibility="gone"
 	/>
 
+	<com.maxmpz.audioplayer.widget.ToggleButton android:id="@+id/dolby_button" 
+		style="?EqCheckButton"
+		android:text="@string/dolby_fx"
+
+		android:layout_alignParentLeft="true"
+		android:layout_below="@+id/srs_button_div"
+		android:visibility="gone"
+	/>
+	<View android:id="@+id/dolby_button_div"			
+		style="?EqHorButtonDiv"
+		android:layout_below="@+id/dolby_button"
+		android:visibility="gone"
+	/>
+	
+	<com.maxmpz.audioplayer.widget.ToggleButton android:id="@+id/platform_fx_button" 
+		style="?EqCheckButton"
+		android:text="@string/platform_fx"
+
+		android:layout_alignParentLeft="true"
+		android:layout_below="@+id/dolby_button"
+		android:visibility="gone"
+	/>
+	<View android:id="@+id/platform_fx_button_div"			
+		style="?EqHorButtonDiv"
+		android:layout_below="@+id/platform_fx_button"
+		android:visibility="gone"
+	/>	
 </merge>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-Copyright (C) 2010-2012 Maksim Petrov
+Copyright (C) 2010-2014 Maksim Petrov
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted for themes, skins, widgets, plugins, applications and other software
@@ -20,36 +20,47 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
 <!-- v11 -->
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 	<style name="ActivityThemeBase" parent="@android:style/Theme.Holo">
 		<!--<item name="android:windowBackground">@null</item>--><!-- setting this to null actually seems to slowdown redraws a bit -->
 		 <!--<item name="android:windowNoTitle">true</item>--><!-- NOTE: setting this to true removes AB completely -->
 		 <item name="android:windowActionBar">false</item>
-		 <!--<item name="android:windowActionBarOverlay">true</item>-->
-		 <!--<item name="android:actionBarStyle">@style/ActionBar</item>--> 
+		 <item name="android:windowTitleSize">0px</item><!-- Removes sometimes visible app header while activity is restored -->
+		 <!--<item name="android:windowBackground">@null</item>
+		 <item name="android:colorBackgroundCacheHint">@null</item>-->
 	</style>
 	
-
+	<!-- NOTE: doesn't work on 3.0, but works on 2.3/ICS -->
+	<style name="ActivityStartup" parent="@android:style/Theme.Holo.Wallpaper">
+		<item name="android:windowBackground">@drawable/startup_logo</item>
+		<item name="android:windowNoTitle">true</item>
+		<item name="android:colorBackgroundCacheHint">@null</item>
+	</style>
+	
 	
 	<style name="ActivityTheme_Settings" parent="@android:style/Theme.Holo">
 		<!--<item name="android:textAppearanceMedium">@style/ChangedTextAppearanceLarge2</item>-->
-		
 	</style>
 	
-	<style name="ActivityTheme_SettingsDialog" parent="@android:style/Theme.Holo.Dialog">
+    <style name="ActivityTheme_SettingsDialog" parent="@android:style/Theme.Holo.Dialog">
 		<item name="TreeViewList">@style/TreeViewList</item>
-		<!--<item name="android:textAppearanceLarge">@style/ChangedTextAppearanceLarge2</item>-->
 	</style>	
 	
-	<!--
-	<style name="ActionBar" parent="@android:style/Widget.Holo.ActionBar">
-	    <item name="android:background">#55000000</item>
-        <item name="android:backgroundStacked">#55000000</item>
-        <item name="android:backgroundSplit">#55000000</item>	    
-    </style>
-    -->
-    
-	<style name="ActivityWidgetConfigure" parent="@android:style/Theme.Holo.Wallpaper">
+	<style name="ActivityWidgetConfigure_Title" parent="@android:style/Widget.Holo.ActionBar">
+	    <item name="android:background">@color/widget_options_bg_color</item>
 	</style>
+	
+	<style name="ActivityWidgetConfigure" parent="@android:style/Theme.Holo.Wallpaper">
+	    <!-- <item name="android:actionBarStyle">@style/ActivityWidgetConfigure_Title</item> -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowShowWallpaper">true</item>
+	</style>
+	
+	<style name="ActivityTheme_Dialog" parent="@android:style/Theme.Holo.Dialog">
+	    <item name="DialogSeparator">?android:attr/dividerVertical</item>
+	    <item name="vpiTabPageIndicatorStyle">@style/Widget_TabPageIndicator</item>
+	</style>
+	
 </resources>
 

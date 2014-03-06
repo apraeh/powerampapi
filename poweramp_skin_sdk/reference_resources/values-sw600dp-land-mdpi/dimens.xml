@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-Copyright (C) 2010-2012 Maksim Petrov
+Copyright (C) 2010-2014 Maksim Petrov
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted for themes, skins, widgets, plugins, applications and other software
@@ -35,5 +35,24 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
    	<dimen name="deck_controls_padding2">0dip</dimen>
    	<dimen name="ff_rw_button_margin">-8dip</dimen>
    	
-	<dimen name="panel_frs_width">150dip</dimen>   	
+	<dimen name="panel_frs_width">150dip</dimen>
+	
+	<dimen name="dialog_grid_height">500dip</dimen>
+	
+	<dimen name="ls_timeDisplay_textSize">64dp</dimen>
+	<dimen name="ls_timeDisplay_textSize2">120dp</dimen><!-- used when no AlbumArt shown -->
+	<dimen name="ls_am_pm_textSize">16sp</dimen>
+	<dimen name="ls_date_textSize">16sp</dimen>
+	
+	<dimen name="ls_paddings">12dp</dimen>
+	
+	<dimen name="ls_album_art_frame_width">480dp</dimen>
+	
+	<dimen name="ls_decks_layout_width">480dp</dimen><!-- land-only -->
+	<dimen name="ls_decks_layout_height">440dp</dimen><!-- land-only -->
+	
+	<dimen name="ls_decks_layout_marginLeft">0dip</dimen>
+	<dimen name="ls_decks_layout_marginRight">0dip</dimen>
+			
+			
 </resources>

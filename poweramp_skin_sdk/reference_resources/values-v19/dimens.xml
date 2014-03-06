@@ -19,5 +19,6 @@ NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-<shape xmlns:android="http://schemas.android.com/apk/res/android">
-</shape>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+   	<dimen name="checkbox_paddingLeft">0dp</dimen>
+</resources>

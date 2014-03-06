@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-Copyright (C) 2010-2012 Maksim Petrov
+Copyright (C) 2010-2014 Maksim Petrov
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted for themes, skins, widgets, plugins, applications and other software
@@ -23,8 +23,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<color name="status_inverse1">#FFffffff</color>
 	<color name="status_inverse2">#FFaaaaaa</color>
 	
-	<color name="status_background">#00000000</color><!-- transparent, needed only for v14 -->
-	
 	<color name="matte_eq_thumbs_background">#FF0a0d11</color>
+	<color name="status_background">#00000000</color><!-- not used -->
 	
 </resources>

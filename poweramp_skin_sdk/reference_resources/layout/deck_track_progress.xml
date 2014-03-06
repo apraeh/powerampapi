@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-Copyright (C) 2010-2012 Maksim Petrov
+Copyright (C) 2010-2014 Maksim Petrov
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted for themes, skins, widgets, plugins, applications and other software
@@ -58,8 +58,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		
 		android:layout_below="@+id/player_seekbar"
 		android:gravity="center"
-		android:layout_toRightOf="@+id/sleep_timer_icon"
-		android:layout_marginLeft="4dip"
+		android:layout_marginLeft="64dip"
 		android:layout_marginRight="64dip"
 	/>
 </merge>

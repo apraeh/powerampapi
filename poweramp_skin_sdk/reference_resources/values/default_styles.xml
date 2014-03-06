@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-Copyright (C) 2010-2012 Maksim Petrov
+Copyright (C) 2010-2014 Maksim Petrov
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted for themes, skins, widgets, plugins, applications and other software
@@ -37,6 +37,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		<item name="eq_layout">@layout/activity_eq</item><!-- Sets the layouts for EqActivity --> 
 		<item name="play_list_layout">@layout/activity_play_list</item><!-- Sets the layout for PlayListActivity -->
 		<item name="lock_screen_layout">@layout/activity_lock_screen</item><!-- Sets the layout for LockScreenActivity -->
+		<item name="stereo_x_layout">@layout/activity_stereox</item><!-- Sets the layout for StereoXActivity -->
 		
 		<item name="LockScreenTheme">@style/Matte_LockScreenTheme</item><!-- Sets the theme for LockScreenActivity. This is usually derived from the current theme with few possible modifications for LockScreen only -->
 		
@@ -193,6 +194,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		<item name="NowPlayingText1">@style/Matte_PlayListText1</item><!-- Main player NowPlaying 1st line -->
 		<item name="NowPlayingText2">@style/Matte_NowPlayingText2</item><!-- Main player NowPlaying 2nd line -->
 		<item name="PlayListText1_Header">@style/Matte_PlayListText1_Header</item><!-- Playlist header text -->
+ 		<item name="PlayListText2_Header">@style/Matte_PlayListText2_Header</item><!-- Playlist header 2 text (album name for artist, etc.) --> 
 		<item name="SmallLabelText">@style/Matte_SmallLabelText</item><!-- Used in eq layouts -->
 		<item name="DialogTitleText">@style/Matte_DialogTitleText</item><!-- dialog.xml, dialog_eq_preset.xml -->
 		<item name="DialogText">@style/Matte_DialogText</item><!-- various dialogs texts -->
@@ -236,6 +238,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		<item name="QuickOptionsMenu2">@style/Matte_QuickOptionsMenu2</item><!-- Quick (custom) main menu style (non Action Bar mode) -->
 		<item name="MenuImageButton">@style/Matte_MenuImageButton</item><!-- Special style for ImageButton (Image + text button). Used in aaa_panels.xml for buttons in top/bottom panels -->
 		<item name="Dialog">@style/Matte_Dialog</item><!-- General style used for dialogs -->
+		<item name="StandardDialog">@style/Matte_Dialog</item><!-- General style used for settings/Holo looking dialogs. This option is overriden in values-v11/default_styles.xml for SDK 11+ -->
 		<item name="DialogSeparator">@style/Matte_DialogSeparator</item><!-- Dialog separator line -->
 	    <item name="EqBgLayout">@style/Matte_EqBgLayout</item><!-- Equalizer knobs background widget, this one draws dotted lines -->
 	    <item name="OverflowButton">@style/Matte_OverflowButton</item><!-- v11+. "Three dots" button style. Used when menu button is not available and ActionBar is disabled. -->
@@ -244,6 +247,8 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		<item name="AlertDialogWindowStyle">@style/Matte_AlertDialogWindow</item>
 		<item name="android:alertDialogStyle">@style/Matte_AlertDialog</item>
 		<item name="android:editTextStyle">@style/Matte_EditText</item>
+		
+		
 		
 		<!-- These two styles set background for "native" android menus, for Honeycomb/ICS.  -->
 		<item name="android:popupMenuStyle">@style/Matte_ActionBarPopupMenu</item><!-- v14. Additional styles for ICS ActionBar/default menu popup -->
@@ -335,6 +340,10 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     	<!--<item name="android:textColor">?text_color_1</item>-->
     	<item name="android:textColor">#ffffff</item>
     	<item name="android:textSize">@dimen/PlayListText1_Header_size</item>
+    </style>
+    
+    <style name="Matte_PlayListText2_Header" parent="@style/Matte_PlayListText2">
+    	<item name="android:textColor">#ffffff</item>
     </style>
     
     <style name="Matte_SmallLabelText">
@@ -459,7 +468,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		<item name="android:background">@drawable/matte_highlight_bg_selector</item>
 		<item name="android:paddingTop">7dip</item>
 		<item name="android:paddingBottom">7dip</item>
-		<item name="android:paddingLeft">40dip</item>
+		<item name="android:paddingLeft">@dimen/checkbox_paddingLeft</item>
 	</style>
 
     <style name="Matte_LinearKnob">
@@ -484,7 +493,8 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	coverMarginBottom should be ~ -(top shadow size of DeckControls background)
 	-->
 	<style name="Matte_AlbumArtAnimator">
-		<item name="default_bg">@drawable/gl_poweramp_logo</item>
+		<item name="default_logo">@drawable/gl_poweramp_logo</item><!-- exactly 512x512 bitmap in drawable-nodpi -->
+		<item name="default_logo_hd">@drawable/gl_poweramp_logo_hd</item><!-- exactly 1024x1024 bitmap in drawable-nodpi -->
 	</style>
 
 	
@@ -667,7 +677,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<!-- System stuff -->
     <style name="Matte_DialogWindowTitle">
         <item name="android:visibility">gone</item>
-    </style>
+    </style>    
 
 	<style name="Base_Matte_Dialog" parent="@style/Base_ActivityTheme_Default">
 	    <!-- Shouldn't have any styles here - for Meizu. -->
@@ -681,7 +691,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
         <item name="android:windowSoftInputMode">stateUnspecified|adjustResize</item>
         <item name="android:colorBackgroundCacheHint">@null</item>
-		<item name="android:backgroundDimAmount">0.75</item>
+		<item name="android:backgroundDimAmount">0.65</item>
 		
 	</style>
 	

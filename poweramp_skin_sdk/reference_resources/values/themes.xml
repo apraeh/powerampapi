@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-Copyright (C) 2010-2012 Maksim Petrov
+Copyright (C) 2010-2014 Maksim Petrov
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted for themes, skins, widgets, plugins, applications and other software
@@ -19,40 +19,31 @@ NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-<!-- Default -->
+<!-- values -->
 <resources>
 	<style name="ActivityThemeBase" parent="@android:style/Theme.Black.NoTitleBar"><!-- Also has v11 style -->
 		<!--<item name="android:windowBackground">@null</item>--><!-- setting this to null actually seems to slowdown redraws a bit -->
 		<item name="android:windowNoTitle">true</item>
 	</style>
 	
-	<!-- NOTE: doesn't work on 3.0, but works on 2.3/ICS -->
 	<style name="ActivityStartup" parent="@android:style/Theme.Wallpaper.NoTitleBar">
 		<item name="android:windowBackground">@drawable/startup_logo</item>
-		<item name="android:windowNoTitle">true</item>
-		<item name="android:windowNoDisplay">true</item>
 	</style>
 	
 	<style name="ActivityTheme_Settings" parent="@android:style/Theme.Black">
 		<item name="android:textAppearanceLarge">@style/ChangedTextAppearanceLarge</item>
-		<item name="textColorAlertDialogListItem">#ff0000</item>
 	</style>
-	
-    <!--
-    <style name="Settings_AlertDialogWindowStyle" parent="@android:style/Theme.Dialog">
-        <item name="android:windowBackground">@android:color/transparent</item>
-        <item name="android:windowIsFloating">true</item>
-        <item name="android:windowContentOverlay">@null</item>
-    </style>
-    -->
 	
 	<style name="ActivityTheme_SettingsDialog" parent="@android:style/Theme.Dialog">
 		<item name="TreeViewList">@style/TreeViewList</item>
 		<item name="android:textAppearanceLarge">@style/ChangedTextAppearanceLarge</item>
-		<item name="textColorAlertDialogListItem">#00ff00</item>
 	</style>	
 	
-	<style name="ActivityWidgetConfigure" parent="@android:style/Theme.Wallpaper">
+	
+	<style name="ActivityTheme_Dialog" parent="@android:style/Theme.Dialog">
+	    <item name="DialogSeparator">@null</item>
+	    <item name="vpiTabPageIndicatorStyle">@style/Widget_TabPageIndicator</item>
 	</style>
+		
 </resources>
 
