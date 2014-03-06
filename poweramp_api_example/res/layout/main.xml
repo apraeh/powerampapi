@@ -326,6 +326,65 @@
 		android:textStyle="bold"
 		android:text="PA All Songs"
 	/>
+
+	<View android:id="@+id/scan_separator"
+		android:layout_width="match_parent"
+		android:layout_height="1px"
+		android:layout_below="@+id/pa_all_songs"		
+	    android:background="#FFFFFFFF"
+		android:layout_marginTop="16dip"	    
+    />
+		
+	<ProgressBar android:id="@+id/scan_progress"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_below="@+id/scan_separator"
+		android:layout_marginTop="8dip"
+		android:visibility="invisible"
+		style="?android:attr/progressBarStyleHorizontal"
+    />
+	
+	<Button android:id="@+id/pa_fast_scan"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@+id/scan_progress"
+		android:layout_marginTop="16dip"
+		android:textStyle="bold"
+		android:text="Scanner Fast Scan"
+		android:onClick="onClick"
+	/>
+		
+	<Button android:id="@+id/pa_scan"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@+id/scan_progress"
+		android:layout_marginTop="16dip"
+		android:layout_toRightOf="@+id/pa_fast_scan"
+		android:textStyle="bold"
+		android:text="Scanner Normal Scan"
+		android:onClick="onClick"
+	/>
+
+	<Button android:id="@+id/pa_full_scan"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@+id/pa_scan"
+		android:layout_marginTop="16dip"
+		android:textStyle="bold"
+		android:text="Scanner Full Rescan"
+		android:onClick="onClick"
+	/>
+
+		<Button android:id="@+id/pa_song_scan"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@+id/pa_scan"
+		android:layout_marginTop="16dip"
+		android:layout_toRightOf="@+id/pa_full_scan"
+		android:textStyle="bold"
+		android:text="Scan Just One Song"
+		android:onClick="onClick"
+	/>
 </RelativeLayout>
 
 </ScrollView>

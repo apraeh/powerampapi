@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2011-2013 Maksim Petrov
+Copyright (C) 2011-2014 Maksim Petrov
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted for widgets, plugins, applications and other software
@@ -25,6 +25,7 @@ import java.io.FileFilter;
 
 import android.app.Activity;
 import android.content.BroadcastReceiver;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -49,6 +50,7 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TableLayout;
@@ -56,6 +58,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.maxmpz.poweramp.player.PowerampAPI;
+import com.maxmpz.poweramp.player.TableDefs;
 import com.maxmpz.poweramp.player.RemoteTrackTime;
 import com.maxmpz.poweramp.player.RemoteTrackTime.TrackTimeListener;
 import com.maxmpz.poweramp.widget.WidgetUtilsLite;
@@ -76,6 +79,11 @@ public class MainActivity extends Activity implements OnClickListener, OnLongCli
 	private TextView mDuration;
 	private TextView mElapsed;
 	private boolean mSettingPreset;
+
+	private Object mDirsScanIntent;
+	private Intent mTagsScanIntent;
+	private Handler mHandler = new Handler();
+	private String mLastScannedFile;
 	
 	
 	/** Called when the activity is first created. */
@@ -185,28 +193,75 @@ public class MainActivity extends Activity implements OnClickListener, OnLongCli
 		mTrackIntent = registerReceiver(mTrackReceiver, new IntentFilter(PowerampAPI.ACTION_TRACK_CHANGED));
 		mStatusIntent = registerReceiver(mStatusReceiver, new IntentFilter(PowerampAPI.ACTION_STATUS_CHANGED));
 		mPlayingModeIntent = registerReceiver(mPlayingModeReceiver, new IntentFilter(PowerampAPI.ACTION_PLAYING_MODE_CHANGED));
+		
+		
+		IntentFilter filter = new IntentFilter();
+		filter.addAction(PowerampAPI.Scanner.ACTION_DIRS_SCAN_STARTED);
+		filter.addAction(PowerampAPI.Scanner.ACTION_DIRS_SCAN_FINISHED);
+		filter.addAction(PowerampAPI.Scanner.ACTION_TAGS_SCAN_STARTED);
+		filter.addAction(PowerampAPI.Scanner.ACTION_TAGS_SCAN_PROGRESS);
+		filter.addAction(PowerampAPI.Scanner.ACTION_TAGS_SCAN_FINISHED);;
+		filter.addAction(PowerampAPI.Scanner.ACTION_FAST_TAGS_SCAN_FINISHED);
+		
+		if(registerReceiver(mScanReceiver, filter) == null) { // No any scan progress, hide it (progress might be shown previously, before pause/resume)
+			findViewById(R.id.scan_progress).setVisibility(View.INVISIBLE);
+		}
 	}
+	
+	private BroadcastReceiver mScanReceiver = new BroadcastReceiver() {
+		@Override
+		public void onReceive(Context context, Intent intent) {
+			Log.w(TAG, "Received intent=" + intent);
+			
+			String action = intent.getAction();
+			ProgressBar progress = (ProgressBar)findViewById(R.id.scan_progress);
+			
+			if(PowerampAPI.Scanner.ACTION_DIRS_SCAN_STARTED.equals(action)) {
+				progress.setIndeterminate(true);
+				progress.setVisibility(View.VISIBLE);
+			} else if(PowerampAPI.Scanner.ACTION_DIRS_SCAN_FINISHED.equals(action)) {
+				// Don't hide progress here as ACTION_TAGS_SCAN_STARTED will arrive right away.			
+			} else if(PowerampAPI.Scanner.ACTION_TAGS_SCAN_STARTED.equals(action)) {
+				progress.setVisibility(View.VISIBLE);
+			} else if(PowerampAPI.Scanner.ACTION_TAGS_SCAN_PROGRESS.equals(action)) {
+				progress.setIndeterminate(false);
+				progress.setMax(100);
+				progress.setProgress(intent.getIntExtra(PowerampAPI.Scanner.EXTRA_PROGRESS, 0));
+			} else if(PowerampAPI.Scanner.ACTION_TAGS_SCAN_FINISHED.equals(action)) {
+				progress.setVisibility(View.INVISIBLE);
+				Toast.makeText(MainActivity.this, "Tags scanned: " + intent.getBooleanExtra(PowerampAPI.Scanner.EXTRA_TRACK_CONTENT_CHANGED, false), Toast.LENGTH_SHORT).show();
+				
+			} else if(PowerampAPI.Scanner.ACTION_FAST_TAGS_SCAN_FINISHED.equals(action)) {
+				Toast.makeText(MainActivity.this, "File rescanned: " + mLastScannedFile, Toast.LENGTH_SHORT).show();
+			}
+		}
+	};
 	
 	private void unregister() {
 		if(mTrackIntent != null) {
 			try {
 				unregisterReceiver(mTrackReceiver);
-			} catch(Exception ex){} // Can throw exception if for some reason broadcast receiver wasn't registered.
+			} catch(Exception ex) {} // Can throw exception if for some reason broadcast receiver wasn't registered.
 		}
 		if(mAAIntent != null) {
 			try {
 				unregisterReceiver(mAAReceiver);
-			} catch(Exception ex){} // Can throw exception if for some reason broadcast receiver wasn't registered.
+			} catch(Exception ex) {}
 		}
 		if(mStatusReceiver != null) {
 			try {
 				unregisterReceiver(mStatusReceiver);
-			} catch(Exception ex){}
+			} catch(Exception ex) {}
 		}
 		if(mPlayingModeReceiver != null) {
 			try {
 				unregisterReceiver(mPlayingModeReceiver);
-			} catch(Exception ex){}
+			} catch(Exception ex) {}
+		}
+		if(mScanReceiver != null) {
+			try {
+				unregisterReceiver(mScanReceiver);
+			} catch(Exception ex) {}
 		}
 	}
 	
@@ -265,6 +320,8 @@ public class MainActivity extends Activity implements OnClickListener, OnLongCli
 			updatePlayingModeUI();
 		}
 	};
+
+
 
 	// This method updates track related info, album art.
 	private void updateTrackUI() {
@@ -559,6 +616,50 @@ public class MainActivity extends Activity implements OnClickListener, OnLongCli
 				
 			case R.id.pa_all_songs:
 				startActivity(new Intent(PowerampAPI.ACTION_SHOW_LIST).setData(PowerampAPI.ROOT_URI.buildUpon().appendEncodedPath("files").build()));
+				break;
+				
+			case R.id.pa_fast_scan:
+				startService(new Intent(PowerampAPI.Scanner.ACTION_SCAN_DIRS).putExtra(PowerampAPI.Scanner.EXTRA_FAST_SCAN, true));
+				break;
+			
+			case R.id.pa_scan:
+				startService(new Intent(PowerampAPI.Scanner.ACTION_SCAN_DIRS));
+				break;
+
+			case R.id.pa_full_scan:
+				startService(new Intent(PowerampAPI.Scanner.ACTION_SCAN_DIRS).putExtra(PowerampAPI.Scanner.EXTRA_FULL_RESCAN, true).putExtra(PowerampAPI.Scanner.EXTRA_ERASE_TAGS, true));
+				break;
+
+			case R.id.pa_song_scan:
+				final Uri allFilesUri = PowerampAPI.ROOT_URI.buildUpon().appendEncodedPath("files").build();
+				
+				// Find just any first available track 
+				Cursor c = getContentResolver().query(allFilesUri,new String[]{ TableDefs.Files._ID, TableDefs.Files.FULL_PATH }, null, null, TableDefs.Files.NAME + " COLLATE NOCASE LIMIT 1");
+				if(c != null) {
+					if(c.moveToNext()) {
+						mLastScannedFile = c.getString(1);
+						Log.e(TAG, "Got file to scan=" + mLastScannedFile);								
+						long id = c.getLong(0);
+						
+						// Now set is as TAG_NOT_SCANNED
+						ContentValues values = new ContentValues();
+						values.put(TableDefs.Files.TAG_STATUS, TableDefs.Files.TAG_NOT_SCANNED);						
+						int updated = getContentResolver().update(allFilesUri, values, TableDefs.Files._ID + "=" + id, null);
+
+						if(updated > 0) {
+							
+							// And call scanner
+							startService(new Intent(PowerampAPI.Scanner.ACTION_SCAN_TAGS).putExtra(PowerampAPI.Scanner.EXTRA_FAST_SCAN, true));			
+							
+						} else {
+							Toast.makeText(this, "File not updated", Toast.LENGTH_SHORT).show();
+						}
+						
+					} else {
+						Toast.makeText(this, "No tracks in DB", Toast.LENGTH_SHORT).show();
+					}
+					c.close();
+				}
 				break;
 		}
 	}
