@@ -293,7 +293,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<declare-styleable name="RoundKnob">
 		<attr name="knob_bg" format="reference"/>
 		<attr name="indicator" format="reference"/>
-		<attr name="indicatorScale" format="float"/>
+		<attr name="indicatorScale" format="float"/><!-- not used -->
 		<!-- <attr name="snap" format="boolean"/> -->
 		<attr name="snap"/> <!-- vpi -->
 		<attr name="snapTo" format="float"/>

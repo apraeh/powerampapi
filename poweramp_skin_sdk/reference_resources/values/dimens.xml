@@ -32,9 +32,12 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dimen name="PlayListText1_Header_size">15sp</dimen>
     <dimen name="DialogTitleText_size">17sp</dimen>
     <dimen name="DialogText_size">16sp</dimen>
+    <dimen name="Counter_textSize">12.5dp</dimen>
     <dimen name="SmallMetaText_size">10.5sp</dimen>
     <dimen name="MenuText_size">14sp</dimen>
     <dimen name="EditText_textSize">20sp</dimen>
+    <dimen name="QuickMenuPopup2_popupWidth">-1px</dimen><!-- FILL_PARENT -->
+    <dimen name="QuickOptionsMenu2_rowHeight">70.6dip</dimen>
     
 	<integer name="coverScaleInt">10000</integer>
 	<dimen name="coverMarginBottom">184dip</dimen>
@@ -48,12 +51,14 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<dimen name="deck_np_image_size">42.66dip</dimen>
 	<dimen name="deck_controls_padding">0dip</dimen>
 	<dimen name="deck_controls_padding2">0dip</dimen>
+	<dimen name="deck_track_progress_meta_marginTop">-18dip</dimen>
 	<dimen name="ff_rw_button_margin">0dip</dimen>
 	<dimen name="BigRoundButton_size">100dip</dimen>
 	<dimen name="MediumRoundButton_size">65.33dip</dimen>
 	<dimen name="SmallRoundButton">48dip</dimen>
 	
-	<dimen name="aaa_panel_height">68dip</dimen>
+	<dimen name="aaa_panel_height">64dip</dimen>
+	<dimen name="aa_perm_panel_paddingTop">0dip</dimen>
 	<dimen name="aaa_perm_icon_width">88dip</dimen>
 	<dimen name="aaa_perm_icon_height">45dip</dimen>
 	<dimen name="aaa_icon_width">96dip</dimen>
@@ -62,13 +67,13 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<dimen name="aaa_padding1">4dip</dimen>
 	<dimen name="aaa_padding2">4.5dip</dimen>
 	<dimen name="aaa_rating_width">140dip</dimen>
+	<dimen name="aaa_bottom_panel_marginBottom">-8.66dp</dimen>
 	
 	<dimen name="RatingBar_size">24dip</dimen>
 	
 	<integer name="alu_coverScaleInt">10000</integer>
 	<dimen name="alu_coverMarginBottom">99.33dip</dimen>
 	<dimen name="alu_deckAlbumArt_marginBottom">88.67dip</dimen>
-	
 	<dimen name="ls_bottom_panel_marginBottom">8dip</dimen>
 	
 	<dimen name="ls_keyguard_paddingTB">4dip</dimen>
@@ -78,6 +83,11 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
    	<dimen name="linear_knob_text_size">12sp</dimen>
    	<dimen name="round_knob_size">104dip</dimen><!-- differs for mdpi and below in landscape -->
    	<dimen name="round_knob_padding">4dip</dimen><!-- differs for mdpi and below in landscape -->
+   	
+   	<dimen name="TrackProgressBar_minProgressDrawableWidth">20dp</dimen>
+   	<dimen name="TrackProgressBar_minHeight">20dp</dimen>
+   	<dimen name="TrackProgressBar_layout_height">28dip</dimen>
+   	
    	
    	<dimen name="eq_frs_height">54dip</dimen>
    	<dimen name="eq_padding">0dip</dimen>
@@ -104,9 +114,9 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
    	<dimen name="player_seekbar_label_margin">-6dip</dimen>
    	
    	<dimen name="panel_frs_width">120dip</dimen>
-   	<dimen name="actionBarSize">0px</dimen>
+   	<dimen name="actionBarSize">0px</dimen><!-- not used -->
    	
-   	<dimen name="frs_lineWidth">1.33dip</dimen>
+   	<dimen name="frs_lineWidth">1dip</dimen>
    	<dimen name="frs_glowWidth">3dip</dimen>
 	<dimen name="EqBgLayout_line1Offset">37dip</dimen>
    	<dimen name="EqBgLayout_line3Offset">-54dip</dimen>

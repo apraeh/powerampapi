@@ -22,12 +22,6 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 <!--  values-v11 -->
 <resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:z="http://schemas.android.com/apk/res/com.maxmpz.audioplayer">
 	<!-- NOTE: set in values-v11 -->
-	<style name="Matte_ActionOverflowButton" parent="@android:style/Widget.ActionButton.Overflow">
-	    <item name="android:src">?menu</item>
-- 	    <item name="android:paddingTop">@dimen/action_overflow_padding</item>
-	    <item name="android:paddingBottom">@dimen/action_overflow_padding</item>
-	    <item name="android:background">@drawable/matte_button_selector</item>
-   	</style>
    	
 	<!-- NOTE: Meizu MX bug required:
 	- @style/Base_ActivityTheme_Default introduction, values/ActivityTheme_Default and values-11/ActivityTheme_Default inherit from it
@@ -35,17 +29,43 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	- values-11/ActivityTheme_Default now includes v11+ items
 	-->
 	<style name="ActivityTheme_Default" parent="@style/Base_ActivityTheme_Default">
-		<!-- NOTE: not applied from here as action bar takes styles from manifest or
-			some other pre-defined space, not from dynamic assigned theme -->
 		<item name="android:actionBarStyle">@style/Matte_ActionBar</item>
 		<item name="android:actionOverflowButtonStyle">@style/Matte_ActionOverflowButton</item>
 		<item name="android:selectableItemBackground">@drawable/matte_button_selector</item><!-- v11 requires this -->
+
    		<item name="android:fastScrollTrackDrawable">@drawable/matte_fast_track</item>
-   		
+        <item name="android:fastScrollThumbDrawable">@drawable/matte_fast_thumb_selector</item>
+
    		<item name="StandardDialog">@style/Matte_StandardDialog</item><!-- General style used for settings/Holo looking dialogs -->
+
+		<item name="android:actionButtonStyle">@style/Default_ActionButton</item>
 	</style>
 	
+	<style name="Matte_ActionBar" parent="@android:style/Widget.Holo.ActionBar">
+	    <!-- <item name="android:height">80dip</item> -->
+	    <item name="android:background">@null</item><!-- NOTE: gets value from actionBar_*_background attributes -->
+        <item name="android:backgroundStacked">#00000000</item>
+        <item name="android:backgroundSplit">#00000000</item>
+        <item name="android:itemPadding">0dip</item>
+        
+    </style>
 	
+	<style name="Matte_ActionOverflowButton" parent="@android:style/Widget.Holo.ActionButton.Overflow">
+	    <item name="android:src">?menu</item>
+- 	    <item name="android:paddingTop">@dimen/action_overflow_padding</item>
+	    <item name="android:paddingBottom">@dimen/action_overflow_padding</item>
+	    <item name="android:background">@drawable/matte_button_selector</item>
+		
+		<!-- TODO: car -->
+<!-- 		
+		<item name="android:scaleX">1.5</item>
+		<item name="android:scaleY">1.5</item>        
+ -->	
+ 	</style>
+	
+	<style name="Default_ActionButton" parent="@android:style/Widget.Holo.ActionButton">
+	</style>
+		
     <style name="DialogWindowTitle_Holo">
         <item name="android:maxLines">2</item>
         <item name="android:scrollHorizontally">false</item>

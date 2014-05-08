@@ -35,9 +35,11 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dimen name="SmallMetaText_size">12sp</dimen>
     <dimen name="MenuText_size">16sp</dimen>
     <dimen name="EditText_textSize">22sp</dimen>
+    <dimen name="QuickOptionsMenu2_rowHeight">80dip</dimen>
     
     <dimen name="coverMarginBottom">275dip</dimen>
     
+	<dimen name="aaa_bottom_panel_marginBottom">-11.5dp</dimen>
 	<dimen name="aaa_panel_height">96dip</dimen>
 	<dimen name="aaa_perm_icon_width">132dip</dimen>
 	<dimen name="aaa_perm_icon_height">67dip</dimen>
@@ -49,17 +51,18 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<dimen name="aaa_rating_width">200dip</dimen>
 	<dimen name="RatingBar_size">36dip</dimen>
    	
-   	<dimen name="bottom_bg_height">280dip</dimen>
+   	<dimen name="bottom_bg_height">288dip</dimen>
    	<dimen name="deck_controls_height">154dip</dimen>
    	<dimen name="deck_np_image_size">64dip</dimen>
    	<dimen name="deck_now_playing_height">71dip</dimen>
-   	<dimen name="deck_track_progress_height">61dip</dimen>   	
+   	<dimen name="deck_track_progress_height">71dip</dimen>   	
    	<dimen name="decks_margin">0dip</dimen>
    	<dimen name="deck_controls_padding">0dip</dimen>
    	<dimen name="deck_controls_padding2">0dip</dimen>
 	<dimen name="BigRoundButton_size">150dip</dimen>
 	<dimen name="MediumRoundButton_size">98dip</dimen>
 	<dimen name="SmallRoundButton">72dip</dimen>
+	<dimen name="checkbox_paddingLeft">54dip</dimen>
    	
    	<dimen name="panel_frs_width">90dip</dimen>   		
    	<dimen name="eq_frs_height">96dip</dimen>
@@ -77,6 +80,12 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
    	<dimen name="round_knob_vert_label_offset">-30dip</dimen>
    	<dimen name="round_knob_vert_label_offset2">16dip</dimen>
    	
+   	<dimen name="TrackProgressBar_minProgressDrawableWidth">30dp</dimen>
+   	<!-- <dimen name="TrackProgressBar_minHeight">42dp</dimen> -->
+<!--    	
+	NOTE: this breaks 3rd party skins, which use hdpi graphics on tablets, so left as is
+   	<dimen name="TrackProgressBar_layout_height">42dip</dimen>
+ -->   	
    	
    	<dimen name="EqBgLayout_line1Offset">56dip</dimen>
    	<dimen name="EqBgLayout_line3Offset">-74dip</dimen>
@@ -164,4 +173,6 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 	<dimen name="list_checkmark_marginLeft">40dip</dimen>
 	<dimen name="list_checkmark_marginBottom">15dip</dimen>
+	
+	
 </resources>

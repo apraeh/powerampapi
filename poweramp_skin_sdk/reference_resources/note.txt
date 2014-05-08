@@ -1,0 +1,13 @@
+Note on some drawable resources organization.
+
+Some resource folders are in fact symbolic links to apprioriate directories as their contents is the same:
+
+LINK                     -> REAL DIRECTORY
+===========================================
+drawable-sw600dp-hdpi-v11 -> drawable-xhdpi
+drawable-sw600dp-mdpi-v11 -> drawable-hdpi
+drawable-sw600dp-xhdpi-v11 -> drawable-xxhdpi
+
+This is because current Poweramp themes use icons zoomed one DPI level up.
+You can achieve the same results by either using symbolic links as specified above in your skin,
+or by copying the same images each time before build to those folders.

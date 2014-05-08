@@ -801,4 +801,11 @@ public final class PowerampAPI {
 		
 	}
 	
+	public static final class Settings {
+		public static final String ACTION_EXPORT_SETTINGS = "com.maxmpz.audioplayer.ACTION_EXPORT_SETTINGS";
+		public static final String ACTION_IMPORT_SETTINGS = "com.maxmpz.audioplayer.ACTION_IMPORT_SETTINGS";
+
+		public static final String EXTRA_UI = "ui";
+	}
+	
 }

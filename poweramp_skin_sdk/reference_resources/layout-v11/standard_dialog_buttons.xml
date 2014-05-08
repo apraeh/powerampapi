@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright (C) 2010-2014 Maksim Petrov
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted for themes, skins, widgets, plugins, applications and other software
+which communicate with Poweramp music player application on Android platform.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE FOUNDATION OR
+CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<!-- layout-v11 -->
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/buttons_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="@dimen/standard_dialog_buttons_height"
+    android:orientation="vertical"
+    android:divider="?android:attr/dividerHorizontal"
+    android:showDividers="beginning"
+    android:dividerPadding="0dip"
+    android:layout_alignBottom="@+id/content"
+    >
+    <LinearLayout
+        style="?android:attr/buttonBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:measureWithLargestChild="true"
+    >
+        <Button android:id="@+id/button2"
+            android:layout_width="0dip"
+            android:layout_gravity="left"
+            android:layout_weight="1"
+            android:maxLines="2"
+            style="?android:attr/buttonBarButtonStyle"
+            android:textSize="14sp"
+            android:minHeight="50dip"
+            android:layout_height="wrap_content" />
+        <Button android:id="@+id/button3"
+            android:layout_width="0dip"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:maxLines="2"
+            style="?android:attr/buttonBarButtonStyle"
+            android:textSize="14sp"
+            android:minHeight="50dip"
+            android:layout_height="wrap_content" />
+        <Button android:id="@+id/button1"
+            android:layout_width="0dip"
+            android:layout_gravity="right"
+            android:layout_weight="1"
+            android:maxLines="2"
+            android:minHeight="50dip"
+            style="?android:attr/buttonBarButtonStyle"
+            android:textSize="14sp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+ </LinearLayout>

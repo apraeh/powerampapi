@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-Copyright (C) 2010-2012 Maksim Petrov
+Copyright (C) 2010-2014 Maksim Petrov
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted for themes, skins, widgets, plugins, applications and other software
@@ -22,7 +22,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 <!-- PORTRAIT -->
 <RelativeLayout	xmlns:android="http://schemas.android.com/apk/res/android" xmlns:z="http://schemas.android.com/apk/res/com.maxmpz.audioplayer"
 	xmlns:gl="http://schemas.android.com/apk/res/com.maxmpz.audioplayer"
-
+	android:id="@+id/container"
 	android:layout_width="fill_parent" 
 	android:layout_height="fill_parent"
 	>
@@ -30,16 +30,6 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<com.maxmpz.audioplayer.widget.DeckAlbumArtGL android:id="@+id/deck_album_art"
 		style="?DeckAlbumArt"
 	/>
-	
-	<!--
-	<com.maxmpz.audioplayer.widget.DeckAAWidgets android:id="@+id/deck_aa_widgets"
-		android:layout_width="fill_parent"
-		android:layout_height="fill_parent"
-		android:layout_alignTop="@+id/deck_album_art"
-		android:layout_above="@+id/bottom_bg"
-		android:layout_marginBottom="-8dip"
-	/>
-	-->
 	
 	<include layout="@layout/aaa_panels"/>	
 	
@@ -54,18 +44,18 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	/>
 
 
+	<!-- 
+	 -->
 	<com.maxmpz.audioplayer.widget.DeckNowPlaying android:id="@+id/deck_now_playing"
-		android:background="?in_deck_hilite_selector"
-			
+		android:background="?in_deck_hilite_selector"			
 		android:longClickable="true"
 		
-		android:paddingTop="1dip"
 		android:layout_width="fill_parent"
 		android:layout_height="@dimen/deck_now_playing_height"
 		android:layout_alignParentLeft="true"
 		android:layout_alignParentRight="true"
 		android:layout_above="@+id/deck_track_progress"
-		android:layout_marginBottom="-10dip"
+		android:layout_marginBottom="-12dip"
 	/>	
 
 	<!--	android:layout_alignParentBottom="true"-->
@@ -90,7 +80,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		android:layout_height="@dimen/deck_controls_height"
 		android:layout_alignParentLeft="true"
 		android:layout_alignParentRight="true"
-		android:layout_marginBottom="-6.5dip"
+		android:layout_marginBottom="-5.5dip"
 		android:layout_above="@+id/deck_now_playing"
 		android:clickable="true"	
 	/>

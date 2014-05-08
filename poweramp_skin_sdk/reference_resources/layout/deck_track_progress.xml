@@ -41,7 +41,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		
 		android:layout_below="@+id/player_seekbar"
 		android:layout_marginLeft="44dip"
-		android:layout_marginTop="-19dip"
+		android:layout_marginTop="-20dip"
 		
 		android:layout_alignParentLeft="true"
 	/>
@@ -53,7 +53,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
-		android:layout_marginTop="-18dip"
+		android:layout_marginTop="@dimen/deck_track_progress_meta_marginTop"
 		android:singleLine="true"
 		
 		android:layout_below="@+id/player_seekbar"

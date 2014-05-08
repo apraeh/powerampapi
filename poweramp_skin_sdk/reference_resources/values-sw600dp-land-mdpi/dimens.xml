@@ -21,13 +21,15 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 <!-- sw600dp-land-mdpi -->
 <resources>
-	<integer name="coverScaleInt">7010</integer>
+    <dimen name="QuickMenuPopup2_popupWidth">600dp</dimen>
+    
+	<integer name="coverScaleInt">8010</integer>
 	<dimen name="coverPadding">0dip</dimen>
-	<dimen name="coverMarginBottom">109dip</dimen>
+	<dimen name="coverMarginBottom">120dip</dimen>
 
-   	<dimen name="bottom_bg_height">124dip</dimen>
+   	<dimen name="bottom_bg_height">130dip</dimen>
    	<dimen name="deck_controls_height">116dip</dimen>
-   	<dimen name="deck_track_progress_height">50dip</dimen>
+   	<dimen name="deck_track_progress_height">62dip</dimen>
    	<dimen name="deck_np_image_size">64dip</dimen>
    	<dimen name="deck_now_playing_height">71dip</dimen>
    	<dimen name="decks_margin">160dip</dimen>

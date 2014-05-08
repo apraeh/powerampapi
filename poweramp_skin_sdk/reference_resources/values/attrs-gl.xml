@@ -5,23 +5,21 @@
 	
 	<declare-styleable name="AlbumArtAnimator">
 		<attr name="default_bg" format="reference"/><!-- not used anymore -->
-		<attr name="coverMarginBottom" format="dimension"/>
-		<attr name="coverMarginTop" format="dimension"/>
-		<attr name="coverMarginRight" format="dimension"/>
-		<attr name="coverMarginLeft" format="dimension"/>
-		<!--
-		<attr name="coverAnchorTop" format="reference"/>
-		<attr name="coverAnchorBottom" format="reference"/>
-		-->
-		<attr name="coverPadding" format="dimension"/>
-		<attr name="coverScale" format="float"/>
-		<attr name="coverScaleInt" format="integer"/>
+		<attr name="coverMarginBottom" format="dimension"/><!-- margins for cover -->
+		<attr name="coverMarginTop" format="dimension"/><!-- margins for cover -->
+		<attr name="coverMarginRight" format="dimension"/><!-- margins for cover -->
+		<attr name="coverMarginLeft" format="dimension"/><!-- margins for cover -->
+
+		<attr name="coverPadding" format="dimension"/><!-- prefered padding for cover -->
+		<attr name="coverScale" format="float"/><!-- float based scale. Not used ATM due to issues with float dimensions -->
+		<attr name="coverScaleInt" format="integer"/><!-- integer based scale. coverScaleInt=10000 means fill whole screen width. -->
 		
-		<attr name="rubberAnimTime" format="integer"/>
-		<attr name="alphaAnimTime" format="integer"/>
+		<attr name="rubberAnimTime" format="integer"/><!-- time to anim move transition -->
+		<attr name="alphaAnimTime" format="integer"/><!-- time to anim alpha transition -->
 		
-		<attr name="default_logo" format="reference"/>		
-		<attr name="default_logo_hd" format="reference"/>
+		<attr name="default_logo" format="reference"/><!-- strictly 512x512 alpha PNG texture for default logo -->		
+		<attr name="default_logo_hd" format="reference"/><!-- strictly 1024x1024 alpha PNG texture for default logo in HD mode -->
+		<attr name="coverShadow" format="reference"/><!-- reference to strictly Bitmap drawable which will be used as shadow below cover (see gl_aa_shadow.png) -->
 	</declare-styleable>
 
 </resources>

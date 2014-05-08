@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-Copyright (C) 2010-2012 Maksim Petrov
+Copyright (C) 2010-2014 Maksim Petrov
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted for themes, skins, widgets, plugins, applications and other software
@@ -23,10 +23,9 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	android:isIndicator="false"
 	android:numStars="5"
 	android:stepSize="1"
-	android:padding="10dip"
 	android:focusable="true"
 
-	android:layout_width="@dimen/aaa_rating_width"
+	android:layout_width="wrap_content"
 	android:layout_height="wrap_content"
 	android:layout_centerVertical="true"
 	android:layout_centerHorizontal="true"

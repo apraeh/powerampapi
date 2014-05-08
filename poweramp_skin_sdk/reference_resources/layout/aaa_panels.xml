@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-Copyright (C) 2010-2012 Maksim Petrov
+Copyright (C) 2010-2014 Maksim Petrov
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted for themes, skins, widgets, plugins, applications and other software
@@ -147,26 +147,27 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 	<!-- NOTE: match layout props to bottom_panel -->
 	<RelativeLayout android:id="@+id/perm_panel"
-		android:paddingTop="@dimen/aaa_padding2"
 		android:layout_width="fill_parent"
 		android:layout_height="@dimen/aaa_panel_height"
 		android:layout_above="@+id/bottom_bg"
-		android:layout_marginBottom="-8dip"
+		android:layout_marginBottom="@dimen/aaa_bottom_panel_marginBottom"
 		android:clickable="false"
 		android:focusable="false"
+		android:paddingTop="@dimen/aa_perm_panel_paddingTop"
 	>
 		<com.maxmpz.audioplayer.gui.menu.MenuImageButton android:id="@+id/perm_repeat_icon"
 			android:src="@null"
-			android:gravity="top"
-			android:layout_marginLeft="@dimen/aaa_padding1"
-			android:layout_width="@dimen/aaa_perm_icon_width"
+
+			android:layout_width="@dimen/aaa_icon_width"
 			android:layout_height="@dimen/aaa_perm_icon_height"
+			android:paddingBottom="@dimen/aaa_padding1"
+			
 			android:layout_alignParentLeft="true"
 			z:buttonSrc="?icon_selector"
 		/>
 
 		<ViewStub android:id="@+id/perm_rating_visible"
-			android:layout_width="@dimen/aaa_rating_width"
+			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_centerVertical="true"
 			android:layout_centerHorizontal="true"
@@ -175,7 +176,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 			android:inflatedId="@+id/perm_rating_visible"
 		/>
 		<ViewStub android:id="@+id/perm_rating_transparent"
-			android:layout_width="@dimen/aaa_rating_width"
+			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_centerVertical="true"
 			android:layout_centerHorizontal="true"
@@ -183,39 +184,33 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 			android:layout="@layout/perm_rating_transparent"
 			android:inflatedId="@+id/perm_rating_transparent"
 		/>
-		
 		<com.maxmpz.audioplayer.gui.menu.MenuImageButton android:id="@+id/perm_shuffle_icon"
 			android:src="@null"
-			android:layout_marginRight="@dimen/aaa_padding1"
-			android:layout_width="@dimen/aaa_perm_icon_width"
+			android:layout_width="@dimen/aaa_icon_width"
 			android:layout_height="@dimen/aaa_perm_icon_height"
+			android:paddingBottom="@dimen/aaa_padding1"
+		
 			android:layout_alignParentRight="true"
 			z:buttonSrc="?icon_selector"
-			
 		/>
 	</RelativeLayout>
-
 	<RelativeLayout android:id="@+id/bottom_panel"
 		android:background="?aaa_panel_bottom_bg"
 		android:visibility="gone"
 		
-		android:paddingTop="@dimen/aaa_padding2"
 		android:layout_width="fill_parent"
 		android:layout_height="@dimen/aaa_panel_height"
 		android:layout_above="@+id/bottom_bg"
-		android:layout_marginBottom="-10dip"
+		android:layout_marginBottom="@dimen/aaa_bottom_panel_marginBottom"
 	>
 		<com.maxmpz.audioplayer.gui.menu.MenuImageButton android:id="@+id/panel_repeat"
 			android:src="?repeat_levels"
 		
 			android:layout_width="@dimen/aaa_icon_width"
 			android:layout_height="@dimen/aaa_icon_height"
-			android:paddingBottom="@dimen/aaa_padding2"
+			android:paddingBottom="@dimen/aaa_padding1"
 			
-			android:layout_centerVertical="true"
 			android:layout_alignParentLeft="true"
-			
-			
 		/>
 	
 		<RatingBar android:id="@+id/rating"
@@ -223,9 +218,8 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 			android:numStars="5"
 			android:stepSize="1"
 			android:focusable="true"
-			android:layout_width="@dimen/aaa_rating_width"
+			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:padding="10dip"
 			android:layout_centerVertical="true"
 			android:layout_centerHorizontal="true"
 		/>
@@ -235,9 +229,8 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		
 			android:layout_width="@dimen/aaa_icon_width"
 			android:layout_height="@dimen/aaa_icon_height"
-			android:paddingBottom="@dimen/aaa_padding2"
+			android:paddingBottom="@dimen/aaa_padding1"
 			
-			android:layout_centerVertical="true"
 			android:layout_alignParentRight="true"
 		/>
 	</RelativeLayout>

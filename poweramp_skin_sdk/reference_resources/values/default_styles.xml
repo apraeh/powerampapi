@@ -261,7 +261,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	    <item name="ab_bottom_background">?list_footer</item><!-- v14+ Background for ActionBar when forced to bottom -->
 	    <item name="ab_poweramp_icon">@drawable/matte_ab_poweramp_icon</item><!-- v11+. Poweramp smaller icon -->
 	    <item name="ab_poweramp_logo">@drawable/matte_ab_poweramp_logo</item><!-- v11+. Poweramp larger icon, shown when space is available -->
-	    <item name="ab_back">@drawable/matte_ab_back</item>
+	    <item name="ab_back">@drawable/matte_ab_back</item><!-- v11+ action bar "back arrow" (left to icon/logo) -->
 	    
 	</style>
 
@@ -329,7 +329,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </style>
 
     <style name="Matte_NowPlayingText2" parent="@style/Matte_PlayListText2">
-    	<item name="android:textSize">16dip</item>
+    	<item name="android:textSize">@dimen/Text1_size</item>
     </style>
 
     <style name="Matte_PlayListText3" parent="@style/Matte_Text2">
@@ -460,7 +460,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<style name="Matte_Radio" parent="@android:style/Widget.CompoundButton.RadioButton">
 		<item name="android:button">@drawable/matte_radio_selector</item>
 		<item name="android:background">@drawable/matte_highlight_bg_selector</item>
-		<item name="android:paddingLeft">40dip</item>
+		<item name="android:paddingLeft">@dimen/checkbox_paddingLeft</item>
 	</style>
 
 	<style name="Matte_Check" parent="@android:style/Widget.CompoundButton.CheckBox">
@@ -492,9 +492,14 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<!--
 	coverMarginBottom should be ~ -(top shadow size of DeckControls background)
 	-->
+	<!-- Please check attr-gl.xml as well for additional AlbumArtAnimator attributes -->
 	<style name="Matte_AlbumArtAnimator">
-		<item name="default_logo">@drawable/gl_poweramp_logo</item><!-- exactly 512x512 bitmap in drawable-nodpi -->
-		<item name="default_logo_hd">@drawable/gl_poweramp_logo_hd</item><!-- exactly 1024x1024 bitmap in drawable-nodpi -->
+		<item name="default_logo">@drawable/gl_poweramp_logo</item><!-- exactly 512x512 bitmap in strictly /drawable-nodpi -->
+		<item name="default_logo_hd">@drawable/gl_poweramp_logo_hd</item><!-- exactly 1024x1024 bitmap in strictly /drawable-nodpi -->
+		<!-- reference to strictly Bitmap drawable which will be used as shadow below cover (see gl_aa_shadow.png)
+		     NOTE: you should keep the size of this image and shadow area in it the same as in gl_aa_shadow PSD layers (image size 64x64px, shadow size=16px),
+		     otherwise it will fail to load -->
+		<item name="coverShadow">@drawable/gl_aa_shadow</item>
 	</style>
 
 	
@@ -515,10 +520,10 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		<item name="lineColor">#ffffffff</item>
 		<item name="lineWidth">@dimen/frs_lineWidth</item>
 		<item name="glowWidth">@dimen/frs_glowWidth</item>
-		<item name="blurWidth">4</item>
 		<item name="glowColor">#807a87ff</item>
 		<item name="textSize2">11dip</item>
 		<item name="textColor2">?text_color_2</item>
+		<item name="blurWidth">5.0</item>
 	</style>
 	
 	
@@ -526,10 +531,10 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		<item name="android:background">@null</item>
 		<item name="android:textSize">9.5sp</item>
 		<item name="android:textColor">?text_color_2</item>
-		<item name="lineWidth">1px</item>
-		<item name="lineColor">?text_color_1</item>
+		<item name="lineWidth">1dp</item>
+		<item name="lineColor">#ffffffff</item>
 		<item name="glowColor">#807a87ff</item>
-		<item name="glowWidth">3dip</item>
+		<item name="glowWidth">4dip</item>
 		<item name="miniMode">true</item>
 		<item name="textSize2">9dip</item>
 		<item name="textColor2">?text_color_2</item>
@@ -565,13 +570,14 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
         <item name="rowPaddingTop">0dip</item>
         <item name="rowPaddingBottom">0dip</item>
-        <item name="rowHeight">70.6dip</item>
+        <item name="rowHeight">@dimen/QuickOptionsMenu2_rowHeight</item>
     </style>
     
     <style name="Matte_QuickMenuPopup2" parent="@style/Matte_QuickOptionsMenu2">
-    	<item name="background">@drawable/matte_qm_bg</item>
-    	<item name="shadowOffsetTop">21.5dip</item>
-    	<item name="shadowOffsetBottom">22dip</item>
+    	<item name="background">@drawable/matte_menu_bg</item>
+    	<item name="shadowOffsetTop">7dip</item>
+    	<item name="shadowOffsetBottom">7dip</item>
+    	<item name="popupWidth">@dimen/QuickMenuPopup2_popupWidth</item>
     </style>
 
     <style name="Matte_MenuText">
@@ -597,7 +603,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		<item name="android:textAppearance">?Text2</item>
 		<item name="android:paddingLeft">4dip</item>
 		<item name="android:paddingRight">4dip</item>
-		<item name="android:textSize">12.5dip</item>
+		<item name="android:textSize">@dimen/Counter_textSize</item>
     </style>
     
     <style name="Matte_MenuImageButton" parent="@style/Matte_MenuText">
@@ -610,14 +616,14 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <style name="Matte_TrackProgressBar" parent="@android:style/Widget.SeekBar">
         <item name="android:indeterminateOnly">false</item>
         <item name="android:progressDrawable">@drawable/matte_list_progress_horizontal</item>
-        <item name="android:minHeight">20dip</item>
-        <item name="android:maxHeight">20dip</item>
+        <item name="android:minHeight">@dimen/TrackProgressBar_minHeight</item>
+        <item name="android:maxHeight">@dimen/TrackProgressBar_minHeight</item>
         <item name="android:layout_height">28dip</item>
         <item name="android:minWidth">100dip</item>
         <item name="android:thumb">@null</item>
         <item name="android:thumbOffset">0dip</item>
         <item name="android:disabledAlpha">1</item>
-        <item name="minProgressDrawableWidth">20dip</item><!-- Special parameter which sets minimal size of progress drawable, as 9-patches sometimes can't be too narrow -->
+        <item name="minProgressDrawableWidth">@dimen/TrackProgressBar_minProgressDrawableWidth</item><!-- Special parameter which sets minimal size of progress drawable, as 9-patches sometimes can't be too narrow -->
     </style>
     
     
@@ -761,18 +767,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		<item name="android:shadowRadius">2.0</item>
 	</style>
 	
-	
-	<style name="Matte_ActionBar" parent="@android:style/Widget.Holo.ActionBar">
-	    <!--item name="android:height">48dip</item>-->
-	    <item name="android:background">@null</item><!-- NOTE: gets value from actionBar_*_background attributes -->
-        <item name="android:backgroundStacked">#00000000</item>
-        <item name="android:backgroundSplit">#00000000</item>
-        <item name="android:itemPadding">0dip</item>
-    </style>
     
-	<style name="Matte_ActionOverflowButton" parent="@android:style/Widget.ActionButton.Overflow">
-	    <item name="android:src">@drawable/matte_menu</item>
-	</style>
 	
 	<style name="Matte_ActionBarPopupMenu" parent="@android:style/Widget.PopupMenu">
         <item name="android:popupBackground">@drawable/matte_menu_bg</item>

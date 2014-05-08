@@ -1,3 +1,13 @@
+May 08, 2014
+- updated reference resources and default_style.PSD to match latest build-555
+  - new attributes for default album art logo 
+  - new XD (xhdpi) and XXD (xxhdpi) dimens and drawables
+
+1.4
+- added assets directories
+- added skin_compat-debug.apk in skin_compat subprojects
+- these 2 changes allows out-of-box skin building without need for skin_compat building first
+
 1.2
 - skin build scripts changed to allow Sony 4.2.2 ROM compatibility (additional dummy apk is used per skin for build process only)
 - skins now have additional button to directly set the skin and also hides header when InfoActivity is started on Android 3+

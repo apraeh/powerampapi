@@ -147,8 +147,8 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		android:layout_height="wrap_content"
 		android:layout_alignParentRight="true"
 		android:layout_alignTop="@+id/title"
-		android:layout_marginRight="3dip"
-		android:layout_marginLeft="3dip"
+		android:layout_marginRight="6dip"
+		android:layout_marginLeft="12dip"
 		android:layout_marginTop="8dip"
 		android:visibility="gone"
 	/>
