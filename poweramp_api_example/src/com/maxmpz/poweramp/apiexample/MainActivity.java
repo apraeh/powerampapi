@@ -594,6 +594,10 @@ public class MainActivity extends Activity implements OnClickListener, OnLongCli
 				playAlbum();
 				break;
 			
+			case R.id.play_first_folder:
+				playFirstFolder();
+				break;
+
 			case R.id.play_all_songs:
 				playAllSongs();
 				break;
@@ -730,6 +734,29 @@ public class MainActivity extends Activity implements OnClickListener, OnLongCli
 		}
 	}
 	
+	private void playFirstFolder() {
+		// Get first folder id with some tracks.
+		Cursor c = getContentResolver().query(PowerampAPI.ROOT_URI.buildUpon().appendEncodedPath("folders").build(), 
+				new String[]{ TableDefs.Folders._ID, TableDefs.Folders.PATH }, 
+				TableDefs.Folders.NUM_FILES + ">0", null, TableDefs.Folders.PATH);
+		if(c != null) {
+			if(c.moveToNext()) {
+				long id = c.getLong(0);
+				String path= c.getString(1);
+				Toast.makeText(this, "Playing folder: " + path, Toast.LENGTH_SHORT).show();
+
+				startService(new Intent(PowerampAPI.ACTION_API_COMMAND)
+						.putExtra(PowerampAPI.COMMAND, PowerampAPI.Commands.OPEN_TO_PLAY)
+						.setData(PowerampAPI.ROOT_URI.buildUpon()
+								.appendEncodedPath("folders")
+								.appendEncodedPath(Long.toString(id))
+								.appendEncodedPath("files")
+								.build()));
+			}
+			c.close();
+		}
+	}
+
 	// Play first available album from first available artist in ARTIST_ALBUMs.
 	private void playSecondArtistFirstAlbum() {
 		// Get first artist.

@@ -127,46 +127,153 @@ public final class PowerampAPI {
 		 * Data:
 		 * - uri, following URIs are recognized:
 		 * 	- file://path
-		 * 	- content://com.maxmpz.audioplayer/FOLDER/<folder_id>/<file_id>
-		 * 	- content://com.maxmpz.audioplayer/FOLDER/<root_folder_id>/<folder_id>/<file_id>?hier=true   (hierarchy mode)
-		 * 	- content://com.maxmpz.audioplayer/FOLDER_PLAYLIST/<folder_playlist_id>/<folder_playlist_entry_id>
-		 * 	- content://com.maxmpz.audioplayer/ALL/<lib_media_id>
-		 *  - content://com.maxmpz.audioplayer/ARTIST/<lib_artist_id>/<lib_media_id>
-		 * 	- content://com.maxmpz.audioplayer/ALBUM/<lib_album_id>/<lib_media_id>
-		 * 	- content://com.maxmpz.audioplayer/ARTIST_ALBUM/<lib_artist_id>/<lib_album_id>/<lib_media_id>
-		 *  - content://com.maxmpz.audioplayer/GENRE_ALBUM/<lib_genre_id>/<lib_album_id>/<lib_media_id>
-		 * 	- content://com.maxmpz.audioplayer/GENRE/<lib_genre_id>/<lib_media_id>
-		 * 	- content://com.maxmpz.audioplayer/PLAYLIST/<lib_playlist_id>/<lib_playlist_entry_id>
-		 * 	- content://com.maxmpz.audioplayer/QUEUE/<queue_entry_id>
+		 * 	- content://com.maxmpz.audioplayer.data/... (see below)
 		 * 
-		 * Poweramp plays whole list starting from the specified song (for SONG uri) or from first one or random one in shuffle mode (for LIST uri).
-		 * If last Uri segment exists (file/song/entry id) - it's SONG uri. 
-		 * If last song/entry id segment doesn't exist - it's a LIST uri. 
+		 * # means some numeric id (track id for queries ending with /files, otherwise - appropriate category id). 
+		 * If song id (in place of #) is not specified, Poweramp plays whole list starting from the specified song,
+		 * or from first one, or from random one in shuffle mode.
 		 * 
-		 * Example SONG uri:          content://com.maxmpz.audioplayer/FOLDER/12/3
-		 * Example LIST (folder) uri: content://com.maxmpz.audioplayer/FOLDER/12
-		 * Example LIST (hier folder, with root folder=55, folder to play=12, no file id) uri: 
-		 * 							  content://com.maxmpz.audioplayer/FOLDER/55/12?hier=true
+		 * All queries support following params (added as URL encoded params, e.g. content://com.maxmpz.audioplayer.data/files?lim=10&flt=foo):
+		 * lim - integer - SQL LIMIT, which limits number of rows returned
+		 * flt - string - filter substring. Poweramp will return only matching rows (the same way as returned in Poweramp lists UI when filter is used).
+		 * hier - long - hierarchy folder id. Used only to play in shuffle lists/shuffle songs mode while in hierarchy folders view. This is the target folder id
+		 *               which will be shuffled with the all subfolders in it as one list.
+		 * shf - integer - shuffle mode (see ShuffleMode class)
+		 * ssid - long - shuffle session id (for internal use)
+		 * 
+		 * Each /files/meta subquery returns special crafted query with some metainformation provided (it differs in each category, you can explore it by analizing the cols returned).                
+		
+		- All Songs:
+		content://com.maxmpz.audioplayer.data/files
+		content://com.maxmpz.audioplayer.data/files/meta
+		content://com.maxmpz.audioplayer.data/files/#
+
+		- Most Played
+		content://com.maxmpz.audioplayer.data/most_played
+		content://com.maxmpz.audioplayer.data/most_played/files
+		content://com.maxmpz.audioplayer.data/most_played/files/meta
+		content://com.maxmpz.audioplayer.data/most_played/files/#
+		
+		- Top Rated
+		content://com.maxmpz.audioplayer.data/top_rated
+		content://com.maxmpz.audioplayer.data/top_rated/files
+		content://com.maxmpz.audioplayer.data/top_rated/files/meta
+		content://com.maxmpz.audioplayer.data/top_rated/files/#
+
+		- Recently Added
+		content://com.maxmpz.audioplayer.data/recently_added
+		content://com.maxmpz.audioplayer.data/recently_added/files
+		content://com.maxmpz.audioplayer.data/recently_added/files/meta
+		content://com.maxmpz.audioplayer.data/recently_added/files/#
+		
+		- Recently Played
+		content://com.maxmpz.audioplayer.data/recently_played
+		content://com.maxmpz.audioplayer.data/recently_played/files
+		content://com.maxmpz.audioplayer.data/recently_played/files/meta
+		content://com.maxmpz.audioplayer.data/recently_played/files/#
+		
+		- Plain folders view (just files in plain folders list)
+		content://com.maxmpz.audioplayer.data/folders
+		content://com.maxmpz.audioplayer.data/folders/#
+		content://com.maxmpz.audioplayer.data/folders/#/files
+		content://com.maxmpz.audioplayer.data/folders/#/files/meta
+		content://com.maxmpz.audioplayer.data/folders/#/files/#
+		
+		- Hierarchy folders view (files and folders intermixed in one cursor)
+		content://com.maxmpz.audioplayer.data/folders/#/folders_and_files
+		content://com.maxmpz.audioplayer.data/folders/#/folders_and_files/meta
+		content://com.maxmpz.audioplayer.data/folders/#/folders_and_files/#
+		content://com.maxmpz.audioplayer.data/folders/files // All folder files, sorted as folders_files sort (for mass ops).
+		
+		- Genres
+		content://com.maxmpz.audioplayer.data/genres
+		content://com.maxmpz.audioplayer.data/genres/#/files
+		content://com.maxmpz.audioplayer.data/genres/#/files/meta
+		content://com.maxmpz.audioplayer.data/genres/#/files/#
+		content://com.maxmpz.audioplayer.data/genres/files
+
+		- Artists
+		content://com.maxmpz.audioplayer.data/artists
+		content://com.maxmpz.audioplayer.data/artists/#
+		content://com.maxmpz.audioplayer.data/artists/#/files
+		content://com.maxmpz.audioplayer.data/artists/#/files/meta
+		content://com.maxmpz.audioplayer.data/artists/#/files/#
+		content://com.maxmpz.audioplayer.data/artists/files
+		
+		- Composers
+		content://com.maxmpz.audioplayer.data/composers
+		content://com.maxmpz.audioplayer.data/composers/#
+		content://com.maxmpz.audioplayer.data/composers/#/files
+		content://com.maxmpz.audioplayer.data/composers/#/files/#
+		content://com.maxmpz.audioplayer.data/composers/#/files/meta
+		content://com.maxmpz.audioplayer.data/composers/files
+		
+		- Albums 
+    	content://com.maxmpz.audioplayer.data/albums
+    	content://com.maxmpz.audioplayer.data/albums/#/files
+    	content://com.maxmpz.audioplayer.data/albums/#/files/#
+    	content://com.maxmpz.audioplayer.data/albums/#/files/meta
+    	content://com.maxmpz.audioplayer.data/albums/files
+    	
+    	- Albums by Genres
+    	content://com.maxmpz.audioplayer.data/genres/#/albums
+    	content://com.maxmpz.audioplayer.data/genres/#/albums/meta
+    	content://com.maxmpz.audioplayer.data/genres/#/albums/#/files
+    	content://com.maxmpz.audioplayer.data/genres/#/albums/#/files/#
+    	content://com.maxmpz.audioplayer.data/genres/#/albums/#/files/meta
+    	content://com.maxmpz.audioplayer.data/genres/#/albums/files
+    	content://com.maxmpz.audioplayer.data/genres/albums
+
+    	- Albums by Artists
+    	content://com.maxmpz.audioplayer.data/artists/#/albums
+    	content://com.maxmpz.audioplayer.data/artists/#/albums/meta
+    	content://com.maxmpz.audioplayer.data/artists/#/albums/#/files
+    	content://com.maxmpz.audioplayer.data/artists/#/albums/#/files/#
+    	content://com.maxmpz.audioplayer.data/artists/#/albums/#/files/meta
+    	content://com.maxmpz.audioplayer.data/artists/#/albums/files
+    	content://com.maxmpz.audioplayer.data/artists/albums
+
+    	- Albums by Composers
+    	content://com.maxmpz.audioplayer.data/composers/#/albums
+    	content://com.maxmpz.audioplayer.data/composers/#/albums/meta
+    	content://com.maxmpz.audioplayer.data/composers/#/albums/#/files
+    	content://com.maxmpz.audioplayer.data/composers/#/albums/#/files/#
+    	content://com.maxmpz.audioplayer.data/composers/#/albums/#/files/meta
+    	content://com.maxmpz.audioplayer.data/composers/#/albums/files
+    	content://com.maxmpz.audioplayer.data/composers/albums
+
+    	- Artists Albums
+    	content://com.maxmpz.audioplayer.data/artists_albums
+    	content://com.maxmpz.audioplayer.data/artists_albums/meta
+    	content://com.maxmpz.audioplayer.data/artists_albums/#/files
+    	content://com.maxmpz.audioplayer.data/artists_albums/#/files/#
+    	content://com.maxmpz.audioplayer.data/artists_albums/#/files/meta
+    	content://com.maxmpz.audioplayer.data/artists_albums/files
+		
+		- Playlists
+		content://com.maxmpz.audioplayer.data/playlists
+		content://com.maxmpz.audioplayer.data/playlists/#
+		content://com.maxmpz.audioplayer.data/playlists/#/files
+		content://com.maxmpz.audioplayer.data/playlists/#/files/#
+		content://com.maxmpz.audioplayer.data/playlists/#/files/meta
+		content://com.maxmpz.audioplayer.data/playlists/files
+		
+		- Library Search
+		content://com.maxmpz.audioplayer.data/search
+		
+		- Equalizer Presets
+		content://com.maxmpz.audioplayer.data/eq_presets
+		content://com.maxmpz.audioplayer.data/eq_presets/#
+		content://com.maxmpz.audioplayer.data/eq_presets_songs
+		content://com.maxmpz.audioplayer.data/queue
+		content://com.maxmpz.audioplayer.data/queue/#
+
 		 *  
 		 * Extras:
-		 * - shuffle - int - (optional) apply appropriate shuffle mode to the list. Correct shuffle mode should be selected:
-		 *                    to shuffle just folder - Shuffle.SHUFFLE_FOLDER, to shuffle in folder hierarchy - Shuffle.SHUFFLE_HIER (only in hierarchy mode)
-		 *                    to shuffle any other list - Shuffle.SHUFFLE_CAT
-		 *                    Can't be applied to file:// or SONG uri.
-		 * 
-		 * - filter - String - (optional) option text filtering to apply to the list which is played.
-		 * 					  Can't be applied to file:// or SONG uri.
-		 * 
 		 * - paused - boolean - (optional) default false. OPEN_TO_PLAY command starts playing the file immediately, unless "paused" extra is true.
-		 *                    Can be applied only to file:// and SONG uri.
+		 *                       (see PowerampAPI.PAUSED)
 		 * 
-		 * - pos - int - (optional) seek to this position in song before playing
-		 * 					  Can be applied only to file:// and SONG uri.
-		 * 
-		 * - matchFile - boolean - (optional) default true. If true, Poweramp will try to match file://path against Folder Files database, and if match found,
-		 *                    Poweramp will play that file based on matched folder/file ids. Otherwise just file is played (no list loaded, Category=NONE_RAW_FILE).
-		 *                    Can be applied only to file:// uri. 
-		 *  
+		 * - pos - int - (optional) seek to this position in song before playing (see PowerampAPI.Track.POSITION)
 		 */
 		public static final int OPEN_TO_PLAY = 20;
 		

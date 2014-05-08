@@ -277,6 +277,13 @@
 			android:text="Play First Album"
 		/>
 	
+		<Button android:id="@+id/play_first_folder"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Play First Folder"
+			android:onClick="onClick"
+		/>
+		
 		<Button android:id="@+id/play_all_songs"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
