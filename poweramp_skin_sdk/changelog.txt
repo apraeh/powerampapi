@@ -1,3 +1,8 @@
+May 10, 2014
+- added skin_lib, added support for skin Poweramp icons and skin pack icon hide option
+- refactored skin sample projects to use skin_lib
+- added skin_custom_info_activity sample project
+
 May 08, 2014
 - updated reference resources and default_style.PSD to match latest build-555
   - new attributes for default album art logo 
