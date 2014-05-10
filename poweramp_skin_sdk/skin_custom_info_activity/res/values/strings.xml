@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Skin With Custom Info Activity</string>
+    
+    <string name="custom_button1">Custom Button 1</string>
+    <string name="custom_button2">Custom Button 2</string>
+</resources>

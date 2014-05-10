@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="installation_ok">Скин-пак для Poweramp был успешно установлен.</string>
+    
+    <string name="toggle_themed_icon">Добавить иконку Poweramp из скина</string>
+    <string name="toggle_themed_icon_summary">Добавляет иконку из скина в качестве иконки запуска Poweramp в лаунчере</string>
+    
+    <string name="hide_skin_icon">Скрыть иконку скина</string>
+    <string name="hide_skin_icon_summary">Скрывает иконку этого скина из лаунчера. В зависимости от лаунчера, обновление иконки может произойти почти сразу, или после перезапуска устройства. Потребуется переустановка скина, что бы сделать иконку видимой снова</string>
+    
+    <string name="set_skin_s">Установить скин: %s</string>
+    
+</resources>

@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Two Skins</string>
-    <string name="set_skin_1">Set Skin 1</string>
-    <string name="set_skin_2">Set Skin 2</string>
 </resources>

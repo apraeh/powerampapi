@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+    <property name="poweramp.apk" value="${android.library.reference.1}/Poweramp-2.0.9-build-555-uni.apk"/>
+    
+   	<target name="-code-gen" depends="-build-setup">
+        <mergemanifest
+                appManifest="${manifest.abs.file}"
+                outManifest="${out.manifest.abs.file}"
+                enabled="${manifestmerger.enabled}">
+            <library refid="project.library.manifest.file.path" />
+        </mergemanifest>
+	
+     
+        <echo>SKIN: Generating R.java / Manifest.java from the resources...</echo>
+		<exec executable="${aapt}" failonerror="true">
+			<arg value="package"/>
+			<arg value="-f"/>
+			<arg value="-m"/>
+			<arg value="--auto-add-overlay"/>
+			<arg value="-M"/>
+			<arg value="${out.absolute.dir}/AndroidManifest.xml"/>
+			<arg value="-S"/>
+			<arg value="${out.absolute.dir}/res"/>
+			<arg value="-S"/>
+			<arg value="${resource.absolute.dir}"/>
+			<arg value="-S"/>			
+			<arg value="${android.library.reference.1}/bin/res"/>
+			<arg value="-S"/>
+     		<arg value="${android.library.reference.1}/res"/>
+     		<arg value="--extra-packages"/>
+     		<arg value="com.maxmpz.poweramp.skinlib"/>
+     		<arg value="-I"/>
+			<arg value="${project.target.android.jar}"/>
+ 			<arg value="-I"/>
+			<arg value="${poweramp.apk}"/>
+			<arg value="-I"/>
+			<arg value="${android.library.reference.1}/skin_compat/bin/skin_compat-debug.apk"/>
+			<arg value="-x"/>		
+ 			<arg value="-J"/>
+			<arg value="${gen.absolute.dir}"/>
+ 		</exec>
+    </target>
+  
+    <target name="-package-resources">
+        <echo>SKIN: Packaging resources</echo>
+		<exec executable="${aapt}" failonerror="true">
+			<arg value="package"/>
+			<arg value="-f"/>
+			<arg value="--auto-add-overlay"/>
+			<arg value="-M"/>
+			<arg value="${out.absolute.dir}/AndroidManifest.xml"/>
+			<arg value="-S"/>
+			<arg value="${out.absolute.dir}/res"/>
+			<arg value="-S"/>
+			<arg value="${resource.absolute.dir}"/>
+			<arg value="-S"/>			
+			<arg value="${android.library.reference.1}/bin/res"/>
+			<arg value="-S"/>
+     		<arg value="${android.library.reference.1}/res"/>
+     		<arg value="--extra-packages"/>
+     		<arg value="com.maxmpz.poweramp.skinlib"/>
+     		<arg value="-A"/>
+			<arg value="${asset.absolute.dir}"/>
+			<arg value="-I"/>
+			<arg value="${project.target.android.jar}"/>
+			<arg value="-I"/>
+			<arg value="${poweramp.apk}"/>
+			<arg value="-I"/>
+			<arg value="${android.library.reference.1}/skin_compat/bin/skin_compat-debug.apk"/>
+			<arg value="-F"/>
+			<arg value="${out.absolute.dir}/${resource.package.file.name}"/>
+			<arg value="-x"/>
+ 			<arg value="--version-code"/>
+			<arg value="${version.code}"/>
+		</exec>
+    </target>
+    
+	<target name="-set-jar">
+	    <property name="resource.package.file.name" value="${ant.project.name}.jar" />
+	</target>
+	
+	<target name="-set-jar-task">
+ 	    <property name="build.target" value="jar" />
+	</target>
+	
+	<target name="jar" depends="clean, -set-jar-task, -set-debug-mode, -set-jar, -code-gen, -package-resources">
+		<copy 
+			file="${out.absolute.dir}/${resource.package.file.name}" 
+			tofile="${out.absolute.dir}/${ant.project.name}.jar"
+		/>
+    </target>
+	
+	<target name="jarpush" depends="clean, jar">
+		<exec executable="adb" failonerror="true">
+			<arg value="push"/>
+			<arg value="${out.absolute.dir}/${ant.project.name}.jar"/>
+			<arg value="/sdcard/Android/data/_com.maxmpz.audioplayer/skins/${ant.project.name}.jar"/>
+		</exec>
+	</target>
+
+	<target name="apkpush" depends="clean, debug" >
+		<exec executable="adb" failonerror="true">
+			<arg value="install"/>
+			<arg value="-r"/>
+			<arg value="${out.final.file}"/>
+		</exec>
+	</target>
+
+	<target name="dist" depends="clean, release">
+		<buildnumber file="build.num" />
+		<property name="release.apk" value="${out.absolute.dir}/${ant.project.name}-release.apk"/>
+		<property name="version.tag" value="build-${build.number}"/>
+		<property name="dist.dir" value="dist/${build.number}"/>
+
+		<mkdir dir="${dist.dir}"/>
+		<copy 
+			file="${release.apk}" 
+			tofile="${dist.dir}/${ant.project.name}-${version.tag}.apk"
+		/>
+	</target>
+</project>

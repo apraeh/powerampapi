@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <!-- Those arrays are empty here - they should be redefined in the skin project -->
+
+   	<integer-array name="poweramp_skins">
+	</integer-array>
+
+	<string-array name="poweramp_skin_names">
+	</string-array>
+	
+	<string-array name="poweramp_skin_authors">
+	</string-array>
+</resources>

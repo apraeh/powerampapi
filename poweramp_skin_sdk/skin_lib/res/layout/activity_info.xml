@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+ 	<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" 
+	android:layout_width="fill_parent" 
+	android:layout_height="fill_parent"
+	android:scrollbarDefaultDelayBeforeFade="100000"
+	android:layout_alignParentTop="true"
+	android:fillViewport="true"
+>
+	<RelativeLayout
+		android:layout_width="fill_parent" 
+		android:layout_height="fill_parent"
+		android:padding="10dip"
+	>
+		<ImageView
+			android:id="@+id/icon"
+			android:src="@drawable/app_icon"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="2dip"
+			android:tag="icon"
+			android:layout_marginBottom="22dip"
+		/>
+		<TextView
+			android:id="@+id/title"
+			android:layout_marginLeft="10dip"
+			android:layout_toRightOf="@+id/icon"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:text="@string/app_name"
+			android:textSize="19sp"
+			android:textStyle="bold"
+			android:layout_alignTop="@+id/icon"
+			android:layout_alignBottom="@+id/icon"
+			android:gravity="center_vertical"
+			android:tag="title"
+		/>
+	
+		<TextView
+			android:id="@+id/msg1"
+			android:layout_below="@+id/icon"		
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:text="@string/installation_ok"
+			android:textSize="19sp"
+		/>
+		
+	   	<LinearLayout android:id="@+id/checkboxes"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			android:layout_below="@+id/msg1"
+			android:layout_marginTop="10dp"
+			android:padding="10dp"
+		>
+			<CheckBox android:id="@+id/toggle_themed_icon"
+				android:onClick="onClick"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:text="@string/toggle_themed_icon"
+				android:textSize="18sp"
+				android:tag="toggle_themed_icon"
+			/>
+			<TextView
+			    android:text="@string/toggle_themed_icon_summary"
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+				android:layout_marginBottom="10dip"		    
+			/>
+			
+			<CheckBox android:id="@+id/hide_skin_icon"
+				android:onClick="onClick"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:text="@string/hide_skin_icon"
+				android:textSize="18sp"
+				android:tag="hide_skin_icon"
+			/>
+			<TextView
+			    android:text="@string/hide_skin_icon_summary"
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+				android:layout_marginBottom="10dip"		    
+			/>
+	   	</LinearLayout>
+		
+	   	<LinearLayout android:id="@+id/button_layout" 
+	   	    android:tag="button_layout" 
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			android:layout_below="@+id/checkboxes"
+			android:layout_alignParentBottom="true"
+			android:layout_marginTop="10dp"
+			android:gravity="bottom"			
+		>
+		</LinearLayout>	
+	</RelativeLayout>
+</ScrollView>

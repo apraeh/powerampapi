@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+ 	<target name="-set-jar">
+	    <property name="resource.package.file.name" value="${ant.project.name}.jar" />
+	</target>
+	
+	<target name="jar" depends="clean, -set-debug-mode, -set-jar, -build-setup, -code-gen, -package-resources">
+    </target>
+</project>

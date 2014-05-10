@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Poweramp SkinLib</string>
+    
+    <string name="installation_ok">Poweramp skin pack was successfully installed</string>
+
+    <string name="toggle_themed_icon">Enable Poweramp themed icon</string>
+    <string name="toggle_themed_icon_summary">Enable custom themed icon as additional Poweramp shortcut. New icon will appear in launcher</string>
+    
+    <string name="hide_skin_icon">Hide skin icon</string>
+    <string name="hide_skin_icon_summary">Hide skin icon completely from launcher. Depending on Launcher, it updates icon visibility shortly or it may require phone restart. You may need to reinstall skin to make icon visible again</string>
+    
+    <string name="set_skin_s">Set Skin: %s</string>
+</resources>
