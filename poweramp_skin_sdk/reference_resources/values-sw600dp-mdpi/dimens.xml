@@ -39,7 +39,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     
     <dimen name="coverMarginBottom">275dip</dimen>
     
-	<dimen name="aaa_bottom_panel_marginBottom">-11.5dp</dimen>
+	<dimen name="aaa_bottom_panel_marginBottom">-12dp</dimen>
 	<dimen name="aaa_panel_height">96dip</dimen>
 	<dimen name="aaa_perm_icon_width">132dip</dimen>
 	<dimen name="aaa_perm_icon_height">67dip</dimen>

@@ -19,12 +19,14 @@ NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
+<!-- NOTE: Poweramp build-556 and above uses custom RatingBar, which always ensures max. 5 stars are shown. Thus, too small width of rating bar is ignored.  -->
 <RatingBar xmlns:android="http://schemas.android.com/apk/res/android" xmlns:z="http://schemas.android.com/apk/res/com.maxmpz.audioplayer"
 	android:isIndicator="false"
 	android:numStars="5"
 	android:stepSize="1"
 	android:focusable="true"
 
+	android:padding="@dimen/aaa_rating_pading"
 	android:layout_width="wrap_content"
 	android:layout_height="wrap_content"
 	android:layout_centerVertical="true"

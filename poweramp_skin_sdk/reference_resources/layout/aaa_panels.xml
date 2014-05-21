@@ -164,6 +164,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 			
 			android:layout_alignParentLeft="true"
 			z:buttonSrc="?icon_selector"
+			
 		/>
 
 		<ViewStub android:id="@+id/perm_rating_visible"
@@ -202,6 +203,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		android:layout_height="@dimen/aaa_panel_height"
 		android:layout_above="@+id/bottom_bg"
 		android:layout_marginBottom="@dimen/aaa_bottom_panel_marginBottom"
+		android:paddingTop="@dimen/aa_perm_panel_paddingTop"
 	>
 		<com.maxmpz.audioplayer.gui.menu.MenuImageButton android:id="@+id/panel_repeat"
 			android:src="?repeat_levels"
@@ -213,11 +215,13 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 			android:layout_alignParentLeft="true"
 		/>
 	
+		<!-- NOTE: Poweramp build-556 and above uses custom RatingBar, which always ensures max. 5 stars are shown. Thus, too small width of rating bar is ignored.  -->
 		<RatingBar android:id="@+id/rating"
 			android:isIndicator="false"
 			android:numStars="5"
 			android:stepSize="1"
 			android:focusable="true"
+			android:padding="@dimen/aaa_rating_pading"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_centerVertical="true"

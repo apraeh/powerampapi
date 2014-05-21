@@ -27,9 +27,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
    	
    	<dimen name="list_item_library_image_size">48dp</dimen>
    	
-   	<dimen name="aaa_bottom_panel_marginBottom">-9dp</dimen>
-   	
+   	<!-- <dimen name="aaa_bottom_panel_marginBottom">-9dp</dimen> -->
 	<dimen name="aaa_panel_height">70dip</dimen>
 	<dimen name="aa_perm_panel_paddingTop">3.67dip</dimen>
-   		
 </resources>

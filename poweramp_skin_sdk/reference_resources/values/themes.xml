@@ -22,7 +22,6 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 <!-- values -->
 <resources>
 	<style name="ActivityThemeBase" parent="@android:style/Theme.Black.NoTitleBar"><!-- Also has v11 style -->
-		<!--<item name="android:windowBackground">@null</item>--><!-- setting this to null actually seems to slowdown redraws a bit -->
 		<item name="android:windowNoTitle">true</item>
 	</style>
 	

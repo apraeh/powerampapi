@@ -51,7 +51,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<dimen name="deck_np_image_size">42.66dip</dimen>
 	<dimen name="deck_controls_padding">0dip</dimen>
 	<dimen name="deck_controls_padding2">0dip</dimen>
-	<dimen name="deck_track_progress_meta_marginTop">-18dip</dimen>
+	<dimen name="deck_track_progress_meta_marginTop">-17.66dip</dimen>
 	<dimen name="ff_rw_button_margin">0dip</dimen>
 	<dimen name="BigRoundButton_size">100dip</dimen>
 	<dimen name="MediumRoundButton_size">65.33dip</dimen>
@@ -67,9 +67,9 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<dimen name="aaa_padding1">4dip</dimen>
 	<dimen name="aaa_padding2">4.5dip</dimen>
 	<dimen name="aaa_rating_width">140dip</dimen>
-	<dimen name="aaa_bottom_panel_marginBottom">-8.66dp</dimen>
-	
 	<dimen name="RatingBar_size">24dip</dimen>
+	<dimen name="aaa_bottom_panel_marginBottom">-8dp</dimen><!--  -->
+	<dimen name="aaa_rating_pading">10dp</dimen>
 	
 	<integer name="alu_coverScaleInt">10000</integer>
 	<dimen name="alu_coverMarginBottom">99.33dip</dimen>

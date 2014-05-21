@@ -293,9 +293,13 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<declare-styleable name="RoundKnob">
 		<attr name="knob_bg" format="reference"/>
 		<attr name="indicator" format="reference"/>
-		<attr name="indicatorScale" format="float"/><!-- not used -->
-		<!-- <attr name="snap" format="boolean"/> -->
-		<attr name="snap"/> <!-- vpi -->
+		<attr name="indicatorScale" format="float"/>
+		<attr name="indicatorBehavior">		   
+	        <enum name="scale" value="0" /><!-- scale indicator image as in builds pre-555, according to indicatorScale value -->
+	        <enum name="keep" value="1" /><!-- keep indicator image as is, ignoring scale, so even if round knob is scaled too much, indicator remains clearly visible and consinstent -->
+	        <enum name="keepAndRotateBg" value="2" /><!-- same as keep, but also rotates knob_bg image to the same angle as indicator  -->
+	    </attr>
+		<attr name="snap"/><!-- boolean -->
 		<attr name="snapTo" format="float"/>
 	</declare-styleable>
 	
@@ -370,6 +374,8 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		<attr name="miniMode" format="boolean"/>
 		<attr name="textSize2" format="dimension"/>
 		<attr name="textColor2" format="color"/>
+		<attr name="textShadowColor" format="color"/>
+		<attr name="textShadowWidth" format="float"/>
 	</declare-styleable>
 	
 	<declare-styleable name="NumberListPreference">

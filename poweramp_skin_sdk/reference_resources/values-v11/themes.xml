@@ -22,12 +22,8 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 <!-- v11 -->
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 	<style name="ActivityThemeBase" parent="@android:style/Theme.Holo">
-		<!--<item name="android:windowBackground">@null</item>--><!-- setting this to null actually seems to slowdown redraws a bit -->
-		 <!--<item name="android:windowNoTitle">true</item>--><!-- NOTE: setting this to true removes AB completely -->
 		 <item name="android:windowActionBar">false</item>
 		 <item name="android:windowTitleSize">0px</item><!-- Removes sometimes visible app header while activity is restored -->
-		 <!--<item name="android:windowBackground">@null</item>
-		 <item name="android:colorBackgroundCacheHint">@null</item>-->
 	</style>
 	
 	<!-- NOTE: doesn't work on 3.0, but works on 2.3/ICS -->

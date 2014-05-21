@@ -21,14 +21,18 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:z="http://schemas.android.com/apk/res/com.maxmpz.audioplayer">
 
-	<!-- NOTE: don't put v11+ values here due to Meizu M9 inability to load such themes -->
 	<!-- v11 means attribute is used for Honeycomb  -->
 	<!-- v14 means attribute is used for ICS -->
+	
+	<!-- NOTE: build-556 sets PlayerUI android:windowBackground to null for best performance if DeckAlbumArt is covering whole
+	     activity (has width/height=fill_parent/match_parent and no margins). If DeckAlbumArt is not covering everything,
+	     windowBackground is not overriden -->
 	
 	<!-- 
 		Default theme definition. 
 		Note that actual theme name is "ActivityTheme_Default". 
-		ActivityTheme_Default is derived from Base_ActivityTheme_Default, for v11/v14 additional styles added to it. 
+		ActivityTheme_Default is derived from Base_ActivityTheme_Default, for v11/v14 additional styles added to it.
+		See also /values/attrs.xml, attrs-gl.xml, and attrs-gui.xml for reference. 
 	-->
 	<style name="Base_ActivityTheme_Default" parent="@style/ActivityThemeBase">
 	    <item name="plain_bg_color">#FF000000</item><!-- Previously used as activity background, almost not used now. Used in activity_help.xml --> 
@@ -263,15 +267,13 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	    <item name="ab_poweramp_logo">@drawable/matte_ab_poweramp_logo</item><!-- v11+. Poweramp larger icon, shown when space is available -->
 	    <item name="ab_back">@drawable/matte_ab_back</item><!-- v11+ action bar "back arrow" (left to icon/logo) -->
 	    
+	    
 	</style>
 
 	<style name="ActivityTheme_Default" parent="@style/Base_ActivityTheme_Default">
 	    <!-- Shouldn't have any styles here, but additional styles are added in values-v11 -->
     </style>
     
-	
-	
-	
 	<!-- Styles for Default theme -->
 	
 	<color name="matte_text_color_1">#e4f2ff</color>
@@ -425,7 +427,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		<item name="android:layout_height">1dip</item>
     </style>
 	
-	
+	<!-- NOTE: Poweramp build-556 and above uses custom RatingBar, which always ensures max. 5 stars are shown. Thus, too small width of rating bar is ignored.  -->
 	<style name="Matte_RatingBar" parent="@android:style/Widget.RatingBar">
         <item name="android:progressDrawable">@drawable/matte_ratingbar_full</item>
         <item name="android:indeterminateDrawable">@drawable/matte_ratingbar_full</item>
@@ -442,7 +444,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<style name="Matte_PermRatingBar" parent="Matte_RatingBar">
         <item name="android:progressDrawable">@drawable/matte_ratingbar_perm</item>
         <item name="android:indeterminateDrawable">@drawable/matte_ratingbar_perm</item>
-	</style>
+    </style>
 	
     <style name="Matte_DialogButton" parent="@style/Matte_Button">
     </style>
@@ -502,7 +504,6 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		<item name="coverShadow">@drawable/gl_aa_shadow</item>
 	</style>
 
-	
 	<style name="Matte_DeckAlbumArt">
 		<item name="coverScaleInt">@integer/coverScaleInt</item><!-- Album art cover image scale as fixed point integer number. 10000 => 1.0f -->
 		<item name="coverPadding">@dimen/coverPadding</item><!-- Padding for cover image -->
@@ -524,6 +525,8 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		<item name="textSize2">11dip</item>
 		<item name="textColor2">?text_color_2</item>
 		<item name="blurWidth">5.0</item>
+		<item name="textShadowColor">#FF000000</item>
+		<item name="textShadowWidth">2.0</item><!-- set to 0.0 to hide shadow completely -->
 	</style>
 	
 	

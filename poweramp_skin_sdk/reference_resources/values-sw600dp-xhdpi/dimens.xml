@@ -21,5 +21,5 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 <!--  values-sw600dp-xhdpi -->
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
-   	<dimen name="aaa_bottom_panel_marginBottom">-12.33dp</dimen>
+   	<!-- <dimen name="aaa_bottom_panel_marginBottom">-12dp</dimen> -->
 </resources>
