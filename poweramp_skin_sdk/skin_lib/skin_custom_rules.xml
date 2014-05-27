@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project>
-    <property name="poweramp.apk" value="${android.library.reference.1}/Poweramp-2.0.9-build-555-uni.apk"/>
+    <property name="poweramp.apk" value="${android.library.reference.1}/Poweramp-2.0.9-build-556-uni.apk"/>
     
    	<target name="-code-gen" depends="-build-setup">
         <mergemanifest

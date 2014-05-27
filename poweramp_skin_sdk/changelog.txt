@@ -1,3 +1,6 @@
+May 27, 2014
+- updated Poweramp APK and default skin references to match build 556
+
 May 10, 2014
 - added skin_lib, added support for skin Poweramp icons and skin pack icon hide option
 - refactored skin sample projects to use skin_lib
