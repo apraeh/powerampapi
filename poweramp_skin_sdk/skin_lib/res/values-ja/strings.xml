@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="installation_ok">Poweramp スキンパックのインストールを完了しました</string>
+    
+    <string name="toggle_themed_icon">Powerampテーマのアイコンを有効</string>
+    <string name="toggle_themed_icon_summary">追加のPowerampのショートカットとしてカスタムテーマアイコンを有効にする。新しいアイコンがランチャーに表示されます</string>
+    
+    <string name="hide_skin_icon">スキンアイコンを非表示</string>
+    <string name="hide_skin_icon_summary">スキンアイコンをランチャーから完全に非表示にします。ランチャーによっては、アイコンの表示がすぐに更新されますが、端末の再起動が必要になる可能性があります。逢い再び表示するにはスキンの再インストールが必要になるかもしれません</string>
+    
+    <string name="set_skin_s">スキンを設定: %s</string>
+</resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="installation_ok">Le pack de skin Poweramp a été installé avec succès</string>
+    
+    <string name="toggle_themed_icon">Activer l\'icône de thème Poweramp</string>
+    <string name="toggle_themed_icon_summary">Activer l\'icône de thème personnalisée en tant que raccourci Poweramp supplémentaire. La nouvelle icône apparaîtra dans l\'écran de lancement</string>
+    
+    <string name="hide_skin_icon">Masquer l\'icône de skin</string>
+    <string name="hide_skin_icon_summary">Masquer complètement l\'icône de skin de l\'écran de lancement. Selon l\'écran de lancement, la visibilité de l\'icône se met à jour rapidement ou bien nécessite le redémarrage du téléphone. Vous pouvez avoir besoin de réinstaller la skin pour rendre l\'icône à nouveau visible</string>
+    
+    <string name="set_skin_s">Régler la skin: %s</string>
+</resources>

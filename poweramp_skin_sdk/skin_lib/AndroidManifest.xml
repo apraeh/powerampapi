@@ -9,9 +9,9 @@
 
     <uses-sdk
         android:minSdkVersion="9"
-        android:targetSdkVersion="19" />
+        android:targetSdkVersion="21" />
 
-    <application>
+    <application android:theme="@style/AppTheme">
       	<!-- This enables APK as skin for Poweramp -->
       	<meta-data android:name="com.maxmpz.PowerampSkins" android:value="true"/>
       	

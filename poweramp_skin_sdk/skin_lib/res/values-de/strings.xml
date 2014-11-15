@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="installation_ok">Poweramp Skin Pack erfolgreich installiert</string>
+    
+    <string name="toggle_themed_icon">Poweramp Themensymbol aktivieren</string>
+    <string name="toggle_themed_icon_summary">Benutzerdefiniertes Poweramp-Symbol als zusätzliches Poweramp Shortcut aktivieren. Das neue Symbol erscheint auf Startbildschirm</string>
+    
+    <string name="hide_skin_icon">Skinsymbol verbergen</string>
+    <string name="hide_skin_icon_summary">Skinsymbol auf dem Startbildschirm völlig verbergen. Abhängig vom Startbildschirm wird die Symbolsichtbarkeit zeitnah aktualisiert oder es wird ein Neustart notwendig. Um die Sichtbarkeit wiederherzustellen, muss der Skin eventuell neu installiert werden</string>
+    
+    <string name="set_skin_s">Skin festlegen: %s</string>    
+</resources>

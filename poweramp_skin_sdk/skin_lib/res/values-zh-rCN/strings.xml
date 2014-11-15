@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="installation_ok">已成功安装Poweramp皮肤包</string>
+    
+    <string name="toggle_themed_icon">启用Poweramp主题图标</string>
+    <string name="toggle_themed_icon_summary">将自定义主题图标用作额外的Poweramp快捷方式。安卓桌面中将会显示新图标</string>
+    
+    <string name="hide_skin_icon">隐藏皮肤图标</string>
+    <string name="hide_skin_icon_summary">在安卓桌面中完全隐藏皮肤图标。根据安卓桌面的不同，可能需要等待一会图标才能隐藏，或者需要重启手机才能隐藏。您可能需要重新安装皮肤才能让图标重新显示</string>
+    
+    <string name="set_skin_s">设置皮肤： %s</string>    
+</resources>

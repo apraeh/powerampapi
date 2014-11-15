@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<resources xmlns:android="http://schemas.android.com/apk/res/android">
-	<style name="ClassicSkin" parent="@com.maxmpz.audioplayer:style/ActivityTheme_Default">
+<resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:z="http://schemas.android.com/apk/res/com.maxmpz.audioplayer">
+	<style name="ClassicSkin" parent="@com.maxmpz.audioplayer:style/Base_ActivityTheme_Default">
 		<item name="com.maxmpz.audioplayer:player_layout">@layout/activity_player_ui</item>
 		<item name="com.maxmpz.audioplayer:eq_layout">@layout/activity_eq</item>
 		<item name="com.maxmpz.audioplayer:lock_screen_layout">@layout/activity_lock_screen</item>
 		
 		<item name="com.maxmpz.audioplayer:plain_bg_color">#FF080808</item>
 		<item name="com.maxmpz.audioplayer:deck_bg">@drawable/matte_deck_bg</item>
-		<item name="com.maxmpz.audioplayer:list_header">@com.maxmpz.audioplayer:drawable/matte_list_header_selector</item>
 		<item name="com.maxmpz.audioplayer:list_footer">@drawable/classic_list_footer</item>
 		<item name="com.maxmpz.audioplayer:list_footer_selection">@drawable/classic_list_footer</item>
 		
@@ -103,33 +102,60 @@
     	<item name="android:textColor">@color/matte_text_color_2</item>
     </style>
     
-    <style name="Classic_ToastText1" parent="@style/Classic_Text1">
+    <style name="Classic_ToastText1">
     	<item name="android:textColor">#000000</item>
+    	
+    	<item name="android:textSize">16dip</item>
+    	<item name="android:textStyle">bold</item>
+    	<item name="android:typeface">normal</item>
     </style>
     
-    <style name="Classic_ToastText2" parent="@style/Classic_Text2">
+    <style name="Classic_ToastText2">
 	    <item name="android:textColor">#000000</item>
-    </style>
+	    
+    	<item name="android:textSize">14dip</item>
+    	<item name="android:textStyle">normal</item>
+    	<item name="android:typeface">normal</item>
+	</style>
 
-    <style name="Classic_Text3" parent="@style/Classic_Text2">
+    <style name="Classic_Text3">
     	<item name="android:textColor">@color/matte_text_color_3</item>
+    	
+    	<item name="android:textSize">14dip</item>
+    	<item name="android:textStyle">normal</item>
+    	<item name="android:typeface">normal</item>
     </style>
     
-    <style name="Classic_Text4" parent="@style/Classic_Text2">
+    <style name="Classic_Text4">
     	<item name="android:textSize">12dip</item>
-    </style>
-    
-    
-    <style name="Classic_PlayListText1" parent="@style/Classic_Text1">
-    	<item name="android:textColor">@color/matte_list_item1</item>
-    </style>
 
-    <style name="Classic_PlayListText2" parent="@style/Classic_Text2">
-    	<item name="android:textColor">@color/matte_list_item2</item>
+    	<item name="android:textStyle">normal</item>
+    	<item name="android:typeface">normal</item>
+    	<item name="android:textColor">@color/matte_text_color_2</item>
     </style>
     
-    <style name="Classic_PlayListText3" parent="@style/Classic_Text2">
+    <style name="Classic_PlayListText1" parent="@android:style/TextAppearance">
+    	<item name="android:textColor">@color/matte_list_item1</item>
+    	
+    	<item name="android:textSize">16dip</item>
+    	<item name="android:textStyle">bold</item>
+    	<item name="android:typeface">normal</item>
+    	</style>
+
+    <style name="Classic_PlayListText2">
+    	<item name="android:textColor">@color/matte_list_item2</item>
+    	
+    	<item name="android:textSize">14dip</item>
+    	<item name="android:textStyle">normal</item>
+    	<item name="android:typeface">normal</item>
+    </style>
+    
+    <style name="Classic_PlayListText3">
     	<item name="android:textColor">@color/matte_list_item3</item>
+    	
+    	<item name="android:textSize">14dip</item>
+    	<item name="android:textStyle">normal</item>
+    	<item name="android:typeface">normal</item>
     </style>
 	
     <style name="Classic_SmallLabelText">
@@ -175,18 +201,53 @@
     </style>
     
 
-	<style name="Classic_CheckButton" parent="@style/Classic_Button">
+	<style name="Classic_CheckButton" parent="@com.maxmpz.audioplayer:style/Matte_Button">
 		<item name="com.maxmpz.audioplayer:indicatorGravity">left|center_vertical</item>
-		<item name="android:background">@drawable/matte_check_rounded_button_selector</item>
-		<item name="android:gravity">left|center_vertical</item>
+		<item name="android:button">@null</item>
+    	<item name="android:background">@drawable/matte_check_rounded_button_selector</item>
+		<item name="android:focusable">true</item>
+		<item name="android:clickable">true</item>
+		<item name="android:textSize">12sp</item>
+		<item name="android:textColor">#ffffff</item>
+		<item name="android:gravity">center</item>
+		<item name="android:layout_height">31.33dip</item>
+		<item name="android:lines">1</item>
+		<item name="android:layout_width">68dip</item>
+		<item name="android:layout_marginTop">1dip</item>
+		<item name="android:layout_marginBottom">1dip</item>
 	</style>
 	
-	<style name="Classic_EqCheckButton" parent="@style/Classic_CheckButton">
+	<style name="Classic_EqCheckButton" parent="@com.maxmpz.audioplayer:style/Matte_Button">
 		<item name="android:layout_centerVertical">true</item>
+		
+		<item name="com.maxmpz.audioplayer:indicatorGravity">left|center_vertical</item>
+		<item name="android:button">@null</item>
+    	<item name="android:background">@drawable/matte_check_rounded_button_selector</item>
+		<item name="android:focusable">true</item>
+		<item name="android:clickable">true</item>
+		<item name="android:textSize">12sp</item>
+		<item name="android:textColor">#ffffff</item>
+		<item name="android:gravity">center</item>
+		<item name="android:layout_height">31.33dip</item>
+		<item name="android:lines">1</item>
+		<item name="android:layout_width">68dip</item>
+		<item name="android:layout_marginTop">1dip</item>
+		<item name="android:layout_marginBottom">1dip</item>
 	</style>
 	
-	<style name="Classic_EqButton" parent="@style/Classic_Button">
-	<item name="android:layout_centerVertical">true</item>
+	<style name="Classic_EqButton" parent="@android:style/Widget.Button">
+    	<item name="android:background">@drawable/matte_rounded_button_selector</item>
+		<item name="android:focusable">true</item>
+		<item name="android:clickable">true</item>
+		<item name="android:textSize">12sp</item>
+		<item name="android:textColor">#ffffff</item>
+		<item name="android:gravity">center</item>
+		<item name="android:layout_height">61.33dip</item>
+		<item name="android:lines">1</item>
+		<item name="android:layout_width">68dip</item>
+		<item name="android:layout_marginTop">1dip</item>
+		<item name="android:layout_marginBottom">1dip</item>
+		<item name="android:layout_centerVertical">true</item>
 	</style>
 
 	<style name="Classic_NoButtonDiv">
@@ -214,12 +275,23 @@
 	</style>
 	
 	
-    <style name="Classic_LinearKnob" parent="@com.maxmpz.audioplayer:style/Matte_LinearKnob">
+	<style name="Classic_LinearKnob">
     	<item name="com.maxmpz.audioplayer:thumb">@drawable/matte_knob_thumb_selector</item>
+    	<item name="com.maxmpz.audioplayer:hole">@com.maxmpz.audioplayer:drawable/matte_knob_hole_selector</item> 
+    	<item name="android:textSize">@com.maxmpz.audioplayer:dimen/linear_knob_text_size</item>    	
+		<item name="android:paddingTop">2dip</item>
+		<item name="android:paddingBottom">2dip</item>
+		<item name="android:textStyle">normal</item>
     </style>
     
-	<style name="Classic_PreampLinearKnob" parent="@style/Classic_LinearKnob">
+	<style name="Classic_PreampLinearKnob">
 		<item name="android:background">@drawable/matte_preamp_bg</item>
+    	<item name="com.maxmpz.audioplayer:thumb">@drawable/matte_knob_thumb_selector</item>
+    	<item name="com.maxmpz.audioplayer:hole">@com.maxmpz.audioplayer:drawable/matte_knob_hole_selector</item> 
+    	<item name="android:textSize">@com.maxmpz.audioplayer:dimen/linear_knob_text_size</item>    	
+		<item name="android:paddingTop">2dip</item>
+		<item name="android:paddingBottom">2dip</item>
+		<item name="android:textStyle">normal</item>
 	</style>
     
     <style name="Classic_RoundKnob" parent="@com.maxmpz.audioplayer:style/Matte_RoundKnob">

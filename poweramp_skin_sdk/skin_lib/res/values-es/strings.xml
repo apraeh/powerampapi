@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="installation_ok">El paquete de skins para Poweramp se ha instalado correctamente</string>
+    
+    <string name="toggle_themed_icon">Activar el icono temático de Poweramp</string>
+    <string name="toggle_themed_icon_summary">Habilitar el icono temático personalizado como acceso directo adicional a Poweramp. El nuevo icono aparecerá en la pantalla de inicio</string>
+    
+    <string name="hide_skin_icon">Ocultar el icono de la skin</string>
+    <string name="hide_skin_icon_summary">Ocultar completamente el icono de la skin en la pantalla de inicio. Dependiendo de la pantalla de inicio, la visibilidad del icono se actualice en el momento, o puede que sea necesario reiniciar el dispositivo. Es posible que tenga que volver a instalar la skin para que icono vuelva a estar visible</string>
+    
+    <string name="set_skin_s">Establecer skin: %s</string>
+    
+</resources>

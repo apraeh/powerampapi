@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
-public class RedirActivity extends Activity {
+public class RedirActivity extends ResourceWrappingActivity {
 	private static final String TAG = "RedirActivity";
 	
 	@Override

@@ -17,7 +17,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.Toast;
 
-public class InfoActivity extends Activity {
+public class InfoActivity extends ResourceWrappingActivity {
 	private static final String TAG = "InfoActivity";
 	
 	public static final String EXTRA_OPEN = "open";
@@ -73,8 +73,13 @@ public class InfoActivity extends Activity {
 		LayoutInflater inflater = getLayoutInflater();
 		final Resources r  = getResources();
 		
-		String[] names = r.getStringArray(R.array.poweramp_skin_names);
-		TypedArray array = r.obtainTypedArray(R.array.poweramp_skins);
+		int skinsArrayId = r.getIdentifier("poweramp_skins", "array", getPackageName());
+		int namesArrayId = r.getIdentifier("poweramp_skin_names", "array", getPackageName());
+		//Log.w(TAG, "skinsArrayId=0x" + Long.toHexString(skinsArrayId) + " namesArrayId=0x" + Long.toHexString(namesArrayId));
+		//String[] names = r.getStringArray(R.array.poweramp_skin_names);
+		String[] names = r.getStringArray(namesArrayId);
+		//TypedArray array = r.obtainTypedArray(R.array.poweramp_skins);
+		TypedArray array = r.obtainTypedArray(skinsArrayId);
 		if(array != null && array.length() > 0) {
 			for(int i = 0; i < array.length(); i++) {
 				int themeId = array.getResourceId(i, 0);
@@ -119,21 +124,21 @@ public class InfoActivity extends Activity {
 	}
 
 	protected void setPowerampTheme(int skin) {
-		Intent intent = new Intent(ACTION_SET_THEME).setPackage("com.maxmpz.audioplayer");
-		intent.putExtra(EXTRA_THEME_ID, skin);
-		intent.putExtra(EXTRA_THEME_PATH, getApplicationInfo().publicSourceDir);
 		try {
+			Intent intent = new Intent(ACTION_SET_THEME).setPackage("com.maxmpz.audioplayer");
+			intent.putExtra(EXTRA_THEME_ID, skin);
+			intent.putExtra(EXTRA_THEME_PATH, getApplicationInfo().publicSourceDir);
 			sendBroadcast(intent);
+
+			// Start Poweramp
+			intent = new Intent(Intent.ACTION_MAIN).setClassName("com.maxmpz.audioplayer", "com.maxmpz.audioplayer.StartupActivity");
+			intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_REORDER_TO_FRONT | Intent.FLAG_ACTIVITY_NEW_TASK);
+			startActivity(intent);
+			finish();
 		} catch(Exception ex) {
-			Toast.makeText(this, "Poweramp app can't be found", Toast.LENGTH_LONG).show();
+			Toast.makeText(this, "Poweramp not installed", Toast.LENGTH_LONG).show();
 			Log.e(TAG, "", ex);
 			return;
 		}
-
-		// Start Poweramp
-		intent = new Intent(Intent.ACTION_MAIN).setClassName("com.maxmpz.audioplayer", "com.maxmpz.audioplayer.StartupActivity");
-		intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_REORDER_TO_FRONT | Intent.FLAG_ACTIVITY_NEW_TASK);
-		startActivity(intent);
-		finish();
 	}
 }

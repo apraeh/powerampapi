@@ -26,7 +26,7 @@
 		android:visibility="invisible"
 	/>
 
-	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+	<LinearLayout 
 		android:id="@com.maxmpz.audioplayer:id/goto_keyguard"
 		android:background="@com.maxmpz.audioplayer:drawable/matte_unlock_keyguard_bg"
 		android:paddingTop="4dip"

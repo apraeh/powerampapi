@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="installation_ok">Poweramp 面板套件已成功安裝</string>
+    
+    <string name="toggle_themed_icon">啟用 Poweramp 主題圖示</string>
+    <string name="toggle_themed_icon_summary">啟用自訂主題圖示作為附加的 Poweramp 捷徑。新圖示將出現在啟動器中</string>
+    
+    <string name="hide_skin_icon">隱藏面板圖示</string>
+    <string name="hide_skin_icon_summary">透過啟動器完全隱藏面板圖示。它可能會很快地重新顯示圖示或可能需要重新啟動手機，具體取決於啟動器。您可能需要重新安裝面板才可重新顯示圖示</string>
+    
+    <string name="set_skin_s">設定面板： %s</string>
+</resources>

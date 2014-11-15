@@ -3,6 +3,19 @@
 <project>
     <property name="poweramp.apk" value="${android.library.reference.1}/Poweramp-2.0.9-build-556-uni.apk"/>
     
+    <target name="set-build-shared-lib">
+     	<property name="skinlib.aapt" value="${sdk.dir}/build-tools/21.1.1/aapt"/>
+     	<property name="build.shared.lib" value="true"/>
+     	<property name="build.suffix" value="-lollipop"/>
+    </target>
+    
+    <target name="set-build-extension">
+        <property name="skinlib.aapt" value="${sdk.dir}/build-tools/20.0.0/aapt"/>
+        <property name="build.shared.lib" value="false"/>
+        <property name="build.suffix" value=""/>
+    </target>
+        
+    
    	<target name="-code-gen" depends="-build-setup">
         <mergemanifest
                 appManifest="${manifest.abs.file}"
@@ -11,70 +24,144 @@
             <library refid="project.library.manifest.file.path" />
         </mergemanifest>
 	
-     
-        <echo>SKIN: Generating R.java / Manifest.java from the resources...</echo>
-		<exec executable="${aapt}" failonerror="true">
-			<arg value="package"/>
-			<arg value="-f"/>
-			<arg value="-m"/>
-			<arg value="--auto-add-overlay"/>
-			<arg value="-M"/>
-			<arg value="${out.absolute.dir}/AndroidManifest.xml"/>
-			<arg value="-S"/>
-			<arg value="${out.absolute.dir}/res"/>
-			<arg value="-S"/>
-			<arg value="${resource.absolute.dir}"/>
-			<arg value="-S"/>			
-			<arg value="${android.library.reference.1}/bin/res"/>
-			<arg value="-S"/>
-     		<arg value="${android.library.reference.1}/res"/>
-     		<arg value="--extra-packages"/>
-     		<arg value="com.maxmpz.poweramp.skinlib"/>
-     		<arg value="-I"/>
-			<arg value="${project.target.android.jar}"/>
- 			<arg value="-I"/>
-			<arg value="${poweramp.apk}"/>
-			<arg value="-I"/>
-			<arg value="${android.library.reference.1}/skin_compat/bin/skin_compat-debug.apk"/>
-			<arg value="-x"/>		
- 			<arg value="-J"/>
-			<arg value="${gen.absolute.dir}"/>
- 		</exec>
+        <echo>SKIN: Generating .java from the resources android=${project.target.android.jar} aapt=${skinlib.aapt}</echo>
+        
+        <if condition="${build.shared.lib}">
+            <then>
+                <echo>SKIN: generating shared lib (SDK=21+ ONLY)</echo>
+				<exec executable="${skinlib.aapt}" failonerror="true">
+					<arg value="package"/>
+					<arg value="-f"/>
+					<arg value="-m"/>
+					<arg value="--auto-add-overlay"/>
+					<arg value="-M"/>
+					<arg value="${out.absolute.dir}/AndroidManifest.xml"/>
+					<arg value="-S"/>
+					<arg value="${out.absolute.dir}/res"/>
+					<arg value="-S"/>
+					<arg value="${resource.absolute.dir}"/>
+					<arg value="-S"/>			
+					<arg value="${android.library.reference.1}/bin/res"/>
+					<arg value="-S"/>
+		     		<arg value="${android.library.reference.1}/res"/>
+		     		<arg value="--extra-packages"/>
+		     		<arg value="com.maxmpz.poweramp.skinlib"/>
+		     		<arg value="-I"/>
+					<arg value="${project.target.android.jar}"/>
+					<arg value="-I"/>
+					<arg value="${poweramp.apk}"/>
+		 			<arg value="-J"/>
+					<arg value="${gen.absolute.dir}"/>
+					<arg value="--shared-lib"/>
+					<arg value="--min-sdk-version"/>
+					<arg value="21"/>
+		 		</exec>
+            </then>
+            <else>
+                <echo>SKIN: generating extension</echo>
+				<exec executable="${skinlib.aapt}" failonerror="true">
+					<arg value="package"/>
+					<arg value="-f"/>
+					<arg value="-m"/>
+					<arg value="--auto-add-overlay"/>
+					<arg value="-M"/>
+					<arg value="${out.absolute.dir}/AndroidManifest.xml"/>
+					<arg value="-S"/>
+					<arg value="${out.absolute.dir}/res"/>
+					<arg value="-S"/>
+					<arg value="${resource.absolute.dir}"/>
+					<arg value="-S"/>			
+					<arg value="${android.library.reference.1}/bin/res"/>
+					<arg value="-S"/>
+		     		<arg value="${android.library.reference.1}/res"/>
+		     		<arg value="--extra-packages"/>
+		     		<arg value="com.maxmpz.poweramp.skinlib"/>
+		     		<arg value="-I"/>
+					<arg value="${project.target.android.jar}"/>
+					<arg value="-I"/>
+					<arg value="${poweramp.apk}"/>
+					<arg value="-I"/>
+					<arg value="${android.library.reference.1}/skin_compat/bin/skin_compat-debug.apk"/>
+			 		<arg value="-x"/>
+					<arg value="--non-constant-id"/>
+		 			<arg value="-J"/>
+					<arg value="${gen.absolute.dir}"/>
+		 		</exec>
+            </else>
+        </if>
     </target>
   
-    <target name="-package-resources">
-        <echo>SKIN: Packaging resources</echo>
-		<exec executable="${aapt}" failonerror="true">
-			<arg value="package"/>
-			<arg value="-f"/>
-			<arg value="--auto-add-overlay"/>
-			<arg value="-M"/>
-			<arg value="${out.absolute.dir}/AndroidManifest.xml"/>
-			<arg value="-S"/>
-			<arg value="${out.absolute.dir}/res"/>
-			<arg value="-S"/>
-			<arg value="${resource.absolute.dir}"/>
-			<arg value="-S"/>			
-			<arg value="${android.library.reference.1}/bin/res"/>
-			<arg value="-S"/>
-     		<arg value="${android.library.reference.1}/res"/>
-     		<arg value="--extra-packages"/>
-     		<arg value="com.maxmpz.poweramp.skinlib"/>
-     		<arg value="-A"/>
-			<arg value="${asset.absolute.dir}"/>
-			<arg value="-I"/>
-			<arg value="${project.target.android.jar}"/>
-			<arg value="-I"/>
-			<arg value="${poweramp.apk}"/>
-			<arg value="-I"/>
-			<arg value="${android.library.reference.1}/skin_compat/bin/skin_compat-debug.apk"/>
-			<arg value="-F"/>
-			<arg value="${out.absolute.dir}/${resource.package.file.name}"/>
-			<arg value="-x"/>
- 			<arg value="--version-code"/>
-			<arg value="${version.code}"/>
-		</exec>
-    </target>
+   	<target name="-package-resources">
+        <if condition="${build.shared.lib}">
+            <then>
+                <echo>SKIN: packaging shared lib (SDK=21+ ONLY)</echo>
+				<exec executable="${skinlib.aapt}" failonerror="true">
+					<arg value="package"/>
+					<arg value="-f"/>
+					<arg value="--auto-add-overlay"/>
+					<arg value="-M"/>
+					<arg value="${out.absolute.dir}/AndroidManifest.xml"/>
+					<arg value="-S"/>
+					<arg value="${out.absolute.dir}/res"/>
+					<arg value="-S"/>
+					<arg value="${resource.absolute.dir}"/>
+					<arg value="-S"/>			
+					<arg value="${android.library.reference.1}/bin/res"/>
+					<arg value="-S"/>
+		     		<arg value="${android.library.reference.1}/res"/>
+		     		<arg value="--extra-packages"/>
+		     		<arg value="com.maxmpz.poweramp.skinlib"/>
+		     		<arg value="-A"/>
+					<arg value="${asset.absolute.dir}"/>
+					<arg value="-I"/>
+					<arg value="${project.target.android.jar}"/>
+					<arg value="-I"/>
+					<arg value="${poweramp.apk}"/>
+		 			<arg value="-F"/>
+					<arg value="${out.absolute.dir}/${resource.package.file.name}"/>
+		 			<arg value="--version-code"/>
+					<arg value="${version.code}"/>
+					<arg value="--shared-lib"/>
+					<arg value="--min-sdk-version"/>
+					<arg value="21"/>
+				</exec>
+            </then>
+            <else>
+                <echo>SKIN: packaging extension</echo>
+					<exec executable="${skinlib.aapt}" failonerror="true">
+					<arg value="package"/>
+					<arg value="-f"/>
+					<arg value="--auto-add-overlay"/>
+					<arg value="-M"/>
+					<arg value="${out.absolute.dir}/AndroidManifest.xml"/>
+					<arg value="-S"/>
+					<arg value="${out.absolute.dir}/res"/>
+					<arg value="-S"/>
+					<arg value="${resource.absolute.dir}"/>
+					<arg value="-S"/>			
+					<arg value="${android.library.reference.1}/bin/res"/>
+					<arg value="-S"/>
+		     		<arg value="${android.library.reference.1}/res"/>
+		     		<arg value="--extra-packages"/>
+		     		<arg value="com.maxmpz.poweramp.skinlib"/>
+		     		<arg value="-A"/>
+					<arg value="${asset.absolute.dir}"/>
+					<arg value="-I"/>
+					<arg value="${project.target.android.jar}"/>
+					<arg value="-I"/>
+					<arg value="${poweramp.apk}"/>
+					<arg value="-I"/>
+					<arg value="${android.library.reference.1}/skin_compat/bin/skin_compat-debug.apk"/>
+		 			<arg value="-F"/>
+					<arg value="${out.absolute.dir}/${resource.package.file.name}"/>
+					<arg value="-x"/>
+					<arg value="--non-constant-id"/>
+		 			<arg value="--version-code"/>
+					<arg value="${version.code}"/>
+				</exec>
+			</else>
+		</if>
+	</target>
     
 	<target name="-set-jar">
 	    <property name="resource.package.file.name" value="${ant.project.name}.jar" />
@@ -90,24 +177,37 @@
 			tofile="${out.absolute.dir}/${ant.project.name}.jar"
 		/>
     </target>
-	
-	<target name="jarpush" depends="clean, jar">
+
+    <target name="push-jar">
 		<exec executable="adb" failonerror="true">
 			<arg value="push"/>
 			<arg value="${out.absolute.dir}/${ant.project.name}.jar"/>
 			<arg value="/sdcard/Android/data/_com.maxmpz.audioplayer/skins/${ant.project.name}.jar"/>
 		</exec>
-	</target>
+    </target>
 
-	<target name="apkpush" depends="clean, debug" >
+    <target name="push-apk">
+        <property name="out.final.file" location="${out.absolute.dir}/${ant.project.name}-debug.apk" />
 		<exec executable="adb" failonerror="true">
 			<arg value="install"/>
 			<arg value="-r"/>
 			<arg value="${out.final.file}"/>
 		</exec>
+    </target>
+    	
+	<target name="jarpush" depends="clean, set-build-extension, jar, push-jar">
 	</target>
 
-	<target name="dist" depends="clean, release">
+	<target name="apkpush" depends="clean, set-build-extension, debug, push-apk" >
+	</target>
+
+	<target name="jarpush-shared" depends="clean, set-build-shared-lib, jar, push-jar">
+	</target>
+
+	<target name="apkpush-shared" depends="clean, set-build-shared-lib, debug, push-apk" >
+	</target>
+	
+	<target name="-dist" depends="clean, release">
 		<buildnumber file="build.num" />
 		<property name="release.apk" value="${out.absolute.dir}/${ant.project.name}-release.apk"/>
 		<property name="version.tag" value="build-${build.number}"/>
@@ -116,7 +216,13 @@
 		<mkdir dir="${dist.dir}"/>
 		<copy 
 			file="${release.apk}" 
-			tofile="${dist.dir}/${ant.project.name}-${version.tag}.apk"
+			tofile="${dist.dir}/${ant.project.name}-${version.tag}{build.suffix}.apk"
 		/>
+	</target>
+	
+	<target name="dist-shared" depends="set-build-shared-lib, -dist">
+	</target>
+
+	<target name="dist" depends="set-build-extension, -dist">
 	</target>
 </project>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="installation_ok">Poweramp 스킨 팩이 성공적으로 설치되었습니다</string>
+    
+    <string name="toggle_themed_icon">Poweramp 테마 아이콘 활성화</string>
+    <string name="toggle_themed_icon_summary">맞춤형 테마 아이콘을 추가 Poweramp 바로 가기로 활성화합니다. 새 아이콘이 홈 화면에 나타납니다</string>
+    
+    <string name="hide_skin_icon">스킨 아이콘 숨기기</string>
+    <string name="hide_skin_icon_summary">스킨 아이콘을 홈 화면에서 완전히 숨깁니다. 홈 화면에 따라 바로 아이콘 표시가 업데이트되거나 휴대폰을 다시 시작해야 할 수 있습니다. 아이콘이 다시 표시되게 하려면 스킨을 다시 설치해야 할 수 있습니다</string>
+    
+    <string name="set_skin_s">스킨 설정: %s</string>
+</resources>

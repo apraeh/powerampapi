@@ -19,6 +19,8 @@ NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
+
+
 <merge xmlns:android="http://schemas.android.com/apk/res/android"
 	>
 	<com.maxmpz.audioplayer.widget.PlayerSeekbar android:id="@com.maxmpz.audioplayer:id/player_seekbar"

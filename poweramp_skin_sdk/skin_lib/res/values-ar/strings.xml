@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="installation_ok">م تثبيت حزمة غلاف Poweramp بنجاح</string>
+    
+    <string name="toggle_themed_icon">تمكين رمز Poweramp ذي السمة</string>
+    <string name="toggle_themed_icon_summary">تمكين الرمز ذي السمة المخصص كاختصار إضافي لـ Poweramp. سوف يظهر الرمز الجديد في شاشة البدء</string>
+    
+    <string name="hide_skin_icon">إخفاء رمز المظهر الخارجي</string>
+    <string name="hide_skin_icon_summary">إخفاء رمز المظهر الخارجي تمامًا من شاشة البدء. حسب شاشة البدء، يتم تحديث إمكانية رؤية الؤمز بكل فترة قصيرة أو قد يتطلب الأمر إعادة تشغيل الهاتف. قد تحتاج إلى إعادة تثبيت المظهر الخارجي لإظهار الرمز مرة أخرى</string>
+    
+    <string name="set_skin_s">%s: تعيين المظهر الخارجي</string>
+    
+</resources>

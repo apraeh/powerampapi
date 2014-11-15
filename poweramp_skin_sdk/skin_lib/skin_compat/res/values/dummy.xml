@@ -1,3 +1,9 @@
 <resources>
 	<string name="_dummy1">dummy1</string>
+	<style name="_dummy1"></style>
+	<style name="_dummy2"></style>
+	<style name="_dummy3"></style>
+	<style name="_dummy4"></style>
+	<style name="_dummy5"></style>
+	<style name="_dummy6"></style>
 </resources>

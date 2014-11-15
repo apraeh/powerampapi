@@ -2,8 +2,6 @@
 # Please change sdk.dir to point your Android SDK location
 sdk.dir=/Applications/android-sdk/
 
-poweramp.apk=../Poweramp-2.0.9-build-555-uni.apk
-
 # Change to point your keystore file and set name/alias of your key
 key.store=PATH_TO_YOUR_KEYSTORE
 key.alias=NAME_OF_YOUR_KEY
