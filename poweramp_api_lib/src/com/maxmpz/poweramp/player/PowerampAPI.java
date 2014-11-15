@@ -906,6 +906,11 @@ public final class PowerampAPI {
 		 */
 		public static final String EXTRA_FULL_RESCAN = "fullRescan";
 		
+		/**
+		 * Extra.
+		 * String.
+		 */
+		public static final String EXTRA_CAUSE = "cause";
 	}
 	
 	public static final class Settings {
