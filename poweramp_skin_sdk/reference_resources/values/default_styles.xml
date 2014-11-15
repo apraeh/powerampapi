@@ -19,6 +19,7 @@ NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
+<!-- values -->
 <resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:z="http://schemas.android.com/apk/res/com.maxmpz.audioplayer">
 
 	<!-- v11 means attribute is used for Honeycomb  -->
@@ -52,10 +53,10 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		<item name="list_header">@drawable/matte_list_header_selector</item><!-- Background for id=header in list_rest.xml, list_search.xml -->
 		<item name="list_footer">@drawable/matte_list_footer</item><!-- Background for various bottom panels in activity_play_list.xml (id=choice_panel), help_buttons.xml, list_media_scan_in_progress.xml -->
 		<item name="list_footer_selection">@drawable/matte_list_footer_selection</item><!-- Background for bottom choice panel in activity_play_list.xml (e.g. All, Add to playlist, Cancel) -->
-		<item name="list_item_bg_list">@drawable/matte_list_item_bg_list</item><!-- Special background for list/grid rows -->
+		<item name="list_item_bg_list">@drawable/matte_list_item_bg_list</item><!-- Special background for 3/grid rows -->
 				
 		<item name="list_item_separator">#10151b</item><!-- not used anymore -->
-		<item name="grid_header_bg">#AA000000</item><!-- Lists grid view mode header background -->
+		<item name="grid_header_bg">@drawable/matte_grid_header_gradient</item><!-- Lists grid view mode header background -->
 		<item name="row_more_levels">@drawable/matte_row_more_levels</item><!-- List items "more" button (the triangle button to the right of each row) -->
 		<item name="deck_main_ui_bg">@drawable/matte_deck_main_ui</item><!-- Background for id=bottom_bg in activity_player_ui.xml. This is "background" panel, usually behind controls/playing now info -->
 		<item name="list_insert_cursor">@drawable/matte_insert_cursor</item><!-- Drawable for list row insertion point in Playlists/Queue dragging mode --> 
@@ -268,6 +269,13 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	    <item name="ab_back">@drawable/matte_ab_back</item><!-- v11+ action bar "back arrow" (left to icon/logo) -->
 	    
 	    
+	    <item name="dialogContentPaddingLR">@dimen/dialog_padding</item>
+	    <item name="dialogContentMarginTop">0dp</item>
+	    <item name="ListSelectHeader">@style/Matte_ListSelectHeader</item>
+	    <item name="ListHeaderBg">@style/Matte_ListHeaderBg</item>
+	    <item name="help_header">@drawable/matte_list_footer</item>
+	    <item name="roundKnob_label_marginRight">@dimen/round_knob_vert_label_offset</item>
+	    <item name="bigRoundKnob_label_marginRight">@dimen/vol_round_knob_vert_label_offset</item>
 	</style>
 
 	<style name="ActivityTheme_Default" parent="@style/Base_ActivityTheme_Default">
@@ -317,6 +325,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     
     <style name="Matte_PlayListText1" parent="@style/Matte_Text1">
     	<item name="android:textColor">@color/matte_list_item1</item>
+    	<item name="android:textSize">@dimen/PlayListText1_size</item>
     </style>
 
     <style name="Matte_PlayListText1_Alt" parent="@style/Matte_PlayListText1">
@@ -325,17 +334,20 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
     <style name="Matte_PlayListText2" parent="@style/Matte_Text2">
     	<item name="android:textColor">@color/matte_list_item2</item>
+    	<item name="android:textSize">@dimen/PlayListText2_size</item>
     </style>
     
     <style name="Matte_NowPlayingText1" parent="@style/Matte_PlayListText1">
+        <item name="android:textSize">@dimen/NowPlayingText1_size</item>
     </style>
 
     <style name="Matte_NowPlayingText2" parent="@style/Matte_PlayListText2">
-    	<item name="android:textSize">@dimen/Text1_size</item>
+    	<item name="android:textSize">@dimen/NowPlayingText2_size</item>
     </style>
 
     <style name="Matte_PlayListText3" parent="@style/Matte_Text2">
     	<item name="android:textColor">@color/matte_list_item3</item>
+    	<item name="android:textSize">@dimen/PlayListText3_size</item>
     </style>
 
     <style name="Matte_PlayListText1_Header">
@@ -389,7 +401,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     	<item name="android:layout_height">@dimen/SmallRoundButton</item>
     </style>
     
-    <style name="Matte_Button"  parent="@android:style/Widget.Button">
+    <style name="Matte_Button" parent="@android:style/Widget.Button">
     	<item name="android:background">@drawable/matte_button_selector</item>
 		<item name="android:focusable">true</item>
 		<item name="android:clickable">true</item>
@@ -422,9 +434,9 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		<item name="android:layout_height">46dip</item>
 	</style>
     <style name="Matte_EqHorButtonDiv">
-		<item name="android:background">@drawable/matte_h_divider</item>
-		<item name="android:layout_width">@dimen/button_width</item>
-		<item name="android:layout_height">1dip</item>
+		<item name="android:visibility">invisible</item>
+		<item name="android:layout_width">0dp</item>
+		<item name="android:layout_height">0dip</item>
     </style>
 	
 	<!-- NOTE: Poweramp build-556 and above uses custom RatingBar, which always ensures max. 5 stars are shown. Thus, too small width of rating bar is ignored.  -->
@@ -651,7 +663,10 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		
     	<item name="android:cacheColorHint">#FF000000</item>
 		<item name="android:listSelector">@drawable/matte_list_selector</item>
-		<item name="android:verticalSpacing">4dip</item>
+		<item name="android:verticalSpacing">0dip</item>
+		<item name="android:horizontalSpacing">4dip</item>
+		<item name="android:paddingLeft">4dip</item>
+		<item name="android:paddingRight">4dip</item>
 		
 		<item name="android:fastScrollEnabled">true</item>
 		<item name="android:smoothScrollbar">false</item>
@@ -701,7 +716,11 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <item name="android:windowSoftInputMode">stateUnspecified|adjustResize</item>
         <item name="android:colorBackgroundCacheHint">@null</item>
 		<item name="android:backgroundDimAmount">0.65</item>
-		
+		<item name="android:windowCloseOnTouchOutside">true</item>		
+	</style>
+	
+	<style name="Matte_StandardDialog" parent="@style/Matte_Dialog">
+	    <item name="settings_accent_color">#ffff00</item>
 	</style>
 	
 	<style name="Frameless_Dialog" parent="@style/Matte_Dialog">
@@ -787,5 +806,27 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	    <item name="line2Color">#77a3d3ff</item>
 	    <item name="strokeWidth">2dip</item>
    	    <item name="dashes">2,18</item>
+	</style>
+	
+	<style name="Matte_ListSelectHeader">
+		<item name="android:layout_marginLeft">2dip</item>
+		<item name="android:layout_marginRight">2dip</item>
+	</style>
+	
+	<style name="Matte_ListHeaderBg">
+		<item name="android:layout_width">fill_parent</item> 
+		<item name="android:layout_height">@dimen/list_header_height</item>
+		<item name="android:scaleType">fitXY</item>
+	</style>
+	
+	<style name="TextHDSkinButton">
+	    <item name="android:textSize">@dimen/DialogText_size</item>
+    	<item name="android:textStyle">bold</item>
+    	<item name="android:typeface">normal</item>
+    	<item name="android:textColor">#FFFFFFFF</item>
+		<item name="android:shadowColor">#FF000000</item>
+		<item name="android:shadowDx">0</item>
+		<item name="android:shadowDy">0</item>
+		<item name="android:shadowRadius">3.0</item>
 	</style>
 </resources>

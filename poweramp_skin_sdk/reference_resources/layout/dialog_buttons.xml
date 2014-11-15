@@ -18,26 +18,41 @@ LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
 NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
-
-<com.maxmpz.audioplayer.widget.listwrappers.RestWrappersGridLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:z="http://schemas.android.com/apk/res/com.maxmpz.audioplayer"
+<com.maxmpz.audioplayer.gui.widget.DivTableLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:z="http://schemas.android.com/apk/res/com.maxmpz.audioplayer" 
+    android:id="@+id/buttons_layout"
 	android:layout_width="fill_parent"
-	android:layout_height="fill_parent"
-	android:layout_below="@+id/header"
->
-	<com.maxmpz.audioplayer.widget.listwrappers.RestWrappersGridView android:id="@+id/grid_view"
-		android:layout_width="fill_parent"
-		android:layout_height="fill_parent"
-		android:numColumns="@integer/grid_view_columns"
-		style="?Grid"
-	>
-	</com.maxmpz.audioplayer.widget.listwrappers.RestWrappersGridView>
+	style="?DivTableLayout"
+	android:layout_height="44dip"
 	
-<!-- 	
-	<LinearLayout android:id="@+id/grid_headers"
-		android:layout_width="fill_parent"
-		android:layout_height="@dimen/grid_header_h"
-		android:background="?grid_header_bg"
-	>
-	</LinearLayout>
- -->
- </com.maxmpz.audioplayer.widget.listwrappers.RestWrappersGridLayout>
+	android:layout_alignBottom="@+id/content"
+	android:stretchColumns="*"
+	android:shrinkColumns="*"
+>
+	<com.maxmpz.audioplayer.gui.widget.DivTableRow>
+		<!-- OK -->
+		<Button android:id="@+id/button1" 
+			style="?DialogButton"
+			android:layout_width="1dip"
+			android:layout_weight="1"
+			android:layout_height="44dip"
+		/>
+		<!-- Neutral -->
+		<Button android:id="@+id/button2" 
+			style="?DialogButton"
+		
+			android:layout_width="1dip"
+			android:layout_weight="1"
+			android:visibility="gone"
+			android:layout_height="44dip"
+		/>
+		<!-- Cancel -->
+		<Button android:id="@+id/button3" 
+			style="?DialogButton"
+			android:layout_width="1dip"
+			android:layout_weight="1"
+			android:layout_height="44dip"
+		/>
+	
+	</com.maxmpz.audioplayer.gui.widget.DivTableRow>
+
+</com.maxmpz.audioplayer.gui.widget.DivTableLayout>

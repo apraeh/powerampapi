@@ -22,8 +22,8 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" 
 	android:layout_width="fill_parent"
 	android:layout_height="wrap_content"
-	android:paddingTop="12dip"
-	android:paddingBottom="12dip"
+	android:paddingTop="@dimen/list_header_item_paddingTB"
+	android:paddingBottom="@dimen/list_header_item_paddingTB"
 
 	android:paddingLeft="@dimen/list_item_paddingLeft"
 	android:paddingRight="@dimen/list_item_paddingRight"
@@ -56,7 +56,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<LinearLayout android:id="@+id/header_layout"
 		android:layout_width="fill_parent" 
 		android:layout_height="wrap_content"
-		android:orientation="horizontal" 
+		android:orientation="horizontal"
 	>
 		<TextView android:id="@+id/line1"
 			android:textAppearance="?PlayListText2"
@@ -85,10 +85,9 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		/>
 	</LinearLayout>
 	
-	<!-- NOTE: mFilterAnim animates to the layout_height of this view, it should be set explicetly in dips and no vertical margin allowed. --> 
 	<RelativeLayout android:id="@+id/filter_layout"
 		android:layout_width="fill_parent"
-		android:layout_height="78dip"
+		android:layout_height="wrap_content"
 		android:orientation="horizontal"
 		android:visibility="gone"
 	>
@@ -113,7 +112,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 			android:layout_alignParentLeft="true"
 			android:layout_toLeftOf="@+id/filter_close"
 			android:layout_below="@+id/filter_line1"
-			android:layout_marginTop="6dip"
+			android:layout_marginTop="@dimen/list_header_filter_marginTop"
 			android:layout_marginLeft="2dip"
 		/>
 		<ImageButton android:id="@+id/filter_close"

@@ -19,6 +19,7 @@ NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
+
 <merge xmlns:android="http://schemas.android.com/apk/res/android" xmlns:z="http://schemas.android.com/apk/res/com.maxmpz.audioplayer">
 	<ViewStub android:id="@+id/media_scan"
 		android:inflatedId="@+id/media_scan"
@@ -164,7 +165,6 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 			
 			android:layout_alignParentLeft="true"
 			z:buttonSrc="?icon_selector"
-			
 		/>
 
 		<ViewStub android:id="@+id/perm_rating_visible"

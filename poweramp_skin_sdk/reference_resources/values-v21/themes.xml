@@ -19,41 +19,46 @@ NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-<!-- v11 -->
+<!-- v21 -->
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
-	<style name="ActivityThemeBase" parent="@android:style/Theme.Holo">
+	<style name="ActivityThemeBase" parent="@android:style/Theme.Material">
 		 <item name="android:windowActionBar">false</item>
 		 <item name="android:windowTitleSize">0px</item><!-- Removes sometimes visible app header while activity is restored -->
 	</style>
 	
-	<!-- NOTE: doesn't work on 3.0, but works on 2.3/ICS -->
-	<style name="ActivityStartup" parent="@android:style/Theme.Holo.Wallpaper">
+	<style name="ActivityStartup" parent="@android:style/Theme.Material.Wallpaper.NoTitleBar"><!-- NOTE: Theme.Material.Wallpaper bugs here -->
 		<item name="android:windowBackground">@drawable/startup_logo</item>
-		<item name="android:windowNoTitle">true</item>
-		<item name="android:colorBackgroundCacheHint">@null</item>
+		<item name="android:windowClipToOutline">false</item>
 	</style>
 	
 	
-	<style name="ActivityTheme_Settings" parent="@android:style/Theme.Holo">
-		<item name="settings_accent_color">@android:color/holo_blue_dark</item>
+	<style name="ActivityTheme_Settings" parent="@android:style/Theme.Material">
+
+	    <item name="android:colorPrimary">@color/primary</item>
+	    <item name="android:colorPrimaryDark">@color/primary_dark_settings</item>
+	    <item name="android:colorAccent">@color/accent</item>
+	    
+        <item name="android:alertDialogTheme">@style/SettingsAlertDialogTheme</item>
 	</style>
 	
-    <style name="ActivityTheme_SettingsDialog" parent="@android:style/Theme.Holo.Dialog">
+ 	<style name="SettingsAlertDialogTheme" parent="@style/Matte_StandardDialog">
+    </style>	
+	
+    <style name="ActivityTheme_SettingsDialog" parent="@style/Matte_StandardDialog">
 		<item name="TreeViewList">@style/TreeViewList</item>
 	</style>	
 	
-	<style name="ActivityWidgetConfigure_Title" parent="@android:style/Widget.Holo.ActionBar">
-	    <item name="android:background">@color/widget_options_bg_color</item>
+	<style name="ActivityWidgetConfigure_Title" parent="@android:style/Widget.Material.ActionBar">
+	    <!-- <item name="android:background">@color/widget_options_bg_color</item> -->
 	</style>
 	
-	<style name="ActivityWidgetConfigure" parent="@android:style/Theme.Holo.Wallpaper">
-	    <!-- <item name="android:actionBarStyle">@style/ActivityWidgetConfigure_Title</item> -->
-        <item name="android:windowBackground">@android:color/transparent</item>
-        <item name="android:colorBackgroundCacheHint">@null</item>
+	<style name="ActivityWidgetConfigure" parent="@android:style/Theme.Material.Wallpaper">
         <item name="android:windowShowWallpaper">true</item>
+	    <item name="android:actionBarStyle">@style/ActivityWidgetConfigure_Title</item>
+	    <item name="vpiTabPageIndicatorStyle">@style/Widget_TabPageIndicator</item>
 	</style>
 	
-	<style name="ActivityTheme_Dialog" parent="@android:style/Theme.Holo.Dialog">
+	<style name="ActivityTheme_Dialog" parent="@android:style/Theme.Material.Dialog">
 	    <item name="DialogSeparator">?android:attr/dividerVertical</item>
 	    <item name="vpiTabPageIndicatorStyle">@style/Widget_TabPageIndicator</item>
 	</style>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<!-- values-v21 -->
 <!--
 Copyright (C) 2010-2014 Maksim Petrov
 
@@ -20,16 +20,20 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
 <resources>
-	<color name="status_inverse1">#FFffffff</color>
-	<color name="status_inverse2">#FFaaaaaa</color>
-	
-	<color name="matte_eq_thumbs_background">#FF0a0d11</color>
-
-	<color name="primary">#29343f</color>
-	<color name="primary_dark">#000000</color>	
-	<color name="primary_dark_settings">#202831</color>
-	<color name="accent">@color/matte_text_color_1</color>
-	<color name="dialogColorBG">#F0303030</color>
-	
-	<color name="status_background">#00000000</color><!-- not used -->
+    <dimen name="standard_dialog_button_height">48dp</dimen>
+   	<dimen name="standard_dialog_padding">16dp</dimen>
+   	<dimen name="standard_dialog_buttons_paddingBottom">8dp</dimen>
+   	<dimen name="standard_dialog_content_paddingBottom">8dip</dimen><!-- standard_dialog_buttons layout has 16dp on top, so adding 8 to match 24dp for material -->
+   	<dimen name="standard_dialog_buttons_height">82dip</dimen>
+   	<dimen name="standard_dialog_content_paddingTop">10dip</dimen>
+   	
+   	<dimen name="dir_tree_item_checkbox_paddingLeft">14dp</dimen><!-- add some padding to help with touch presses. NOTE: 21+ actualy changes right padding (as this is applied to (missing) text)  -->
+   		
+   	<dimen name="status_button_margin">0dip</dimen>
+   	<dimen name="dir_tree_item_paddingLeft">14dp</dimen>
+   	
+   	<dimen name="dialog_custom_title_paddingLeft">0dp</dimen>
+   	
+   	<item type="dimen" name="standard_dialog_windowMinWidthMajor">80%</item>
+   	<item type="dimen" name="standard_dialog_windowMinWidthMinor">100%</item>
 </resources>

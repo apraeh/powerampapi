@@ -27,6 +27,18 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dimen name="Text1_size">16dip</dimen>
     <dimen name="Text2_size">14dip</dimen>
     <dimen name="Text4_size">14dip</dimen>
+    
+    <dimen name="PlayListText1_size">16dip</dimen>
+    <dimen name="PlayListText2_size">14dip</dimen>
+    <dimen name="PlayListText3_size">14dip</dimen>
+    
+    <dimen name="Text1_linesize">23dip</dimen>
+    <dimen name="Text2_linesize">18dip</dimen>
+    
+    <dimen name="NowPlayingText1_size">@dimen/PlayListText1_size</dimen>
+    <dimen name="NowPlayingText2_size">@dimen/PlayListText1_size</dimen>
+    
+    
     <dimen name="OnDeckText_size">14dip</dimen>
     <dimen name="OnDeckText2_size">16dip</dimen>
     <dimen name="PlayListText1_Header_size">15sp</dimen>
@@ -121,12 +133,19 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<dimen name="EqBgLayout_line1Offset">37dip</dimen>
    	<dimen name="EqBgLayout_line3Offset">-54dip</dimen>
    		
-   	<dimen name="list_item_height1">80dip</dimen><!-- folders, albums -->
+   	<dimen name="list_item_height1">100dip</dimen><!-- folders, albums -->
    	<dimen name="list_item_height2">62dip</dimen><!-- track -->
-   	<dimen name="list_item_paddingTop">8dip</dimen>
+   	<dimen name="list_item_paddingTop">8.33dip</dimen>
    	<dimen name="list_item_paddingLeft">4dip</dimen>
    	<dimen name="list_item_paddingRight">4dip</dimen>
-   	<dimen name="list_item_paddingBottom">8dip</dimen>
+   	<dimen name="list_item_paddingBottom">4dip</dimen>
+   	<dimen name="list_item_folder_album_paddingTB">4dp</dimen>
+   	
+   	<dimen name="list_item_folder_album_marginTop">10dip</dimen>
+   	<dimen name="list_item_folder_album_image_size">92dip</dimen>
+   	<dimen name="list_item_folder_album_image_marginRight">8dip</dimen>
+   	
+   	<dimen name="list_item_cue_icon_marginTop">2dp</dimen>
    	
    	<dimen name="list_header_paddingTop">2dip</dimen>
    	<dimen name="list_header_paddingLeft">2dip</dimen>
@@ -136,18 +155,20 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
    	<dimen name="list_header_height">68dip</dimen>
    	<dimen name="list_header_image_marginLeft">0dip</dimen>
    	<dimen name="list_header_image_size">64dip</dimen>
+   	
+   	<dimen name="list_header_item_paddingTB">12dp</dimen>
+   	<dimen name="list_header_with_filter_expanded_height">84dp</dimen>
+   	<dimen name="list_header_filter_marginTop">4dp</dimen>
    	   	
-   	<dimen name="list_item_folder_album_marginTop">2dip</dimen>
-   	<dimen name="list_item_folder_album_image_size">64dip</dimen>
-   	<dimen name="list_item_folder_album_image_marginRight">4dip</dimen>
    	<dimen name="list_item_track_duration_marginRight">2dip</dimen>
    	<dimen name="list_item_track_artist_width">160dip</dimen>
    	<dimen name="track_list_seekbar_marginRight">18dip</dimen>
    	<dimen name="list_item_library_image_size">42.66dip</dimen>
+   	<dimen name="list_item_folder_album_lines_marginTop">0dp</dimen>
    	
-   	<dimen name="grid_header_paddingLR">2dip</dimen>
-   	<dimen name="grid_header_paddingTB">4dip</dimen>
-   	<dimen name="grid_item_folder_album_paddingBottom">40dip</dimen>
+   	<dimen name="grid_header_paddingLR">4dip</dimen>
+   	<dimen name="grid_header_paddingTB">12dip</dimen>
+   	<dimen name="grid_item_folder_album_paddingBottom">44dip</dimen>
    	<dimen name="grid_header_h">29dip</dimen>
    	
    	<dimen name="list_item_height3">60dip</dimen><!-- playlists -->
@@ -157,17 +178,17 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
    	
    	<dimen name="list_item_eq_preset_height">45dip</dimen>
    	
-   	<dimen name="dialog_padding">4dip</dimen>
+   	<dimen name="dialog_padding">8dip</dimen>
    	<dimen name="dialog_content_paddingBottom">44dip</dimen>
    	<dimen name="dialog_info_separator_margin">3dip</dimen>
 	<dimen name="dialog_title_padding">-4dip</dimen>
-	<dimen name="dialog_text_padding">10dip</dimen>
-	<dimen name="dialog_text_padding_bottom">16dip</dimen>
 	<dimen name="dialog_grid_height">300dip</dimen>
 	
    	<dimen name="standard_dialog_padding">@dimen/dialog_padding</dimen>
    	<dimen name="standard_dialog_content_paddingBottom">@dimen/dialog_content_paddingBottom</dimen>
    	<dimen name="standard_dialog_content_paddingTop">16dip</dimen>
+   	<dimen name="standard_dialog_header_height">50dp</dimen><!-- NOTE: wrap_content/fill_parent won't work properly here. Applied to v11+ -->
+   	<dimen name="standard_dialog_header_textSize">18dp</dimen><!-- v11+ -->
 	   	
    	<dimen name="status_button_margin">-10dip</dimen>
 	<dimen name="status_padding_left">0dip</dimen>
@@ -181,7 +202,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<dimen name="ls_height">-1px</dimen><!-- port -->
 	<dimen name="ls_height_width_time">-1px</dimen><!--  when date/time is shown -->
 	<dimen name="ls_paddings">8dp</dimen>
-	
+		
 	<dimen name="ls_date_time_height">-1px</dimen><!-- port -->
 	
 	<dimen name="ls_album_art_frame_width">-1px</dimen>
@@ -212,4 +233,31 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<dimen name="list_checkmark_marginBottom">-2dip</dimen>
 	
 	<dimen name="checkbox_paddingLeft">40dip</dimen>
+	
+    <dimen name="tree_item_height">54dp</dimen>
+    <dimen name="tree_item_indent_per_level">20dp</dimen>
+    <dimen name="dir_tree_item_paddingLeft">0dp</dimen>
+
+    <dimen name="dir_tree_item_checkbox_paddingLeft">@dimen/checkbox_paddingLeft</dimen>
+    <dimen name="dir_tree_item_checkbox_width">40dp</dimen><!-- To avoid "jumps" -->
+    
+    <dimen name="WRAP_CONTENT">-2dp</dimen>
+    <dimen name="FILL_PARENT">-1dp</dimen>
+    
+    <!-- Size of the fastscroll hint letter -->
+    <dimen name="customfastscroll_overlay_size">104dp</dimen>
+    <!-- Width of the fastscroll thumb -->
+    <dimen name="customfastscroll_thumb_width">64dp</dimen>
+    <!-- Height of the fastscroll thumb -->
+    <dimen name="customfastscroll_thumb_height">52dp</dimen>
+    
+    <dimen name="ab_logo_height">@dimen/FILL_PARENT</dimen>
+    <dimen name="ab_back_marginRight">-20dp</dimen>
+    
+   	<dimen name="dialog_custom_title_paddingLeft">16dp</dimen>
+    
+   	
+   	
+   	<dimen name="dialog_text_padding_bottom">0dip</dimen><!-- not used -->
+   	<dimen name="dialog_text_padding">0dip</dimen><!-- not used -->
 </resources>

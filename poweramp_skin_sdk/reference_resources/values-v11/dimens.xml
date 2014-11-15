@@ -20,15 +20,11 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
-   	<!--<dimen name="actionBarSize">?android:attr/actionBarSize</dimen>-->
-   	<!--<dimen name="actionBarSize">?android:attr/actionBarSize</dimen>--><!-- doesn't work, throws exception about conversion to type=0x2 -->
    	<dimen name="list_item_paddingRight">8dip</dimen>
    	<dimen name="dialog_title_padding">10dip</dimen>
-   	<dimen name="dialog_text_padding">32dip</dimen>
-   	<dimen name="dialog_text_padding_bottom">16dip</dimen>
    	
    	<dimen name="standard_dialog_padding">16dip</dimen>
-   	<dimen name="standard_dialog_content_paddingBottom">66dip</dimen>
+   	<dimen name="standard_dialog_content_paddingBottom">16dip</dimen>
    	<dimen name="standard_dialog_buttons_height">50dip</dimen>
    	<dimen name="standard_dialog_content_paddingTop">10dip</dimen>
    	
@@ -39,5 +35,5 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
    	<dimen name="status_text_size1_samsung">15dip</dimen>
    	<dimen name="status_text_size2_samsung">12dip</dimen>
    	<dimen name="action_overflow_padding">0dp</dimen>
-   	
+   	<dimen name="dir_tree_item_checkbox_width">@dimen/WRAP_CONTENT</dimen><!-- WRAP_CONTENT -->
 </resources>

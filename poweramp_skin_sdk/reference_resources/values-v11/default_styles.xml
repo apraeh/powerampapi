@@ -33,7 +33,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		<item name="android:actionOverflowButtonStyle">@style/Matte_ActionOverflowButton</item>
 		<item name="android:selectableItemBackground">@drawable/matte_button_selector</item><!-- v11 requires this -->
 
-   		<item name="android:fastScrollTrackDrawable">@drawable/matte_fast_track</item>
+   		<item name="android:fastScrollTrackDrawable">@null</item>><!-- NOTE: important. This is not visible, but when it's @null, FastScroller doesn't do extra scrolling when non thumb area is touched -->
         <item name="android:fastScrollThumbDrawable">@drawable/matte_fast_thumb_selector</item>
 
    		<item name="StandardDialog">@style/Matte_StandardDialog</item><!-- General style used for settings/Holo looking dialogs -->
@@ -66,11 +66,12 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<style name="Default_ActionButton" parent="@android:style/Widget.Holo.ActionButton">
 	</style>
 		
+    <!-- NOTE: header height is set via standard_dialog_header_height -->
     <style name="DialogWindowTitle_Holo">
-        <item name="android:maxLines">2</item>
+        <item name="android:maxLines">2</item><!--2  -->
         <item name="android:scrollHorizontally">false</item>
         <item name="android:textAppearance">@android:style/TextAppearance.Holo.DialogWindowTitle</item>
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">@dimen/standard_dialog_header_textSize</item>
     </style>
     
 	<style name="Matte_StandardDialog" parent="@android:style/Theme.Holo.Dialog">
@@ -87,6 +88,10 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		<item name="text_color_1">#FFFFFFFF</item>
 		<item name="text_color_2">#FFFFFFFF</item>
 		<item name="text_color_3">#FFFFFFFF</item>
+		
+		<item name="TreeViewList">@style/TreeViewList</item>
+		
+		<item name="settings_accent_color">@android:color/holo_blue_dark</item>
 	</style> 
 	
     <style name="Matte_StandardDialog_Button" parent="@android:style/Widget.Button">

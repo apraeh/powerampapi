@@ -31,6 +31,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	
 	<style name="ActivityTheme_Settings" parent="@android:style/Theme.Black">
 		<item name="android:textAppearanceLarge">@style/ChangedTextAppearanceLarge</item>
+		<item name="settings_accent_color">#ff0000</item>
 	</style>
 	
 	<style name="ActivityTheme_SettingsDialog" parent="@android:style/Theme.Dialog">

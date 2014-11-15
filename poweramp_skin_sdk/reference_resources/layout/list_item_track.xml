@@ -70,6 +70,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		android:layout_toLeftOf="@+id/rating"
 		android:layout_alignWithParentIfMissing="true"
 		android:layout_marginLeft="4dip"
+		android:layout_marginRight="4dip"
 	/>
 	<RatingBar android:id="@+id/rating"
 		android:visibility="gone"
@@ -79,7 +80,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		android:isIndicator="true"
 		android:stepSize="1.0"
 		android:layout_marginTop="4dip"
-		android:layout_marginRight="8dip"
+		android:layout_marginRight="4dip"
 		style="?MicroRatingBar"
 	/>
 

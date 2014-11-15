@@ -21,8 +21,11 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 <!-- v-14 -->
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
-    <dimen name="dialog_text_padding">16dip</dimen>
-    <dimen name="dialog_text_padding_bottom">16dip</dimen>
     <dimen name="status_padding_left">12dip</dimen>
     <dimen name="action_overflow_padding">0dp</dimen>
+    
+    <dimen name="dir_tree_item_checkbox_paddingLeft">10dp</dimen><!-- add some padding to help with touch presses -->
+    
+    <dimen name="status_text1_size">18sp</dimen>
+    <dimen name="status_text2_size">14sp</dimen>
 </resources>

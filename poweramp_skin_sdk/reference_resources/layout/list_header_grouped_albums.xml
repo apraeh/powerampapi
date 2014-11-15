@@ -35,10 +35,10 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<ImageView android:id="@+id/image"
 		android:scaleType="center"
 		
-		android:layout_width="@dimen/list_header_grouped_albums_image_width"
+		android:layout_width="@dimen/list_item_library_image_size"
 		android:layout_height="@dimen/list_item_library_image_size"
 		android:layout_alignParentTop="true"
-		android:layout_marginRight="@dimen/list_header_grouped_albums_marginRight"
+		android:layout_marginRight="@dimen/list_item_folder_album_image_marginRight"
 
 		android:layout_alignParentLeft="true"
 	/>

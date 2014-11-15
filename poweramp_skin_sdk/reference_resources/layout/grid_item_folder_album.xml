@@ -19,21 +19,32 @@ NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-<!-- NOTE: in grid mode, CustomGrid sets padding=0 for CheckableRelativeLayout, for top row topPadding=topOffset --> 
+<!-- NOTE: in grid mode, CustomGrid sets padding=0 for CheckableRelativeLayout, for top row topPadding=topOffset 
+	 matchHeight="true" means that CheckableRelativeLayout always exactly square + it adds dimen/grid_item_folder_album_paddingBottom to the bottom --> 
 <com.maxmpz.audioplayer.widget.CheckableRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:z="http://schemas.android.com/apk/res/com.maxmpz.audioplayer" 
 	android:layout_width="fill_parent" 
-	android:layout_height="100dip"
+	android:layout_height="134dip"
 	android:background="?list_item_bg_list"
 	z:matchHeight="true"
+	android:paddingBottom="10dp"
 >	
-	<ImageView android:id="@+id/image"
+<!-- 	<ImageView android:id="@+id/image"
 		android:layout_width="fill_parent"
 		android:layout_height="fill_parent"
 		android:paddingTop="0dip"
-		android:paddingLeft="20dip"
-		android:paddingRight="20dip"
+		android:paddingLeft="0dip"
+		android:paddingRight="0dip"
 		android:paddingBottom="@dimen/grid_item_folder_album_paddingBottom"
 		android:scaleType="fitXY"
+	/>
+ -->	
+	<com.maxmpz.audioplayer.widget.FastImageView android:id="@+id/image"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:paddingTop="0dip"
+		android:paddingLeft="0dip"
+		android:paddingRight="0dip"
+		android:paddingBottom="@dimen/grid_item_folder_album_paddingBottom"
 	/>
 	
 	<ImageView android:id="@+id/cue_icon"
@@ -55,21 +66,19 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		android:layout_marginBottom="@dimen/list_checkmark_marginBottom"
 	/>
 
-	<TextView android:id="@+id/line1"
+	<com.maxmpz.audioplayer.widget.FastTextView android:id="@+id/line1"
 		android:textAppearance="?PlayListText1"
-		android:ellipsize="marquee" 
-		android:singleLine="true"
-		android:gravity="center" 
+		android:gravity="center"
 		
 		android:layout_above="@+id/line2"		
-		android:layout_marginBottom="-2dip"
+		android:layout_marginBottom="0dip"
 		android:layout_marginLeft="2dip"
 		android:layout_marginRight="2dip"
 		android:layout_width="fill_parent" 
-		android:layout_height="wrap_content"
+		android:layout_height="@dimen/Text1_linesize"
 	/>
 	
-	<TextView android:id="@+id/line2" 
+	<com.maxmpz.audioplayer.widget.FastTextView android:id="@+id/line2" 
 		android:textAppearance="?PlayListText2"
 		android:ellipsize="marquee" 
 		android:singleLine="true"
@@ -79,16 +88,16 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		android:layout_marginLeft="2dip"
 		android:layout_marginRight="2dip"
 		android:layout_width="fill_parent" 
-		android:layout_height="wrap_content" 
+		android:layout_height="@dimen/Text2_linesize"
 	/>
 	
-	<TextView android:id="@+id/line3" 
+	<com.maxmpz.audioplayer.widget.FastTextView android:id="@+id/line3" 
 		android:textAppearance="?PlayListText2"
 		android:ellipsize="end" 
 		android:singleLine="true"
 		android:visibility="gone"
 
 		android:layout_width="wrap_content" 
-		android:layout_height="wrap_content" 
+		android:layout_height="@dimen/Text2_linesize"
 	/>
 </com.maxmpz.audioplayer.widget.CheckableRelativeLayout>

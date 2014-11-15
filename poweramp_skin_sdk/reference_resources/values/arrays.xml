@@ -1,0 +1,648 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright (C) 2010-2014 Maksim Petrov
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted for themes, skins, widgets, plugins, applications and other software
+which communicate with Poweramp music player application on Android platform.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE FOUNDATION OR
+CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<resources>
+    
+	<!--
+	Should map to EqPresets values.
+	-->
+    <string-array name="eq_preset_labels">
+		<item></item>
+		<item>@string/bass</item>
+		<item>@string/bass_extreme</item>
+		<item>@string/bass_treble</item>
+		<item>@string/treble</item>
+		<item>@string/flat</item>
+		<item>@string/classical</item>
+		<item>@string/dance</item>
+		<item>@string/rock</item>
+		<item>@string/techno</item>
+		<item>@string/phone_speaker</item>
+		<item>@string/live</item>
+		<item>@string/middle</item>		
+		<item>@string/pop</item>
+		<item>@string/soft</item>
+		<item>@string/soft_bass</item>
+		<item>@string/soft_treble</item>
+	</string-array>
+	
+ 	<string-array name="support_message_types">
+        <item>@string/feature_request</item>
+        <item>@string/bug</item>
+        <item>@string/license_issue</item>
+    </string-array>
+    
+    <string-array name="dhd_effect_labels">
+    	<item>@string/no_effects</item>
+    	<item>Dolby Mobile</item>
+    	<item>SRS Enhancement</item>
+    </string-array>
+    <string-array name="dhd_effect_values">
+    	<item>Original</item>
+    	<item>Dolby</item>
+    	<item>SRS</item>
+    </string-array>
+
+	<array name="pref_orientation_entries">
+		<item>@string/sensor</item>
+		<item>@string/vertical</item>
+		<item>@string/horizontal</item>
+	</array>
+	<integer-array name="pref_orientation_values">
+		<item>0</item>
+		<item>1</item>
+		<item>2</item>
+	</integer-array>
+	
+	<array name="pref_theme_entries">
+		<item>Default</item>
+		<item>Aluminum</item>
+		<item>White Plastic</item>
+		<item>Black Neon</item>
+	</array>
+	<array name="pref_theme_values">
+		<item>@style/ActivityTheme_Default</item>
+		<item>@style/ActivityTheme_Alu</item>
+		<item>@style/ActivityTheme_White</item>
+		<item>@style/ActivityTheme_Black</item>
+	</array>
+	
+
+	<array name="pref_startup_screen_entries">
+		<item>@string/main_player</item>
+		<item>@string/last_played_list</item>
+		<item>@string/folders</item>
+		<item>@string/library</item>
+	</array>
+	<integer-array name="pref_startup_screen_values">
+		<item>0</item>
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+	</integer-array>
+	
+	<!-- PlayerUIActivity.PERM_ICONS_* -->
+	<array name="pref_perm_entries">
+		<item>@string/pref_hidden</item>
+		<item>@string/pref_transparent</item>
+		<item>@string/pref_always_visible</item>
+	</array>
+	<integer-array name="pref_perm_values">
+		<item>0</item>
+		<item>1</item>
+		<item>3</item>
+	</integer-array>
+	
+	
+	<array name="pref_track_meta_entries">
+		<item>@string/pref_hidden</item>
+		<item>@string/pref_track_meta_info</item>
+		<item>@string/pref_track_meta_folder</item>
+		<item>@string/pref_track_meta_next</item>
+	</array>
+	<integer-array name="pref_track_meta_values">
+		<item>0</item>
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+	</integer-array>
+	
+	<array name="pref_lyrics_entries">
+		<item>@string/pref_ask</item>
+		<item>@string/pref_lyrics_auto</item>
+		<item>@string/pref_lyrics_plugin</item>
+		<item>@string/pref_lyrics_tag</item>
+	</array>
+	<integer-array name="pref_lyrics_values">
+		<item>0</item>
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+	</integer-array>
+
+
+	<array name="pref_perm_rating_entries">
+		<item>@string/pref_hidden</item>
+		<item>@string/pref_transparent</item>
+		<item>@string/pref_transparent_clickable</item>
+		<item>@string/pref_always_visible</item>
+	</array>
+	<integer-array name="pref_perm_rating_values">
+		<item>0</item>
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+	</integer-array>
+
+	<array name="pref_playlist_item_action_entries">
+		<item>@string/play_and_go_to_main_ui</item>
+		<item>@string/play_and_stay_in_list</item>
+		<item>@string/enqueue_and_stay</item>
+	</array>
+	<string-array name="pref_playlist_item_action_values">
+		<item>go</item>
+		<item>stay</item>
+		<item>enq</item>
+	</string-array>
+	
+	<array name="pref_tag_encoding_entries">
+		<item>Default</item>
+		<item>Chinese Traditional (Big5)</item>
+		<item>Chinese Simplified (GB2312)</item>
+		<item>Chinese Simplified (GBK)</item> 
+		<item>Eastern European (ISO-8859-2)</item>
+		<item>Eastern European (Win-1250)</item>
+		<item>Hebrew (ISO-8859-8)</item>
+		<item>Hebrew (Win-1255)</item>
+		<item>Japanese (Shift_JIS)</item>
+		<item>Japanese (ISO-2022-JP)</item>
+		<item>Japanese (EUC-JP)</item>
+		<item>Korean (EUC-KR)</item>
+		<item>Russian (Win-1251)</item>
+		<item>Thai (Win-874)</item>
+		<item>Western (Win-1252)</item>
+		<item>Western (ISO-8859-1)</item>
+	</array>
+	<array name="pref_tag_encoding_values">
+		<item>_default_</item>
+		<item>Big5</item>
+		<item>GB2312</item>
+		<item>GBK</item>
+		<item>ISO-8859-2</item>
+		<item>Windows-1250</item>
+		<item>ISO-8859-8</item>
+		<item>Windows-1255</item>
+		<item>SJIS</item>
+		<item>ISO-2022-JP</item>
+		<item>EUC-JP</item>
+		<item>EUC-KR</item>
+		<item>Windows-1251</item>
+		<item>TIS-620</item>
+		<item>Windows-1252</item>
+		<item>ISO-8859-1</item>
+	</array>
+	
+	
+	
+	
+	<string-array name="genres">
+		<item>"A Cappella"</item>
+		<item>"Acid Jazz"</item>
+		<item>"Acid Punk"</item>
+		<item>"Acid"</item>
+		<item>"Acoustic"</item>
+		<item>"Alternative Rock"</item>
+		<item>"Alternative"</item>
+		<item>"Ambient"</item>
+		<item>"Anime"</item>
+		<item>"Avantgarde"</item>
+		<item>"Ballad"</item>
+		<item>"Bass"</item>
+		<item>"Beat"</item>
+		<item>"Bebob"</item>
+		<item>"Big Band"</item>
+		<item>"Black Metal"</item>
+		<item>"Bluegrass"</item>
+		<item>"Blues"</item>
+		<item>"Booty Bass"</item>
+		<item>"BritPop"</item>
+		<item>"Cabaret"</item>
+		<item>"Celtic"</item>
+		<item>"Chamber Music"</item>
+		<item>"Chanson"</item>
+		<item>"Chorus"</item>
+		<item>"Christian Gangsta Rap"</item>
+		<item>"Christian Rap"</item>
+		<item>"Christian Rock"</item>
+		<item>"Classic Rock"</item>
+		<item>"Classical"</item>
+		<item>"Club"</item>
+		<item>"Club-House"</item>
+		<item>"Comedy"</item>
+		<item>"Contemporary Christian"</item>
+		<item>"Country"</item>
+		<item>"Crossover"</item>
+		<item>"Cult"</item>
+		<item>"Dance Hall"</item>
+		<item>"Dance"</item>
+		<item>"Darkwave"</item>
+		<item>"Death Metal"</item>
+		<item>"Disco"</item>
+		<item>"Dream"</item>
+		<item>"Drum &amp; Bass"</item>
+		<item>"Drum Solo"</item>
+		<item>"Duet"</item>
+		<item>"Easy Listening"</item>
+		<item>"Electronic"</item>
+		<item>"Ethnic"</item>
+		<item>"Eurodance"</item>
+		<item>"Euro-House"</item>
+		<item>"Euro-Techno"</item>
+		<item>"Folk"</item>
+		<item>"Folk/Rock"</item>
+		<item>"Folklore"</item>
+		<item>"Freestyle"</item>
+		<item>"Funk"</item>
+		<item>"Fusion"</item>
+		<item>"Fusion"</item>
+		<item>"Game"</item>
+		<item>"Gangsta"</item>
+		<item>"Goa"</item>
+		<item>"Gospel"</item>
+		<item>"Gothic Rock"</item>
+		<item>"Gothic"</item>
+		<item>"Grunge"</item>
+		<item>"Hard Rock"</item>
+		<item>"Hardcore"</item>
+		<item>"Heavy Metal"</item>
+		<item>"Hip-Hop"</item>
+		<item>"House"</item>
+		<item>"Humour"</item>
+		<item>"Indie"</item>
+		<item>"Industrial"</item>
+		<item>"Instrumental Pop"</item>
+		<item>"Instrumental Rock"</item>
+		<item>"Instrumental"</item>
+		<item>"Jazz"</item>
+		<item>"Jazz+Funk"</item>
+		<item>"Jpop"</item>
+		<item>"Jungle"</item>
+		<item>"Latin"</item>
+		<item>"Lo-Fi"</item>
+		<item>"Meditative"</item>
+		<item>"Merengue"</item>
+		<item>"Metal"</item>
+		<item>"Musical"</item>
+		<item>"National Folk"</item>
+		<item>"Native American"</item>
+		<item>"Negerpunk"</item>
+		<item>"New Age"</item>
+		<item>"New Wave"</item>
+		<item>"Noise"</item>
+		<item>"Oldies"</item>
+		<item>"Opera"</item>
+		<item>"Other"</item>
+		<item>"Polka"</item>
+		<item>"Polsk Punk"</item>
+		<item>"Pop"</item>
+		<item>"Pop/Funk"</item>
+		<item>"Pop-Folk"</item>
+		<item>"Porn Groove"</item>
+		<item>"Power Ballad"</item>
+		<item>"Pranks"</item>
+		<item>"Primus"</item>
+		<item>"Progressive Rock"</item>
+		<item>"Psychedelic Rock"</item>
+		<item>"Psychedelic"</item>
+		<item>"Punk Rock"</item>
+		<item>"Punk"</item>
+		<item>"R&amp;B"</item>
+		<item>"Rap"</item>
+		<item>"Rave"</item>
+		<item>"Reggae"</item>
+		<item>"Retro"</item>
+		<item>"Revival"</item>
+		<item>"Rhythmic Soul"</item>
+		<item>"Rock &amp; Roll"</item>
+		<item>"Rock"</item>
+		<item>"Salsa"</item>
+		<item>"Samba"</item>
+		<item>"Satire"</item>
+		<item>"Showtunes"</item>
+		<item>"Ska"</item>
+		<item>"Slow Jam"</item>
+		<item>"Slow Rock"</item>
+		<item>"Sonata"</item>
+		<item>"Soul"</item>
+		<item>"Sound Clip"</item>
+		<item>"Soundtrack"</item>
+		<item>"Southern Rock"</item>
+		<item>"Space"</item>
+		<item>"Speech"</item>
+		<item>"Swing"</item>
+		<item>"Symphonic Rock"</item>
+		<item>"Symphony"</item>
+		<item>"Synthpop"</item>
+		<item>"Tango"</item>
+		<item>"Techno"</item>
+		<item>"Techno-Industrial"</item>
+		<item>"Terror"</item>
+		<item>"Thrash Metal"</item>
+		<item>"Top 40"</item>
+		<item>"Trailer"</item>
+		<item>"Trance"</item>
+		<item>"Tribal"</item>
+		<item>"Trip-Hop"</item>
+		<item>"Vocal"</item>
+	</string-array>
+	
+	<array name="pref_buffer_size_entries">
+		<item>@string/pref_auto</item>
+		<item>@string/pref_plus_250ms</item>
+		<item>@string/pref_plus_500ms</item>
+		<item>@string/pref_plus_750ms</item>
+	</array>
+	<!--
+	<array name="pref_buffer_size_values">
+		<item>a</item>
+		<item>l</item>
+		<item>h</item>
+	</array>
+	-->
+	<integer-array name="pref_buffer_size_values">
+		<item>0</item>
+		<item>1</item>
+		<item>3</item>
+		<item>2</item>
+	</integer-array>
+	
+	<array name="pref_auto_fading_entries">
+		<item>@string/pref_no_fading</item>
+		<item>@string/pref_xfade_non_gapless</item>
+		<item>@string/pref_xfade_all</item>
+	</array>
+	<integer-array name="pref_auto_fading_values">
+		<item>0</item>
+		<item>1</item>
+		<item>2</item>
+	</integer-array>
+	
+	<array name="pref_audio_priority_entries">
+		<item>@string/pref_normal</item>
+		<item>@string/pref_plus_1</item>
+		<item>@string/pref_plus_2</item>
+		<item>@string/pref_plus_3</item>
+		<item>@string/pref_highest</item>
+	</array>
+	<integer-array name="pref_audio_priority_values">
+		<item>0</item>
+		<item>1</item>
+		<item>2</item>
+		<item>4</item>
+		<item>5</item>
+	</integer-array>
+	
+	
+	<array name="pref_fading_entries">
+		<item>@string/pref_no_fading</item>
+		<item>@string/pref_short_fading</item>
+		<item>@string/pref_crossfade</item>
+	</array>
+	<integer-array name="pref_fading_values">
+		<item>0</item>
+		<item>1</item>
+		<item>2</item>
+	</integer-array>
+	
+	<array name="pref_queue_start_entries">
+		<item>@string/pref_immediately</item>
+		<item>@string/pref_after_current_song</item>
+		<item>@string/pref_after_current_list</item>
+	</array>
+	<integer-array name="pref_queue_start_values">
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+	</integer-array>
+	
+    
+	<array name="pref_rg_type_entries">
+		<item>@string/pref_rg_type_none</item>
+		<item>@string/pref_rg_type_apply</item>
+		<item>@string/pref_rg_type_apply_peak</item>
+	</array>
+	<integer-array name="pref_rg_type_values">
+		<item>0</item>
+		<item>1</item>
+		<item>2</item>
+	</integer-array>
+
+	<array name="pref_rg_source_entries">
+		<item>@string/pref_rg_source_album</item>
+		<item>@string/pref_rg_source_track</item>
+	</array>
+	<integer-array name="pref_rg_source_values">
+		<item>0</item>
+		<item>1</item>
+	</integer-array>
+	
+	<array name="pref_notify_prio_entries">
+	    <item>@string/maximum_short</item>
+	    <item>@string/high</item>
+		<item>@string/default_string</item>
+		<item>@string/low</item>
+		<item>@string/minimum_short</item>
+	</array>
+	<integer-array name="pref_notify_prio_values">
+		<item>2</item>
+		<item>1</item>
+		<item>0</item>
+		<item>-1</item>
+		<item>-2</item>
+	</integer-array>
+		
+	
+	
+	
+	<!-- NOTE: indices should match PlayerAPI.REPEAT_* 
+	public static final int REPEAT_NONE = 0;
+	public static final int REPEAT_ON = 1;
+	public static final int REPEAT_ADVANCE = 2;
+	public static final int REPEAT_SONG = 3;
+	--> 
+	<string-array name="repeat_modes">
+		<item>@string/repeat_none</item>
+		<item>@string/repeat_on</item>
+		<item>@string/repeat_advance</item>
+		<item>@string/repeat_song</item>
+	</string-array>
+	<!-- Extra line for repeat modes -->
+	<string-array name="repeat_modes_summary">
+		<item>@string/stop_on_last_song</item>
+		<item>@string/jump_to_first_song</item>
+		<item>@string/jump_to_next_list</item>
+		<item>@null</item>
+	</string-array>
+	<string-array name="repeat_modes_short">
+		<item>@string/repeat_none_short</item>
+		<item>@string/repeat_on_short</item>
+		<item>@string/repeat_advance_short</item>
+		<item>@string/repeat_song_short</item>
+	</string-array>
+	
+	<!--
+	public static final int SHUFFLE_NONE = 0;
+	public static final int SHUFFLE_ALL = 1;
+	public static final int SHUFFLE_SONGS = 2;
+	public static final int SHUFFLE_CATS = 3; // Songs in order.
+	public static final int SHUFFLE_SONGS_AND_CATS = 4; // Songs shuffled.
+	-->
+	<string-array name="shuffle_modes">
+		<item>@string/shuffle_none</item>
+		<item>@string/shuffle_all</item>
+		<item>@string/shuffle_songs</item>
+		<item>@string/shuffle_cats</item>
+		<item>@string/shuffle_songs_and_cats</item>
+	</string-array>
+	<string-array name="shuffle_modes_long">
+		<item>@string/shuffle_none_long</item>
+		<item>@string/shuffle_all_long</item>
+		<item>@string/shuffle_songs_long</item>
+		<item>@string/shuffle_cats_long</item>
+		<item>@string/shuffle_songs_and_cats_long</item>
+	</string-array>	
+	<string-array name="shuffle_modes_short">
+		<item>@string/shuffle_none_short</item>
+		<item>@string/shuffle_all_short</item>
+		<item>@string/shuffle_songs_short</item>
+		<item>@string/shuffle_cats_short</item>
+		<item>@string/shuffle_songs_and_cats_short</item>
+	</string-array>
+	
+	<array name="pref_headset_controls_entries">
+	    <item>@string/pref_controls_single</item>
+	    <item>@string/pref_controls_double_triple</item>
+		<item>@string/pref_controls_long</item>
+	</array>
+	<integer-array name="pref_headset_controls_values">
+		<item>0</item>
+		<item>1</item>
+		<item>2</item>
+	</integer-array>	
+	
+	<array name="pref_send_metachanged_cm_entries">
+	    <item>@string/disabled</item>
+	    <item>@string/pref_send_metachanged_cm_v1</item>
+		<item>@string/pref_send_metachanged_cm_v2</item>
+		<item>@string/pref_send_metachanged_cm_v3</item>
+	</array>
+	<integer-array name="pref_send_metachanged_cm_values">
+		<item>0</item>
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+	</integer-array>	
+		
+	<array name="pref_language_entries">
+		<item>@string/pref_auto</item>
+		<item>العربية</item>
+		<item>Bahasa Indonesia</item>
+		<item>Беларуская мова</item>
+		<item>Български</item>
+		<item>中文(简体)</item>
+		<item>中文(繁體)</item>
+		<item>Čeština</item>
+		<item>Dansk</item>
+		<item>Deutsch</item>		
+		<item>English</item>
+		<item>Español</item>
+		<item>Français</item>
+		<item>Hrvatski</item>
+		<item>ελληνικά</item>
+		<item>Limba română</item>
+		<item>Lietuvių kalba</item>
+		<item>Magyar</item>
+		<item>עברית</item>
+		<item>Italiano</item>
+		<item>日本語</item>
+		<item>한국어</item>
+		<item>Nederlands</item>		
+		<item>فارسی</item>
+		<item>Polski</item>
+		<item>Português</item>
+		<item>Português brasileiro</item>
+		<item>Русский</item>
+		<item>Slovenčina</item>
+		<item>Svenska</item>
+		<item>Suomi</item>
+		<item>Türkçe</item>
+		<item>Українська мова</item>
+		<item>Tiếng Việt</item>		
+	</array>
+	<string-array name="pref_language_values">
+		<item></item>
+		<item>ar</item>
+		<item>in</item>
+		<item>be</item>
+		<item>bg</item>
+		<item>zh_CN</item>
+		<item>zh_TW</item>
+		<item>cs</item>
+		<item>da</item>
+		<item>de</item>
+		<item>en_US</item>
+		<item>es</item>
+		<item>fr</item>
+		<item>hr</item>
+		<item>el</item>
+		<item>ro</item>
+		<item>lt</item>
+		<item>hu</item>
+		<item>iw</item>
+		<item>it</item>
+		<item>ja</item>
+		<item>ko</item>
+		<item>nl</item>
+		<item>fa</item>
+		<item>pl</item>
+		<item>pt_PT</item>
+		<item>pt_BR</item>
+		<item>ru</item>
+		<item>sk</item>
+		<item>sv</item>
+		<item>fi</item>
+		<item>tr</item>
+		<item>uk</item>
+		<item>vi</item>
+		<!-- 30 -->
+	</string-array>
+	
+	<array name="pref_aa_blur_entries">
+		<item>@string/pref_aa_blur_default</item>
+		<item>@string/pref_aa_blur_more</item>
+		<item>@string/pref_aa_blur_solid</item>
+		<item>@string/pref_aa_blur_none</item>
+	</array>
+	<integer-array name="pref_aa_blur_values">
+		<item>0</item>
+		<item>1</item>
+		<item>2</item>
+		<item>-1</item>
+	</integer-array>
+	
+	
+	<string-array name="pref_scan_min_track_duration_entries">
+		<item>@string/pref_dont_ignore</item>
+		<item>2</item>
+		<item>6</item>
+		<item>10</item>
+		<item>15</item>
+		<item>30</item>
+	</string-array>
+	<integer-array name="pref_scan_min_track_duration_values">
+		<item>0</item>
+		<item>2</item>
+		<item>6</item>
+		<item>10</item>
+		<item>15</item>
+		<item>30</item>
+	</integer-array>
+</resources>

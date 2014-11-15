@@ -130,28 +130,26 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 					android:layout_height="wrap_content"
 					android:layout_alignTop="@+id/balance_knob"
 					android:layout_marginTop="@dimen/round_knob_vert_label_offset2"
-					android:layout_marginRight="@dimen/vol_round_knob_vert_label_offset"
+					android:layout_marginLeft="?roundKnob_label_marginRight"
 				/>
 				<TextView
 					android:text="@string/balance_L"
 					android:textAppearance="?SmallLabelText"
 					
-					android:layout_alignLeft="@+id/balance_knob"
+					android:layout_toLeftOf="@+id/balance_knob"
 					android:layout_width="wrap_content"			
 					android:layout_height="wrap_content"
 					android:layout_below="@+id/balance_knob"
-					android:gravity="left"
 					android:layout_marginTop="-24dip"
 				/>
 				<TextView
 					android:text="@string/balance_R"
 					android:textAppearance="?SmallLabelText"
 					
-					android:layout_alignRight="@+id/balance_knob"
+					android:layout_toRightOf="@+id/balance_knob"
 					android:layout_width="wrap_content"			
 					android:layout_height="wrap_content"
 					android:layout_below="@+id/balance_knob"
-					android:gravity="right"
 					android:layout_marginTop="-24dip"
 				/>
 				
@@ -183,7 +181,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 					android:layout_height="wrap_content"
 					android:layout_alignBottom="@+id/volume_knob"
 					android:layout_toLeftOf="@+id/volume_knob"
-					android:layout_marginRight="@dimen/vol_round_knob_vert_label_offset"
+					android:layout_marginRight="?bigRoundKnob_label_marginRight"
 					android:layout_marginBottom="@dimen/round_knob_vert_label_offset2"
 				/>
 	
@@ -202,7 +200,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 					android:layout_height="wrap_content"
 					android:layout_alignBottom="@+id/sfx_knob"
 					android:layout_toLeftOf="@+id/sfx_knob"
-					android:layout_marginRight="@dimen/round_knob_vert_label_offset"
+					android:layout_marginRight="?roundKnob_label_marginRight"
 					android:layout_marginBottom="@dimen/round_knob_vert_label_offset2"
 				/>
 			</RelativeLayout>
@@ -227,14 +225,6 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 			android:layout_alignParentTop="true"
 		/>
 		
-		<!--
-		<View android:id="@+id/equ_button_div"
-			style="?EqVertButtonDiv"
-			android:layout_toRightOf="@+id/equ_button"
-			android:layout_alignTop="@+id/equ_button"
-		/>
-		-->
-
 		<Button android:id="@+id/pre_button" 
 			style="?EqButton"
 			android:text="@string/preset"
@@ -242,20 +232,6 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 			android:layout_alignTop="@+id/equ_button"
 			android:layout_toRightOf="@+id/equ_button"
 		/>
-		<!--
-		<View
-			style="?EqHorButtonDiv"
-			android:layout_below="@+id/pre_button"
-			android:layout_alignLeft="@+id/pre_button"
-		/>
-		-->
-		<!--
-		<View android:id="@+id/pre_button_div"
-			style="?EqVertButtonDiv"
-			android:layout_toRightOf="@+id/pre_button"
-			android:layout_alignTop="@+id/pre_button"
-		/>
-		-->
 		
 		<Button android:id="@+id/save_button" 
 			style="?EqButton"
@@ -264,13 +240,6 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 			android:layout_alignTop="@+id/equ_button"
 			android:layout_toRightOf="@+id/pre_button"
 		/>
-		<!--
-		<View
-			style="?EqHorButtonDiv"
-			android:layout_below="@+id/save_button"
-			android:layout_alignLeft="@+id/save_button"
-		/>
-		-->
 
 		<Button android:id="@+id/reset_button" 
 			style="?EqButton"
@@ -333,7 +302,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 			
 			android:layout_toLeftOf="@+id/bass_knob"
 			android:layout_alignTop="@+id/bass_knob"
-			android:layout_marginRight="@dimen/round_knob_vert_label_offset"
+			android:layout_marginRight="?roundKnob_label_marginRight"
 			android:layout_marginTop="@dimen/round_knob_vert_label_offset2"
 		/>
 			
@@ -353,7 +322,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 			
 			android:layout_toLeftOf="@+id/treble_knob"
 			android:layout_alignTop="@+id/treble_knob"
-			android:layout_marginRight="@dimen/round_knob_vert_label_offset"
+			android:layout_marginRight="?roundKnob_label_marginRight"
 			android:layout_marginTop="@dimen/round_knob_vert_label_offset2"
 	
 		/>

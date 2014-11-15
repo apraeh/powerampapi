@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright (C) 2010-2014 Maksim Petrov
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted for themes, skins, widgets, plugins, applications and other software
+which communicate with Poweramp music player application on Android platform.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE FOUNDATION OR
+CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:z="http://schemas.android.com/apk/res/com.maxmpz.audioplayer"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:paddingTop="@dimen/dialog_padding"
+	>
+	
+	<ProgressBar android:id="@+id/dialog_progress"
+		style="?RoundProgress"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:padding="@dimen/dialog_padding"
+		android:layout_marginLeft="8dp"
+		android:layout_marginTop="4dp"
+		android:layout_marginRight="-4dp"
+		android:visibility="gone"
+		android:layout_alignParentLeft="true"
+		android:layout_alignTop="@+id/title"
+		android:layout_alignBottom="@+id/title"
+	/>	
+
+	<TextView android:id="@+id/title"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		style="?DialogTitleText"
+		android:padding="@dimen/dialog_padding"
+		android:layout_toRightOf="@+id/dialog_progress"
+		android:layout_alignWithParentIfMissing="true"
+		android:layout_alignParentRight="true"
+		android:layout_marginLeft="8dip"
+		android:maxLines="2"
+	/>
+	
+	<View android:id="@+id/separator"
+		android:layout_below="@+id/title"
+		android:layout_marginTop="@dimen/dialog_padding"
+		style="?DialogSeparator"
+		android:layout_marginBottom="@dimen/dialog_padding"
+	/>
+	
+	<FrameLayout android:id="@+id/content"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		
+		android:layout_marginTop="?dialogContentMarginTop"
+		android:layout_marginLeft="?dialogContentPaddingLR"
+		android:layout_marginRight="?dialogContentPaddingLR"
+		android:layout_alignParentLeft="true"
+		android:layout_alignParentRight="true"
+		android:layout_below="@+id/separator"
+		android:paddingBottom="@dimen/dialog_content_paddingBottom"
+	>
+	</FrameLayout>
+	
+	<!--
+	android:layout_alignBottom="@+id/content"
+	-->
+	
+	<include layout="@layout/dialog_buttons"/>
+</RelativeLayout>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-Copyright (C) 2010-2012 Maksim Petrov
+Copyright (C) 2010-2014 Maksim Petrov
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted for themes, skins, widgets, plugins, applications and other software
@@ -22,15 +22,4 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
 	<corners android:radius="5dip" />
 	<solid android:color="#FFFFFFFF" />
-	<!--
-	<stroke android:width="2.33dip" android:color="#FF000000"/>
-	-->
-	<!--
-	<gradient
-        android:startColor="#999ecfff"
-        android:endColor="#559ecfff"
-        android:angle="90"/>	
-	<stroke android:width="1.33dip" android:color="#FF000000"/>
-	-->        
-	
 </shape>

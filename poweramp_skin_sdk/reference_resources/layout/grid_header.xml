@@ -19,15 +19,16 @@ NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
+<!-- Not used anymore -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" 
 	android:layout_width="fill_parent"
 	android:layout_height="wrap_content"
+	android:background="?list_item_bg_list"
+	
 	android:paddingLeft="@dimen/grid_header_paddingLR" 
 	android:paddingRight="@dimen/grid_header_paddingLR"
 	android:paddingTop="@dimen/grid_header_paddingTB"
 	android:paddingBottom="@dimen/grid_header_paddingTB"
-	
-	android:background="?list_item_bg_list"
 >
 	
 	<ProgressBar android:id="@+id/progress_bar"
@@ -65,7 +66,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 			android:layout_width="0dp" 
 			android:layout_height="wrap_content" 
-			android:layout_marginLeft="2dip"
+			android:layout_marginLeft="16dip"
 			android:layout_marginRight="2dip"
 			android:layout_weight="1"
 		/>

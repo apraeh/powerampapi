@@ -19,22 +19,6 @@ NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-<!-- values-xhdpi-v14 -->
-<resources xmlns:android="http://schemas.android.com/apk/res/android">
-    <dimen name="status_padding_left_samsung">0dip</dimen>
-   	<dimen name="status_text_size1_samsung">19dip</dimen>
-   	<dimen name="status_text_size2_samsung">15dip</dimen>
-   	
-   	<dimen name="list_item_library_image_size">48dp</dimen>
-   	
-   	<!-- <dimen name="aaa_bottom_panel_marginBottom">-9dp</dimen> -->
-	<dimen name="aaa_panel_height">70dip</dimen>
-	<dimen name="aa_perm_panel_paddingTop">3.67dip</dimen>
-	
-	<dimen name="Text2_size">15dip</dimen>
-	
-    <dimen name="PlayListText1_size">17dip</dimen>
-    <dimen name="PlayListText2_size">15dip</dimen>
-    <dimen name="PlayListText3_size">15dip</dimen>
-		
-</resources>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+     <solid android:color="#AA000000"/>	
+</shape>

@@ -26,8 +26,8 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 	android:layout_height="@dimen/list_item_height1"
 	android:background="?list_item_bg_list"
-	android:paddingTop="@dimen/list_item_paddingTop"
-	android:paddingBottom="@dimen/list_item_paddingBottom"
+	android:paddingTop="@dimen/list_item_folder_album_paddingTB"
+	android:paddingBottom="@dimen/list_item_folder_album_paddingTB"
 	android:paddingLeft="@dimen/list_item_paddingLeft"
 	android:paddingRight="@dimen/list_item_paddingRight"
 	>
@@ -41,11 +41,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	/>
 
 	<!--
-		android:layout_marginLeft="2dip"
-		android:layout_marginTop="2dip"
-	-->
 	<ImageView android:id="@+id/image"
-		
 		android:layout_width="@dimen/list_item_folder_album_image_size"
 		android:layout_height="@dimen/list_item_folder_album_image_size"
 		android:layout_alignParentTop="true"
@@ -53,6 +49,16 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		android:layout_alignWithParentIfMissing="true"
 		android:layout_marginRight="@dimen/list_item_folder_album_image_marginRight"
 	/>
+	-->
+	<com.maxmpz.audioplayer.widget.FastImageView android:id="@+id/image"
+		android:layout_width="@dimen/list_item_folder_album_image_size"
+		android:layout_height="@dimen/list_item_folder_album_image_size"
+		android:layout_centerVertical="true"
+		android:layout_toRightOf="@+id/checkmark"
+		android:layout_alignWithParentIfMissing="true"
+		android:layout_marginRight="@dimen/list_item_folder_album_image_marginRight"
+	/>
+	
 	
 	<ImageView android:id="@+id/cue_icon"
 		android:layout_width="wrap_content" 
@@ -60,52 +66,50 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		android:visibility="gone"
 		android:src="?dot_cue"
 		android:layout_marginLeft="2dip"
-		android:layout_marginTop="3dip"
+		android:layout_marginTop="@dimen/list_item_cue_icon_marginTop"
 		android:layout_toRightOf="@+id/image"
 		android:layout_below="@+id/line2"
 	/>
 
-	<TextView android:id="@+id/line1"
+	<com.maxmpz.audioplayer.widget.FastTextView android:id="@+id/line1"
 		android:textAppearance="?PlayListText1"
 		android:ellipsize="marquee" 
 		android:singleLine="true"
-		android:paddingLeft="4dip"
 		
 		android:layout_width="wrap_content" 
 		android:layout_height="wrap_content"
 
- 		android:layout_alignParentTop="true"
+ 		android:layout_above="@+id/line2"
 		android:layout_toRightOf="@+id/image"
 		android:layout_toLeftOf="@+id/row_more"
-		android:layout_marginTop="@dimen/list_item_folder_album_marginTop"
+		android:layout_marginTop="@dimen/list_item_folder_album_lines_marginTop"
 	/>
 
-	<TextView android:id="@+id/line2" 
+	<com.maxmpz.audioplayer.widget.FastTextView android:id="@+id/line2" 
 		android:textAppearance="?PlayListText2"
 		android:ellipsize="end" 
 		android:singleLine="true"
-		android:paddingLeft="4dip"
 				
-		android:layout_below="@id/line1"
+		android:layout_centerVertical="true"
 		android:layout_toRightOf="@+id/image" 
 		android:layout_width="wrap_content" 
 		android:layout_height="wrap_content" 
-		android:layout_toLeftOf="@+id/row_more"		
-		/>
+		android:layout_toLeftOf="@+id/row_more"
+	/>
 
 	
-	<TextView android:id="@+id/line3" 
+	<com.maxmpz.audioplayer.widget.FastTextView android:id="@+id/line3" 
 		android:textAppearance="?PlayListText2"
 		android:ellipsize="end" 
 		android:singleLine="true"
 
-		android:paddingLeft="4dip"		
 		android:layout_below="@id/line2" 
 		android:layout_toRightOf="@+id/cue_icon" 
 		android:layout_width="wrap_content" 
 		android:layout_height="wrap_content"
 		android:layout_toLeftOf="@+id/row_more"
-		/>
+		android:layout_marginTop="@dimen/list_item_folder_album_lines_marginTop"
+	/>
 		
 
 	<ImageView android:id="@+id/row_more"

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright (C) 2010-2014 Maksim Petrov
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted for themes, skins, widgets, plugins, applications and other software
+which communicate with Poweramp music player application on Android platform.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE FOUNDATION OR
+CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<!--  values-v21 -->
+<resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:z="http://schemas.android.com/apk/res/com.maxmpz.audioplayer">
+	
+    <!-- NOTE: some styles set to default -->
+	<style name="ActivityTheme_Default" parent="@style/Base_ActivityTheme_Default">
+	    <item name="button_selector">?android:attr/selectableItemBackgroundBorderless</item>
+	    <item name="icon_selector">?android:attr/selectableItemBackgroundBorderless</item>
+	    <item name="in_deck_hilite_selector">@drawable/matte_button_ripple</item><!-- Background for DeckNowPlaying in activity_playrt_ui.xml -->
+		<item name="android:actionBarStyle">@style/Matte_ActionBar</item>
+		<item name="android:actionOverflowButtonStyle">@style/Matte_ActionOverflowButton</item>
+		<item name="android:selectableItemBackground">@drawable/matte_button_selector</item><!-- v11 requires this -->
+
+   		<item name="android:fastScrollTrackDrawable">@null</item>><!-- NOTE: important. This is not visible, but when it's @null, FastScroller doesn't do extra scrolling when non thumb area is touched -->
+        <item name="android:fastScrollThumbDrawable">@drawable/matte_fast_thumb_selector</item>
+
+   		<item name="StandardDialog">@style/Matte_StandardDialog</item><!-- General style used for settings/Holo looking dialogs -->
+
+		<item name="android:actionButtonStyle">@style/Default_ActionButton</item>
+		
+	    <item name="android:colorPrimary">@color/primary</item>
+	    <item name="android:colorAccent">@color/accent</item>
+	    <item name="android:windowBackground">@drawable/matte_deck_bg</item>
+	    
+	    <item name="dialogContentPaddingLR">16dp</item>
+	    <item name="dialogContentMarginTop">-16dp</item>
+	    
+	    <item name="android:colorControlHighlight">#b4dbff</item>
+	    
+<!-- 		<item name="android:windowContentTransitions">true</item>
+	    <item name="android:windowAllowEnterTransitionOverlap">true</item>
+	    <item name="android:windowAllowReturnTransitionOverlap">true</item>
+	    <item name="android:windowSharedElementEnterTransition">@android:transition/move</item>
+	    <item name="android:windowSharedElementExitTransition">@android:transition/move</item>	    
+ -->
+ 	</style>
+	
+	<style name="Matte_ActionBar" parent="@android:style/Widget.Material.ActionBar">
+	    <item name="android:background">@null</item>
+        <item name="android:backgroundStacked">#00000000</item>
+        <item name="android:backgroundSplit">#00000000</item>
+        <item name="android:itemPadding">40dip</item>
+        <!-- NOTE: BaseThemeableActivity shifts ab_logo by -16dp for SDK=21+ if no back icon shown -->
+    </style>
+	
+	<style name="Matte_ActionOverflowButton" parent="@android:style/Widget.Material.ActionButton.Overflow">
+	    <item name="android:src">?menu</item>
+ 	</style>
+ 	
+    <style name="Matte_Button" parent="@android:style/Widget.Material.Button">
+    	<item name="android:background">?android:attr/selectableItemBackgroundBorderless</item>
+		<item name="android:focusable">true</item>
+		<item name="android:clickable">true</item>
+		<item name="android:textSize">@dimen/button_textSize</item>
+		<item name="android:textColor">@color/matte_button_text</item>
+		<item name="android:gravity">center</item>
+		<item name="android:layout_height">48dip</item>
+		<item name="android:layout_width">@dimen/button_width</item>
+		<item name="android:textAllCaps">false</item>
+    </style>
+    
+    <style name="Matte_MenuImageButton" parent="@style/Matte_MenuText">
+    	<item name="buttonSrc">@drawable/matte_button_ripple</item>
+
+		<item name="android:paddingBottom">8dip</item>		
+		<item name="android:paddingTop">2dip</item>
+	</style>
+    
+	<style name="Matte_CheckButton" parent="@style/Matte_Button">
+		<item name="android:background">?android:attr/selectableItemBackgroundBorderless</item>
+		<item name="android:button">@drawable/matte_button_check_selector</item> 
+		<item name="indicatorGravity">bottom|fill_horizontal</item>
+	</style>
+	
+	<style name="Matte_EqButton" parent="@style/Matte_Button">
+	    <item name="android:background">@drawable/matte_button_ripple</item>
+		<item name="android:layout_height">46dip</item>
+	</style>
+
+	<style name="Matte_EqCheckButton" parent="@style/Matte_CheckButton">
+		<item name="android:background">@drawable/matte_button_ripple</item>	    
+		<item name="android:layout_height">46dip</item>
+	</style>
+    
+	<style name="Default_ActionButton" parent="@android:style/Widget.Material.ActionButton">
+	    <item name="android:paddingLeft">12dp</item>
+	    <item name="android:paddingRight">12dp</item>
+	</style>
+	
+	<style name="Matte_DialogSeparator">
+		<item name="android:layout_width">0px</item>
+		<item name="android:layout_height">0px</item>
+		<item name="android:background">@null</item>
+		<item name="android:visibility">invisible</item>
+	</style>
+    
+	<style name="Matte_DialogButton" parent="@android:style/Widget.Material.Button.Borderless.Colored">
+		<item name="android:textColor">@color/matte_button_text</item>
+	    <item name="android:textSize">@dimen/button_textSize</item>
+    </style>
+    
+	<!-- See also themes.xml for settings/alert dialog themes -->
+	<style name="Matte_StandardDialog" parent="@android:style/Theme.Material.Dialog">
+        <item name="DialogText">?android:attr/textAppearanceMedium</item>
+        
+        <item name="DialogButton">@style/Matte_StandardDialog_Button</item>
+	    <item name="DialogSeparator">@style/Matte_StandardDialog_DialogSeparator</item>
+	    <item name="DivTableLayout">@style/Matte_StandardDialog_DivTableLayout</item>
+		<item name="text_color_1">#FFFFFFFF</item>
+		<item name="text_color_2">#FFFFFFFF</item>
+		<item name="text_color_3">#FFFFFFFF</item>
+		
+		<item name="TreeViewList">@style/TreeViewList</item>
+			    
+	    <item name="android:colorBackground">@color/dialogColorBG</item>
+		<item name="android:buttonBarPositiveButtonStyle">?android:attr/buttonStyle</item>
+		
+	    <item name="android:colorAccent">@color/accent</item>
+	    
+		<item name="android:windowMinWidthMajor">@dimen/standard_dialog_windowMinWidthMajor</item>
+		<item name="android:windowMinWidthMinor">@dimen/standard_dialog_windowMinWidthMinor</item>
+	</style>
+	
+	
+    <style name="Matte_StandardDialog_Button" parent="@android:style/Widget.Material.Button">
+    </style>
+</resources>
