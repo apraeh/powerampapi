@@ -1,3 +1,16 @@
+Nov 15, 2014
+- updated skins SDK to allow building skins for Lollipop:
+  - you can't use skin-defined attrs.xml (style attributes) as those are not working for lollipop resources
+    Poweramp build-565 and above provides skin_ref1..skin_ref10, skin_bg1..skin_bg10, skin_color1..skin_color10,
+    skin_dimen1..skin_dimen10 attributes to use freely in skins to workaround this issue. 
+    Alternatively, you can just avoid such attributes or use some Poweramp defined ones (see attrs.xml)
+  - your Android SDK Tools should be updated to at least 23.0.5 AND Android SDK Build-tools 
+    BOTH exactly 20.0.0 and 21.1.1 versions should be installed (via e.g. command line "android" tool)
+    Having 2 build tools versions allows us to build one skin APK for both pre-Lollipop and Lollipop Android versions
+- updated skins InfoActivity to match Material theme on Lollipop. Also, it won't crash anymore if no Poweramp installed
+- updated reference resources to match latest
+  
+
 May 27, 2014
 - updated Poweramp APK and default skin references to match build 556
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project>
-    <property name="poweramp.apk" value="${android.library.reference.1}/Poweramp-2.0.9-build-556-uni.apk"/>
+    <property name="poweramp.apk" value="${android.library.reference.1}/Poweramp-2.0.10-build-565-uni.apk"/>
     
     <target name="set-build-shared-lib">
      	<property name="skinlib.aapt" value="${sdk.dir}/build-tools/21.1.1/aapt"/>
@@ -216,7 +216,7 @@
 		<mkdir dir="${dist.dir}"/>
 		<copy 
 			file="${release.apk}" 
-			tofile="${dist.dir}/${ant.project.name}-${version.tag}{build.suffix}.apk"
+			tofile="${dist.dir}/${ant.project.name}-${version.tag}${build.suffix}.apk"
 		/>
 	</target>
 	
