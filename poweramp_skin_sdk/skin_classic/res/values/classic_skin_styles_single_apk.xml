@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 
+	This one demonstrates the signle APK approach - single build for both pre-5.0 and 5.0+ Androids.
+	The limitation of such approach is inability to use parent skin-defined styles, thus we copy all
+	relevant style information in styles, previously derived from ClassicSkin style:
+	  - ClassicSingleApk_LockScreenTheme
+	  - ClassicSingleApk_Dialog
+	  - ClassicSingleApk_QuickMenuPopup2
+	  
+	All other styles are the same (as they are not derived from anything or derived from com.maxmpz.audioplayer styles,
+	thus they are taken from classic_skin_styles.xml
+	
+	This approach will work under pre-5.0 and 5.0+ Androids if build with "ant apkpush" / "ant dist"
+ -->
+<resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:z="http://schemas.android.com/apk/res/com.maxmpz.audioplayer">
+	
+	<style name="ClassicSkinSingleApk" parent="@com.maxmpz.audioplayer:style/Base_ActivityTheme_Default">
+		<item name="com.maxmpz.audioplayer:player_layout">@layout/activity_player_ui</item>
+		<item name="com.maxmpz.audioplayer:eq_layout">@layout/activity_eq</item>
+		<item name="com.maxmpz.audioplayer:lock_screen_layout">@layout/activity_lock_screen</item>
+		<item name="com.maxmpz.audioplayer:plain_bg_color">#FF080808</item>
+		<item name="com.maxmpz.audioplayer:deck_bg">@drawable/matte_deck_bg</item>
+		<item name="com.maxmpz.audioplayer:list_footer">@drawable/classic_list_footer</item>
+		<item name="com.maxmpz.audioplayer:list_footer_selection">@drawable/classic_list_footer</item>
+		<item name="com.maxmpz.audioplayer:toast_bg">@drawable/matte_toast_bg</item>
+		<item name="com.maxmpz.audioplayer:rw_selector">@drawable/matte_rw_selector</item>
+		<item name="com.maxmpz.audioplayer:ff_selector">@drawable/matte_ff_selector</item>
+		<item name="com.maxmpz.audioplayer:next_cat_selector">@drawable/matte_next_cat_selector</item>    	
+		<item name="com.maxmpz.audioplayer:prev_cat_selector">@drawable/matte_prev_cat_selector</item>
+		<item name="com.maxmpz.audioplayer:play">@drawable/matte_play_big_selector</item>
+		<item name="com.maxmpz.audioplayer:pause">@drawable/matte_pause_big_selector</item>
+		<item name="com.maxmpz.audioplayer:stop">@drawable/matte_stop_big</item>
+		<item name="com.maxmpz.audioplayer:Text1">@style/Classic_Text1</item>
+		<item name="com.maxmpz.audioplayer:Text2">@style/Classic_Text2</item>
+		<item name="com.maxmpz.audioplayer:Text3">@style/Classic_Text3</item>
+		<item name="com.maxmpz.audioplayer:Text4">@style/Classic_Text4</item>
+		<item name="com.maxmpz.audioplayer:text_color_1">@color/matte_text_color_1</item>
+		<item name="com.maxmpz.audioplayer:text_color_2">@color/matte_text_color_2</item>
+		<item name="com.maxmpz.audioplayer:text_color_3">@color/matte_text_color_3</item>
+		<item name="com.maxmpz.audioplayer:PlayListText1">@style/Classic_PlayListText1</item>
+		<item name="com.maxmpz.audioplayer:PlayListText2">@style/Classic_PlayListText2</item>
+		<item name="com.maxmpz.audioplayer:PlayListText3">@style/Classic_PlayListText3</item>
+		<item name="com.maxmpz.audioplayer:NowPlayingText1">@style/Classic_PlayListText1</item>
+		<item name="com.maxmpz.audioplayer:NowPlayingText2">@style/Classic_PlayListText2</item>
+		<item name="com.maxmpz.audioplayer:SmallLabelText">@style/Classic_SmallLabelText</item>
+		<item name="com.maxmpz.audioplayer:ToastText1">@style/Classic_ToastText1</item>
+		<item name="com.maxmpz.audioplayer:ToastText2">@style/Classic_ToastText2</item>
+		<item name="com.maxmpz.audioplayer:BigRoundButton">@style/Classic_BigRoundButton</item>
+		<item name="com.maxmpz.audioplayer:MediumRoundButton">@style/Classic_MediumRoundButton</item>
+		<item name="com.maxmpz.audioplayer:SmallRoundButton">@style/Classic_SmallRoundButton</item>
+		<item name="com.maxmpz.audioplayer:TrackProgressBar">@style/Classic_TrackProgressBar</item>
+		<item name="com.maxmpz.audioplayer:MenuImageButton">@style/Classic_MenuImageButton</item>
+		<item name="com.maxmpz.audioplayer:Button">@style/Classic_Button</item>
+		<item name="com.maxmpz.audioplayer:CheckButton">@style/Classic_CheckButton</item>
+		<item name="com.maxmpz.audioplayer:EqCheckButton">@style/Classic_EqCheckButton</item>		
+		<item name="com.maxmpz.audioplayer:EqButton">@style/Classic_EqButton</item>
+		<item name="com.maxmpz.audioplayer:DivTableLayout">@style/Classic_DivTableLayout</item>
+		<item name="com.maxmpz.audioplayer:DivTableRow">@style/Classic_DivTableRow</item>
+		<item name="com.maxmpz.audioplayer:EqVertButtonDiv">@style/Classic_NoButtonDiv</item>
+		<item name="com.maxmpz.audioplayer:EqHorButtonDiv">@style/Classic_NoButtonDiv</item>
+		<item name="com.maxmpz.audioplayer:FrequencyResponseScroller">@style/Classic_FrequencyResponseScroller</item>
+		<item name="com.maxmpz.audioplayer:LinearKnob">@style/Classic_LinearKnob</item>
+		<item name="com.maxmpz.audioplayer:PreampLinearKnob">@style/Classic_PreampLinearKnob</item>
+		<item name="com.maxmpz.audioplayer:RoundKnob">@style/Classic_RoundKnob</item>
+		<item name="com.maxmpz.audioplayer:QuickMenuPopup2">@style/ClassicSingleApk_QuickMenuPopup2</item>
+		<item name="com.maxmpz.audioplayer:QuickOptionsMenu2">@style/Classic_QuickOptionsMenu2</item>
+		<item name="com.maxmpz.audioplayer:Dialog">@style/ClassicSingleApk_Dialog</item>
+		<item name="com.maxmpz.audioplayer:List">@style/Classic_List</item>
+		<item name="com.maxmpz.audioplayer:Grid">@style/Classic_Grid</item>
+		<item name="com.maxmpz.audioplayer:LockScreenTheme">@style/ClassicSingleApk_LockScreenTheme</item>
+	</style>
+    	
+	<style name="ClassicSingleApk_LockScreenTheme" parent="@com.maxmpz.audioplayer:style/Base_ActivityTheme_Default">
+		<item name="com.maxmpz.audioplayer:player_layout">@layout/activity_player_ui</item>
+		<item name="com.maxmpz.audioplayer:eq_layout">@layout/activity_eq</item>
+		<item name="com.maxmpz.audioplayer:lock_screen_layout">@layout/activity_lock_screen</item>
+		<item name="com.maxmpz.audioplayer:plain_bg_color">#FF080808</item>
+		<item name="com.maxmpz.audioplayer:deck_bg">@drawable/matte_deck_bg</item>
+		<item name="com.maxmpz.audioplayer:list_footer">@drawable/classic_list_footer</item>
+		<item name="com.maxmpz.audioplayer:list_footer_selection">@drawable/classic_list_footer</item>
+		<item name="com.maxmpz.audioplayer:toast_bg">@drawable/matte_toast_bg</item>
+		<item name="com.maxmpz.audioplayer:rw_selector">@drawable/matte_rw_selector</item>
+		<item name="com.maxmpz.audioplayer:ff_selector">@drawable/matte_ff_selector</item>
+		<item name="com.maxmpz.audioplayer:next_cat_selector">@drawable/matte_next_cat_selector</item>    	
+		<item name="com.maxmpz.audioplayer:prev_cat_selector">@drawable/matte_prev_cat_selector</item>
+		<item name="com.maxmpz.audioplayer:play">@drawable/matte_play_big_selector</item>
+		<item name="com.maxmpz.audioplayer:pause">@drawable/matte_pause_big_selector</item>
+		<item name="com.maxmpz.audioplayer:stop">@drawable/matte_stop_big</item>
+		<item name="com.maxmpz.audioplayer:Text1">@style/Classic_Text1</item>
+		<item name="com.maxmpz.audioplayer:Text2">@style/Classic_Text2</item>
+		<item name="com.maxmpz.audioplayer:Text3">@style/Classic_Text3</item>
+		<item name="com.maxmpz.audioplayer:Text4">@style/Classic_Text4</item>
+		<item name="com.maxmpz.audioplayer:text_color_1">@color/matte_text_color_1</item>
+		<item name="com.maxmpz.audioplayer:text_color_2">@color/matte_text_color_2</item>
+		<item name="com.maxmpz.audioplayer:text_color_3">@color/matte_text_color_3</item>
+		<item name="com.maxmpz.audioplayer:PlayListText1">@style/Classic_PlayListText1</item>
+		<item name="com.maxmpz.audioplayer:PlayListText2">@style/Classic_PlayListText2</item>
+		<item name="com.maxmpz.audioplayer:PlayListText3">@style/Classic_PlayListText3</item>
+		<!-- <item name="com.maxmpz.audioplayer:NowPlayingText1">@style/Classic_PlayListText1</item> -->
+		<!-- <item name="com.maxmpz.audioplayer:NowPlayingText2">@style/Classic_PlayListText2</item> -->
+		<item name="com.maxmpz.audioplayer:SmallLabelText">@style/Classic_SmallLabelText</item>
+		<item name="com.maxmpz.audioplayer:ToastText1">@style/Classic_ToastText1</item>
+		<item name="com.maxmpz.audioplayer:ToastText2">@style/Classic_ToastText2</item>
+		<item name="com.maxmpz.audioplayer:BigRoundButton">@style/Classic_BigRoundButton</item>
+		<item name="com.maxmpz.audioplayer:MediumRoundButton">@style/Classic_MediumRoundButton</item>
+		<item name="com.maxmpz.audioplayer:SmallRoundButton">@style/Classic_SmallRoundButton</item>
+		<item name="com.maxmpz.audioplayer:TrackProgressBar">@style/Classic_TrackProgressBar</item>
+		<item name="com.maxmpz.audioplayer:MenuImageButton">@style/Classic_MenuImageButton</item>
+		<item name="com.maxmpz.audioplayer:Button">@style/Classic_Button</item>
+		<item name="com.maxmpz.audioplayer:CheckButton">@style/Classic_CheckButton</item>
+		<item name="com.maxmpz.audioplayer:EqCheckButton">@style/Classic_EqCheckButton</item>		
+		<item name="com.maxmpz.audioplayer:EqButton">@style/Classic_EqButton</item>
+		<item name="com.maxmpz.audioplayer:DivTableLayout">@style/Classic_DivTableLayout</item>
+		<item name="com.maxmpz.audioplayer:DivTableRow">@style/Classic_DivTableRow</item>
+		<item name="com.maxmpz.audioplayer:EqVertButtonDiv">@style/Classic_NoButtonDiv</item>
+		<item name="com.maxmpz.audioplayer:EqHorButtonDiv">@style/Classic_NoButtonDiv</item>
+		<item name="com.maxmpz.audioplayer:FrequencyResponseScroller">@style/Classic_FrequencyResponseScroller</item>
+		<item name="com.maxmpz.audioplayer:LinearKnob">@style/Classic_LinearKnob</item>
+		<item name="com.maxmpz.audioplayer:PreampLinearKnob">@style/Classic_PreampLinearKnob</item>
+		<item name="com.maxmpz.audioplayer:RoundKnob">@style/Classic_RoundKnob</item>
+		<item name="com.maxmpz.audioplayer:QuickMenuPopup2">@style/ClassicSingleApk_QuickMenuPopup2</item>
+		<item name="com.maxmpz.audioplayer:QuickOptionsMenu2">@style/Classic_QuickOptionsMenu2</item>
+		<item name="com.maxmpz.audioplayer:Dialog">@style/ClassicSingleApk_Dialog</item>
+		<item name="com.maxmpz.audioplayer:List">@style/Classic_List</item>
+		<item name="com.maxmpz.audioplayer:Grid">@style/Classic_Grid</item>
+		<item name="com.maxmpz.audioplayer:LockScreenTheme">@style/ClassicSingleApk_LockScreenTheme</item>
+
+		<!-- LockScreenTheme overrides -->	    
+		<item name="com.maxmpz.audioplayer:NowPlayingText1">@com.maxmpz.audioplayer:style/Matte_LockScreen_PlayListText1</item>
+		<item name="com.maxmpz.audioplayer:NowPlayingText2">@com.maxmpz.audioplayer:style/Matte_LockScreen_PlayListText2</item>
+		<item name="com.maxmpz.audioplayer:PlayerSeekbarText">@com.maxmpz.audioplayer:style/Matte_LockScreen_PlayerSeekbarText</item>
+		<item name="com.maxmpz.audioplayer:SmallMetaText">@com.maxmpz.audioplayer:style/Matte_LockScreen_SmallMetaText</item>
+	</style>
+	
+    <style name="ClassicSingleApk_QuickMenuPopup2" parent="@com.maxmpz.audioplayer:style/Matte_QuickOptionsMenu2">
+        <item name="com.maxmpz.audioplayer:background">@drawable/matte_qm_bg</item>
+    	<item name="com.maxmpz.audioplayer:shadowOffsetTop">21.5dip</item>
+    	<item name="com.maxmpz.audioplayer:shadowOffsetBottom">22dip</item>
+    </style>
+    
+	<style name="ClassicSingleApk_Dialog" parent="@com.maxmpz.audioplayer:style/Base_ActivityTheme_Default">
+		<item name="com.maxmpz.audioplayer:player_layout">@layout/activity_player_ui</item>
+		<item name="com.maxmpz.audioplayer:eq_layout">@layout/activity_eq</item>
+		<item name="com.maxmpz.audioplayer:lock_screen_layout">@layout/activity_lock_screen</item>
+		<item name="com.maxmpz.audioplayer:plain_bg_color">#FF080808</item>
+		<item name="com.maxmpz.audioplayer:deck_bg">@drawable/matte_deck_bg</item>
+		<item name="com.maxmpz.audioplayer:list_footer">@drawable/classic_list_footer</item>
+		<item name="com.maxmpz.audioplayer:list_footer_selection">@drawable/classic_list_footer</item>
+		<item name="com.maxmpz.audioplayer:toast_bg">@drawable/matte_toast_bg</item>
+		<item name="com.maxmpz.audioplayer:rw_selector">@drawable/matte_rw_selector</item>
+		<item name="com.maxmpz.audioplayer:ff_selector">@drawable/matte_ff_selector</item>
+		<item name="com.maxmpz.audioplayer:next_cat_selector">@drawable/matte_next_cat_selector</item>    	
+		<item name="com.maxmpz.audioplayer:prev_cat_selector">@drawable/matte_prev_cat_selector</item>
+		<item name="com.maxmpz.audioplayer:play">@drawable/matte_play_big_selector</item>
+		<item name="com.maxmpz.audioplayer:pause">@drawable/matte_pause_big_selector</item>
+		<item name="com.maxmpz.audioplayer:stop">@drawable/matte_stop_big</item>
+		<item name="com.maxmpz.audioplayer:Text1">@style/Classic_Text1</item>
+		<item name="com.maxmpz.audioplayer:Text2">@style/Classic_Text2</item>
+		<item name="com.maxmpz.audioplayer:Text3">@style/Classic_Text3</item>
+		<item name="com.maxmpz.audioplayer:Text4">@style/Classic_Text4</item>
+		<item name="com.maxmpz.audioplayer:text_color_1">@color/matte_text_color_1</item>
+		<item name="com.maxmpz.audioplayer:text_color_2">@color/matte_text_color_2</item>
+		<item name="com.maxmpz.audioplayer:text_color_3">@color/matte_text_color_3</item>
+		<item name="com.maxmpz.audioplayer:PlayListText1">@style/Classic_PlayListText1</item>
+		<item name="com.maxmpz.audioplayer:PlayListText2">@style/Classic_PlayListText2</item>
+		<item name="com.maxmpz.audioplayer:PlayListText3">@style/Classic_PlayListText3</item>
+		<item name="com.maxmpz.audioplayer:NowPlayingText1">@style/Classic_PlayListText1</item>
+		<item name="com.maxmpz.audioplayer:NowPlayingText2">@style/Classic_PlayListText2</item>
+		<item name="com.maxmpz.audioplayer:SmallLabelText">@style/Classic_SmallLabelText</item>
+		<item name="com.maxmpz.audioplayer:ToastText1">@style/Classic_ToastText1</item>
+		<item name="com.maxmpz.audioplayer:ToastText2">@style/Classic_ToastText2</item>
+		<item name="com.maxmpz.audioplayer:BigRoundButton">@style/Classic_BigRoundButton</item>
+		<item name="com.maxmpz.audioplayer:MediumRoundButton">@style/Classic_MediumRoundButton</item>
+		<item name="com.maxmpz.audioplayer:SmallRoundButton">@style/Classic_SmallRoundButton</item>
+		<item name="com.maxmpz.audioplayer:TrackProgressBar">@style/Classic_TrackProgressBar</item>
+		<item name="com.maxmpz.audioplayer:MenuImageButton">@style/Classic_MenuImageButton</item>
+		<item name="com.maxmpz.audioplayer:Button">@style/Classic_Button</item>
+		<item name="com.maxmpz.audioplayer:CheckButton">@style/Classic_CheckButton</item>
+		<item name="com.maxmpz.audioplayer:EqCheckButton">@style/Classic_EqCheckButton</item>		
+		<item name="com.maxmpz.audioplayer:EqButton">@style/Classic_EqButton</item>
+		<item name="com.maxmpz.audioplayer:DivTableLayout">@style/Classic_DivTableLayout</item>
+		<item name="com.maxmpz.audioplayer:DivTableRow">@style/Classic_DivTableRow</item>
+		<item name="com.maxmpz.audioplayer:EqVertButtonDiv">@style/Classic_NoButtonDiv</item>
+		<item name="com.maxmpz.audioplayer:EqHorButtonDiv">@style/Classic_NoButtonDiv</item>
+		<item name="com.maxmpz.audioplayer:FrequencyResponseScroller">@style/Classic_FrequencyResponseScroller</item>
+		<item name="com.maxmpz.audioplayer:LinearKnob">@style/Classic_LinearKnob</item>
+		<item name="com.maxmpz.audioplayer:PreampLinearKnob">@style/Classic_PreampLinearKnob</item>
+		<item name="com.maxmpz.audioplayer:RoundKnob">@style/Classic_RoundKnob</item>
+		<item name="com.maxmpz.audioplayer:QuickMenuPopup2">@style/ClassicSingleApk_QuickMenuPopup2</item>
+		<item name="com.maxmpz.audioplayer:QuickOptionsMenu2">@style/Classic_QuickOptionsMenu2</item>
+		<item name="com.maxmpz.audioplayer:Dialog">@style/ClassicSingleApk_Dialog</item>
+		<item name="com.maxmpz.audioplayer:List">@style/Classic_List</item>
+		<item name="com.maxmpz.audioplayer:Grid">@style/Classic_Grid</item>
+		<item name="com.maxmpz.audioplayer:LockScreenTheme">@style/ClassicSingleApk_LockScreenTheme</item>
+		
+	    <!-- Dialog overrides -->
+		<item name="android:windowBackground">@drawable/matte_dialog_bg</item>
+		<item name="android:windowTitleStyle">@com.maxmpz.audioplayer:style/Matte_DialogWindowTitle</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustResize</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+		<item name="android:backgroundDimAmount">0.75</item>
+	</style>
+</resources>

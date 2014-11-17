@@ -4,15 +4,19 @@
 	<!-- Defines reference to the skin style (one item per skin) -->
 	<integer-array name="poweramp_skins">
 		<item>@style/ClassicSkin</item>
+		<item>@style/ClassicSkinSingleApk</item>
+		<!-- <item>@com.maxmpz.audioplayer:style/skin_style1</item> -->
 	</integer-array>
 
 	<!-- Defines skin name (one item per skin) -->
 	<string-array name="poweramp_skin_names">
 		<item>Poweramp Classic Skin</item>
+		<item>Poweramp Classic Skin (Single APK)</item>
 	</string-array>
 	
 	<!-- Defines authors/copyright (one item per skin) -->
 	<string-array name="poweramp_skin_authors">
+		<item>MaxMP</item>
 		<item>MaxMP</item>
 	</string-array>
 </resources>

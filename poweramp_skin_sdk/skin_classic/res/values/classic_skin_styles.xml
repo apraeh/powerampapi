@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-
+<!-- 
+This style will work under 5.0+ Androids if build with "ant apkpush-shared" / "ant dist-shared"
+This style will work under pre-5.0 Androids if build with "ant apkpush" / "ant dist"
+-->
 <resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:z="http://schemas.android.com/apk/res/com.maxmpz.audioplayer">
+	
 	<style name="ClassicSkin" parent="@com.maxmpz.audioplayer:style/Base_ActivityTheme_Default">
 		<item name="com.maxmpz.audioplayer:player_layout">@layout/activity_player_ui</item>
 		<item name="com.maxmpz.audioplayer:eq_layout">@layout/activity_eq</item>
@@ -68,20 +72,20 @@
 		
 		<item name="com.maxmpz.audioplayer:Dialog">@style/Classic_Dialog</item>
 		
+		
 		<item name="com.maxmpz.audioplayer:List">@style/Classic_List</item>
 		<item name="com.maxmpz.audioplayer:Grid">@style/Classic_Grid</item>
 		
 		<item name="com.maxmpz.audioplayer:LockScreenTheme">@style/Classic_LockScreenTheme</item>
 		
 	</style>
-	
+    	
 	<style name="Classic_LockScreenTheme" parent="@style/ClassicSkin">
 		<item name="com.maxmpz.audioplayer:NowPlayingText1">@com.maxmpz.audioplayer:style/Matte_LockScreen_PlayListText1</item>
 		<item name="com.maxmpz.audioplayer:NowPlayingText2">@com.maxmpz.audioplayer:style/Matte_LockScreen_PlayListText2</item>
 		<item name="com.maxmpz.audioplayer:PlayerSeekbarText">@com.maxmpz.audioplayer:style/Matte_LockScreen_PlayerSeekbarText</item>
 		<item name="com.maxmpz.audioplayer:SmallMetaText">@com.maxmpz.audioplayer:style/Matte_LockScreen_SmallMetaText</item>
 	</style>
-		
 	
 	<color name="matte_text_color_1">#ffa3d3ff</color>
 	<color name="matte_text_color_2">#ff627f99</color>
@@ -306,7 +310,8 @@
         -->
     </style>
     
-    <style name="Classic_QuickMenuPopup2" parent="@style/Classic_QuickOptionsMenu2">
+    
+    <style name="Classic_QuickMenuPopup2" parent="Classic_QuickOptionsMenu2">
     	<item name="com.maxmpz.audioplayer:background">@drawable/matte_qm_bg</item>
     	<item name="com.maxmpz.audioplayer:shadowOffsetTop">21.5dip</item>
     	<item name="com.maxmpz.audioplayer:shadowOffsetBottom">22dip</item>
