@@ -197,7 +197,7 @@ This style will work under pre-5.0 Androids if build with "ant apkpush" / "ant d
 		<item name="android:textSize">12sp</item>
 		<item name="android:textColor">#ffffff</item>
 		<item name="android:gravity">center</item>
-		<item name="android:layout_height">31.33dip</item>
+		<item name="android:layout_height">33dip</item>
 		<item name="android:lines">1</item>
 		<item name="android:layout_width">68dip</item>
 		<item name="android:layout_marginTop">1dip</item>
@@ -214,7 +214,7 @@ This style will work under pre-5.0 Androids if build with "ant apkpush" / "ant d
 		<item name="android:textSize">12sp</item>
 		<item name="android:textColor">#ffffff</item>
 		<item name="android:gravity">center</item>
-		<item name="android:layout_height">31.33dip</item>
+		<item name="android:layout_height">33dip</item>
 		<item name="android:lines">1</item>
 		<item name="android:layout_width">68dip</item>
 		<item name="android:layout_marginTop">1dip</item>
@@ -223,7 +223,6 @@ This style will work under pre-5.0 Androids if build with "ant apkpush" / "ant d
 	
 	<style name="Classic_EqCheckButton" parent="@com.maxmpz.audioplayer:style/Matte_Button">
 		<item name="android:layout_centerVertical">true</item>
-		
 		<item name="com.maxmpz.audioplayer:indicatorGravity">left|center_vertical</item>
 		<item name="android:button">@null</item>
     	<item name="android:background">@drawable/matte_check_rounded_button_selector</item>
@@ -232,7 +231,7 @@ This style will work under pre-5.0 Androids if build with "ant apkpush" / "ant d
 		<item name="android:textSize">12sp</item>
 		<item name="android:textColor">#ffffff</item>
 		<item name="android:gravity">center</item>
-		<item name="android:layout_height">31.33dip</item>
+		<item name="android:layout_height">33dip</item>
 		<item name="android:lines">1</item>
 		<item name="android:layout_width">68dip</item>
 		<item name="android:layout_marginTop">1dip</item>
@@ -246,7 +245,7 @@ This style will work under pre-5.0 Androids if build with "ant apkpush" / "ant d
 		<item name="android:textSize">12sp</item>
 		<item name="android:textColor">#ffffff</item>
 		<item name="android:gravity">center</item>
-		<item name="android:layout_height">61.33dip</item>
+		<item name="android:layout_height">33dip</item>
 		<item name="android:lines">1</item>
 		<item name="android:layout_width">68dip</item>
 		<item name="android:layout_marginTop">1dip</item>

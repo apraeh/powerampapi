@@ -2,7 +2,7 @@
 
 <!-- 
 	This one demonstrates the signle APK approach - single build for both pre-5.0 and 5.0+ Androids.
-	The limitation of such approach is inability to use parent skin-defined styles, thus we copy all
+	The limitation of such approach is inability to use skin-defined parent styles, thus we copy all
 	relevant style information in styles, previously derived from ClassicSkin style:
 	  - ClassicSingleApk_LockScreenTheme
 	  - ClassicSingleApk_Dialog
@@ -204,5 +204,6 @@
         <item name="android:windowSoftInputMode">stateUnspecified|adjustResize</item>
         <item name="android:colorBackgroundCacheHint">@null</item>
 		<item name="android:backgroundDimAmount">0.75</item>
+		<item name="android:windowNoTitle">true</item>
 	</style>
 </resources>

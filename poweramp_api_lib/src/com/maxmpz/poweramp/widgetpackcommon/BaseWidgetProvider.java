@@ -40,7 +40,7 @@ import com.maxmpz.poweramp.player.PowerampAPI;
 /**
  * Base widget provider for PowerampAPI based app widgets.
  */
-public abstract class BaseWidgetProvider extends AppWidgetProvider {
+public abstract class BaseWidgetProvider extends AppWidgetProvider implements IWidgetUpdater {
 	private static final String TAG = "BaseWidgetProvider";
 	private static final boolean LOG = false;
 	
