@@ -94,7 +94,7 @@ public abstract class BaseWidgetProvider extends AppWidgetProvider implements IW
 			if(LOG) Log.e(TAG, "received trackIntent");
 		} else if(!sPingedPowerampService) {
 			if(LOG) Log.e(TAG, "no trackIntent, pinging Poweramp service");
-			context.startService(new Intent(PowerampAPI.ACTION_API_COMMAND));
+			context.startService(PowerampAPI.newAPIIntent());
 			sPingedPowerampService = true;
 		}
 

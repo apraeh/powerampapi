@@ -20,6 +20,8 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 package com.maxmpz.poweramp.player;
 
+import android.content.ComponentName;
+import android.content.Intent;
 import android.net.Uri;
 
 
@@ -58,6 +60,10 @@ public final class PowerampAPI {
 	 * 	- cmd - int - command to execute.
 	 */
 	public static final String ACTION_API_COMMAND = "com.maxmpz.audioplayer.API_COMMAND";
+	
+	public static Intent newAPIIntent() {
+		return new Intent(ACTION_API_COMMAND).setComponent(PLAYER_SERVICE_COMPONENT_NAME);
+	}
 	
 	/**
 	 * ACTION_API_COMMAND extra.
@@ -473,6 +479,9 @@ public final class PowerampAPI {
 	
 
 	public static final String PACKAGE_NAME = "com.maxmpz.audioplayer";
+	public static final String PLAYER_SERVICE_NAME = "com.maxmpz.audioplayer.player.PlayerService";
+	
+	public static final ComponentName PLAYER_SERVICE_COMPONENT_NAME = new ComponentName(PACKAGE_NAME, PLAYER_SERVICE_NAME);
 	
 	public static final String ACTIVITY_PLAYER_UI = "com.maxmpz.audioplayer.PlayerUIActivity";
 	public static final String ACTIVITY_EQ = "com.maxmpz.audioplayer.EqActivity";
